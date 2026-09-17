@@ -1,4 +1,4 @@
-OpenDecision
+# OpenDecision
 
 [![Tests](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml/badge.svg)](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml)
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
@@ -9,22 +9,23 @@ OpenDecision is an open-source semantic decision engine.
 
 It takes a state, a natural-language question, and user-defined criteria, then returns a structured decision with probabilities.
 
-The current backend is MoritzLaurer/ModernBERT-large-zeroshot-v2.0.
+The current backend is [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0).
 
 OpenDecision currently supports three primitives:
 
-Choice — select one option from a set of user-defined alternatives.
+- **Choice** — select one option from a set of user-defined alternatives.
+- **Noul** — evaluate a binary natural-language predicate.
+- **Score** — score a state against an ordered rubric.
 
-Noul — evaluate a binary natural-language predicate.
+It also exposes a `/v1/systemone` endpoint compatible with the core request/response flow used by the TypeSafe Python SDK.
 
-Score — score a state against an ordered rubric.
+---
 
-It also exposes a /v1/systemone endpoint compatible with the core request/response flow used by the TypeSafe Python SDK.
+## Example
 
-Example
+### Request
 
-Request
-
+```json
 {
   "state": "My credit card was charged twice for the same subscription.",
   "questions": {
@@ -39,9 +40,11 @@ Request
     }
   }
 }
+```
 
-Response
+### Response
 
+```json
 {
   "model": "modernbert-large-zeroshot-v2",
   "answers": {
@@ -61,43 +64,63 @@ Response
     "output_tokens": 0
   }
 }
+```
 
-Installation
+---
 
-OpenDecision uses uv.
+## Installation
 
+OpenDecision uses [`uv`](https://docs.astral.sh/uv/).
+
+```bash
 git clone https://github.com/deepanwadhwa/OpenDecision.git
 cd OpenDecision
 uv sync
+```
 
-Run the server
+---
 
+## Run the server
+
+```bash
 uv run uvicorn opendecision.api.app:app \
   --app-dir src \
   --host 127.0.0.1 \
   --port 8000
+```
 
 Health check:
 
+```bash
 curl http://127.0.0.1:8000/health
+```
 
 Expected response:
 
+```json
 {
   "status": "ok",
   "service": "OpenDecision"
 }
+```
 
 Interactive API documentation:
 
+```text
 http://127.0.0.1:8000/docs
+```
 
 OpenAPI schema:
 
+```text
 http://127.0.0.1:8000/openapi.json
+```
 
-Direct Python usage
+---
 
+## Direct Python usage
+
+```python
 from opendecision.engine import OpenDecisionEngine
 
 engine = OpenDecisionEngine()
@@ -113,11 +136,15 @@ result = engine.choice(
 )
 
 print(result)
+```
 
-Choice
+---
 
-Choice selects one option from a set of user-defined alternatives.
+## Choice
 
+`Choice` selects one option from a set of user-defined alternatives.
+
+```python
 result = engine.choice(
     state="My card was charged twice.",
     instructions="Which department should handle this?",
@@ -127,9 +154,11 @@ result = engine.choice(
         "sales": "Pricing and purchasing",
     },
 )
+```
 
 Example output:
 
+```python
 {
     "type": "choice",
     "choice": "billing",
@@ -140,25 +169,33 @@ Example output:
     },
     "confidence": 0.68
 }
+```
 
-Noul
+---
 
-Noul evaluates whether a natural-language predicate is supported by the state.
+## Noul
 
+`Noul` evaluates whether a natural-language predicate is supported by the state.
+
+```python
 result = engine.noul(
     state="I need this fixed before my presentation in thirty minutes.",
     instructions="This request is time-sensitive.",
 )
+```
 
 Example output:
 
+```python
 {
     "type": "noul",
     "noul": 0.95
 }
+```
 
 Explicit true/false definitions are also supported:
 
+```python
 result = engine.noul(
     state=(
         "The account logged in from California and then "
@@ -170,11 +207,15 @@ result = engine.noul(
         "false": "The activity is consistent with normal account usage.",
     },
 )
+```
 
-Score
+---
 
-Score evaluates a state against an ordered rubric.
+## Score
 
+`Score` evaluates a state against an ordered rubric.
+
+```python
 result = engine.score(
     state="This is ridiculous. I have contacted you five times already.",
     instructions="How frustrated is the customer?",
@@ -184,9 +225,11 @@ result = engine.score(
         "Extremely angry",
     ],
 )
+```
 
 Example output:
 
+```python
 {
     "type": "score",
     "score": 1.82,
@@ -202,15 +245,19 @@ Example output:
     },
     "confidence": 0.61
 }
+```
 
 The returned score is the probability-weighted position in the rubric.
 
-TypeSafe SDK compatibility
+---
 
-OpenDecision implements the core /v1/systemone request and response format used by the TypeSafe Python SDK.
+## TypeSafe SDK compatibility
+
+OpenDecision implements the core `/v1/systemone` request and response format used by the TypeSafe Python SDK.
 
 The official client can be pointed at a local OpenDecision server:
 
+```python
 from typesafe_sdk import Choice, Noul, Score, TypeSafeClient
 
 client = TypeSafeClient(
@@ -244,209 +291,180 @@ response = client.system_one(
 )
 
 print(response)
+```
 
 OpenDecision is an independent open-source project and is not affiliated with TypeSafe.
 
-Current model
+---
+
+## Current model
 
 Default backend:
 
-MoritzLaurer/ModernBERT-large-zeroshot-v2.0
+[`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0)
 
 Current properties:
 
-approximately 400M parameters
-
-zero-shot natural-language classification
-
-user-defined labels at inference time
-
-ModernBERT architecture
-
-up to 8192-token model context
-
-Apache-2.0 model license
+- approximately 400M parameters
+- zero-shot natural-language classification
+- user-defined labels at inference time
+- ModernBERT architecture
+- up to 8192-token model context
+- Apache-2.0 model license
 
 The backend is intended to be model-independent. ModernBERT is the first supported backend.
 
-Decision compilation
+---
+
+## Decision compilation
 
 OpenDecision uses different NLI formulations for different decision primitives.
 
-Choice
+### Choice
 
+```text
 state + question
 → semantic candidate descriptions
 → zero-shot classification
+```
 
-Noul
+### Noul
 
+```text
 state
 → natural-language predicate
 → direct entailment probability
+```
 
-Score
+### Score
 
+```text
 state
 → question + rubric description hypotheses
 → probability distribution
 → weighted score
+```
 
 Using different formulations for the three primitives performed better than using one generic zero-shot formulation.
 
-Evaluation
+---
+
+## Evaluation
 
 Run the current benchmark:
 
+```bash
 uv run python benchmarks/run_eval.py
+```
 
 Current seed benchmark:
 
+```text
 Choice accuracy:  9/10 = 90.0%
 Noul accuracy:    4/4  = 100.0%
 Score MAE:              0.178
 Total cases:      17
+```
 
 These numbers come from a small development benchmark and should not be interpreted as general model accuracy.
 
 Current benchmark categories include:
 
-customer support routing
-
-internet troubleshooting
-
-ambiguity
-
-scientific classification
-
-arbitrary invented labels
-
-urgency
-
-security
-
-ordinal scoring
+- customer support routing
+- internet troubleshooting
+- ambiguity
+- scientific classification
+- arbitrary invented labels
+- urgency
+- security
+- ordinal scoring
 
 Run the compiler/template ablation benchmark:
 
+```bash
 uv run python benchmarks/template_ablation.py
+```
 
 Saved results are stored in:
 
+```text
 benchmarks/results/
+```
 
-Tests
+---
+
+## Tests
 
 Run all tests:
 
+```bash
 uv run pytest -v
+```
 
 The current test suite covers:
 
-Choice
+- Choice
+- Noul
+- Noul with explicit criteria
+- Score
+- structured state
+- arbitrary user-defined labels
+- HTTP API
+- multiple question types in one request
+- request validation
 
-Noul
+---
 
-Noul with explicit criteria
+## Confidence
 
-Score
-
-structured state
-
-arbitrary user-defined labels
-
-HTTP API
-
-multiple question types in one request
-
-request validation
-
-Confidence
-
-confidence currently measures concentration of the returned probability distribution.
+`confidence` currently measures concentration of the returned probability distribution.
 
 It is not the probability that the model is correct.
 
 Empirical calibration is planned separately.
 
-Known limitations
+---
 
-The current benchmark dataset is small.
+## Known limitations
 
-Model probabilities are not yet empirically calibrated.
+- The current benchmark dataset is small.
+- Model probabilities are not yet empirically calibrated.
+- Zero-shot classification evaluates candidate hypotheses separately.
+- Large candidate sets increase inference cost.
+- Structured JSON is serialized into text before inference.
+- ModernBERT can still make incorrect semantic decisions even when the correct option is present.
+- Long-context behavior has not yet been evaluated systematically.
 
-Zero-shot classification evaluates candidate hypotheses separately.
+---
 
-Large candidate sets increase inference cost.
+## Project status
 
-Structured JSON is serialized into text before inference.
-
-ModernBERT can still make incorrect semantic decisions even when the correct option is present.
-
-Long-context behavior has not yet been evaluated systematically.
-
-Project status
-
-Milestone
-
-Status
-
-Description
-
-M0
-
-Complete
-
-Raw ModernBERT zero-shot baseline
-
-M1
-
-Complete
-
-Choice, Noul, and Score primitives
-
-M2
-
-Complete
-
-/v1/systemone HTTP API
-
-M3
-
-Complete
-
-TypeSafe Python SDK compatibility
-
-M4
-
-Active
-
-Evaluation and compiler benchmarking
+| Milestone | Status | Description |
+| --- | --- | --- |
+| M0 | Complete | Raw ModernBERT zero-shot baseline |
+| M1 | Complete | Choice, Noul, and Score primitives |
+| M2 | Complete | `/v1/systemone` HTTP API |
+| M3 | Complete | TypeSafe Python SDK compatibility |
+| M4 | Active | Evaluation and compiler benchmarking |
 
 Planned work includes:
 
-larger evaluation corpus
+- larger evaluation corpus
+- additional zero-shot backends
+- ONNX inference
+- CPU and GPU benchmarks
+- dynamic batching
+- probability calibration
+- long-context evaluation
+- confidential-compute deployment
+- custom classifier training
+- shared-state multi-question inference
 
-additional zero-shot backends
+---
 
-ONNX inference
+## Repository structure
 
-CPU and GPU benchmarks
-
-dynamic batching
-
-probability calibration
-
-long-context evaluation
-
-confidential-compute deployment
-
-custom classifier training
-
-shared-state multi-question inference
-
-Repository structure
-
+```text
 OpenDecision/
 ├── benchmarks/
 │   ├── cases.jsonl
@@ -461,7 +479,10 @@ OpenDecision/
 ├── tests/
 ├── pyproject.toml
 └── README.md
+```
 
-License
+---
 
-See LICENSE.
+## License
+
+See [`LICENSE`](LICENSE).
