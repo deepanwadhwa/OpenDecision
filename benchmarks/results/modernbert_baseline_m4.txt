@@ -1,0 +1,40 @@
+Loaded 17 benchmark cases.
+
+Loading MoritzLaurer/ModernBERT-large-zeroshot-v2.0
+Device: mps
+Loading weights: 100%|████████████████████████████████████████████████████████████████████████████████████████████| 174/174 [00:00<00:00, 11210.75it/s]
+
+OpenDecision M4 Evaluation
+========================================
+Choice accuracy: 7/10 = 70.0%
+Noul accuracy:   4/4 = 100.0%
+Score MAE:       0.522
+Total cases:     17
+Failures:        3
+
+Failures
+----------------------------------------
+
+ID:       internet_002
+Expected: isp
+Got:      power_utility
+Probabilities:
+  power_utility             0.3966
+  isp                       0.3392
+  router_manufacturer       0.2642
+
+ID:       internet_003
+Expected: router_manufacturer
+Got:      isp
+Probabilities:
+  isp                       0.7180
+  power_utility             0.1650
+  router_manufacturer       0.1170
+
+ID:       ambiguity_002
+Expected: river_bank
+Got:      financial_institution
+Probabilities:
+  financial_institution     0.7920
+  river_bank                0.1667
+  data_bank                 0.0413

@@ -1,0 +1,420 @@
+[
+  {
+    "profile": "A_current",
+    "choice_correct": 7,
+    "choice_total": 10,
+    "choice_accuracy": 0.7,
+    "score_mae": 0.521511971950531,
+    "choice_failures": [
+      {
+        "id": "internet_002",
+        "correct": false,
+        "expected": "isp",
+        "prediction": "power_utility",
+        "probabilities": {
+          "isp": 0.33922234177589417,
+          "power_utility": 0.39659109711647034,
+          "router_manufacturer": 0.2641866207122803
+        }
+      },
+      {
+        "id": "internet_003",
+        "correct": false,
+        "expected": "router_manufacturer",
+        "prediction": "isp",
+        "probabilities": {
+          "isp": 0.7180467844009399,
+          "power_utility": 0.16497114300727844,
+          "router_manufacturer": 0.11698206514120102
+        }
+      },
+      {
+        "id": "ambiguity_002",
+        "correct": false,
+        "expected": "river_bank",
+        "prediction": "financial_institution",
+        "probabilities": {
+          "financial_institution": 0.7920113801956177,
+          "river_bank": 0.16666434705257416,
+          "data_bank": 0.041324298828840256
+        }
+      }
+    ],
+    "score_results": [
+      {
+        "id": "frustration_001",
+        "prediction": 0.666399359703064,
+        "expected": 0.0,
+        "error": 0.666399359703064,
+        "probabilities": {
+          "0": 0.5277483463287354,
+          "1": 0.2781038284301758,
+          "2": 0.1941477656364441
+        }
+      },
+      {
+        "id": "frustration_002",
+        "prediction": 1.3266607522964478,
+        "expected": 1.0,
+        "error": 0.32666075229644775,
+        "probabilities": {
+          "0": 0.19488883018493652,
+          "1": 0.2835615873336792,
+          "2": 0.5215495824813843
+        }
+      },
+      {
+        "id": "frustration_003",
+        "prediction": 1.4285241961479187,
+        "expected": 2.0,
+        "error": 0.5714758038520813,
+        "probabilities": {
+          "0": 0.13213098049163818,
+          "1": 0.3072137236595154,
+          "2": 0.5606552362442017
+        }
+      }
+    ]
+  },
+  {
+    "profile": "B_current_description_only",
+    "choice_correct": 9,
+    "choice_total": 10,
+    "choice_accuracy": 0.9,
+    "score_mae": 0.5872396916771928,
+    "choice_failures": [
+      {
+        "id": "internet_003",
+        "correct": false,
+        "expected": "router_manufacturer",
+        "prediction": "isp",
+        "probabilities": {
+          "isp": 0.8772872090339661,
+          "power_utility": 0.08720316737890244,
+          "router_manufacturer": 0.03550960496068001
+        }
+      }
+    ],
+    "score_results": [
+      {
+        "id": "frustration_001",
+        "prediction": 0.9946976602077484,
+        "expected": 0.0,
+        "error": 0.9946976602077484,
+        "probabilities": {
+          "0": 0.3420078456401825,
+          "1": 0.3212866485118866,
+          "2": 0.3367055058479309
+        }
+      },
+      {
+        "id": "frustration_002",
+        "prediction": 1.743128441274166,
+        "expected": 1.0,
+        "error": 0.7431284412741661,
+        "probabilities": {
+          "0": 0.06890619546175003,
+          "1": 0.11905922740697861,
+          "2": 0.8120346069335938
+        }
+      },
+      {
+        "id": "frustration_003",
+        "prediction": 1.976107026450336,
+        "expected": 2.0,
+        "error": 0.02389297354966402,
+        "probabilities": {
+          "0": 0.006316387094557285,
+          "1": 0.01126017700880766,
+          "2": 0.9824234247207642
+        }
+      }
+    ]
+  },
+  {
+    "profile": "C_question_in_hypothesis",
+    "choice_correct": 7,
+    "choice_total": 10,
+    "choice_accuracy": 0.7,
+    "score_mae": 0.3413787887742122,
+    "choice_failures": [
+      {
+        "id": "internet_002",
+        "correct": false,
+        "expected": "isp",
+        "prediction": "router_manufacturer",
+        "probabilities": {
+          "isp": 0.10611964762210846,
+          "power_utility": 0.2950155436992645,
+          "router_manufacturer": 0.5988647937774658
+        }
+      },
+      {
+        "id": "internet_003",
+        "correct": false,
+        "expected": "router_manufacturer",
+        "prediction": "isp",
+        "probabilities": {
+          "isp": 0.8108649849891663,
+          "power_utility": 0.08921688795089722,
+          "router_manufacturer": 0.0999181717634201
+        }
+      },
+      {
+        "id": "ambiguity_002",
+        "correct": false,
+        "expected": "river_bank",
+        "prediction": "financial_institution",
+        "probabilities": {
+          "financial_institution": 0.4661022424697876,
+          "river_bank": 0.4460628032684326,
+          "data_bank": 0.08783496916294098
+        }
+      }
+    ],
+    "score_results": [
+      {
+        "id": "frustration_001",
+        "prediction": 0.1089318972080946,
+        "expected": 0.0,
+        "error": 0.1089318972080946,
+        "probabilities": {
+          "0": 0.9316848516464233,
+          "1": 0.02769826166331768,
+          "2": 0.04061681777238846
+        }
+      },
+      {
+        "id": "frustration_002",
+        "prediction": 1.8425389751791954,
+        "expected": 1.0,
+        "error": 0.8425389751791954,
+        "probabilities": {
+          "0": 0.01926414668560028,
+          "1": 0.11893274635076523,
+          "2": 0.8618031144142151
+        }
+      },
+      {
+        "id": "frustration_003",
+        "prediction": 1.9273345060646534,
+        "expected": 2.0,
+        "error": 0.0726654939353466,
+        "probabilities": {
+          "0": 0.01757923886179924,
+          "1": 0.037507135421037674,
+          "2": 0.9449136853218079
+        }
+      }
+    ]
+  },
+  {
+    "profile": "D_question_description_only",
+    "choice_correct": 8,
+    "choice_total": 10,
+    "choice_accuracy": 0.8,
+    "score_mae": 0.17815028876066208,
+    "choice_failures": [
+      {
+        "id": "internet_002",
+        "correct": false,
+        "expected": "isp",
+        "prediction": "power_utility",
+        "probabilities": {
+          "isp": 0.3687044084072113,
+          "power_utility": 0.414545476436615,
+          "router_manufacturer": 0.2167501300573349
+        }
+      },
+      {
+        "id": "internet_003",
+        "correct": false,
+        "expected": "router_manufacturer",
+        "prediction": "isp",
+        "probabilities": {
+          "isp": 0.9338021278381348,
+          "power_utility": 0.04987785592675209,
+          "router_manufacturer": 0.016319971531629562
+        }
+      }
+    ],
+    "score_results": [
+      {
+        "id": "frustration_001",
+        "prediction": 0.20414827018976212,
+        "expected": 0.0,
+        "error": 0.20414827018976212,
+        "probabilities": {
+          "0": 0.8539647459983826,
+          "1": 0.08792220801115036,
+          "2": 0.05811303108930588
+        }
+      },
+      {
+        "id": "frustration_002",
+        "prediction": 1.2119659185409546,
+        "expected": 1.0,
+        "error": 0.2119659185409546,
+        "probabilities": {
+          "0": 0.09513562172651291,
+          "1": 0.5977628231048584,
+          "2": 0.3071015477180481
+        }
+      },
+      {
+        "id": "frustration_003",
+        "prediction": 1.8816633224487305,
+        "expected": 2.0,
+        "error": 0.11833667755126953,
+        "probabilities": {
+          "0": 0.026158470660448074,
+          "1": 0.06601977348327637,
+          "2": 0.907821774482727
+        }
+      }
+    ]
+  },
+  {
+    "profile": "E_best_answer_description_only",
+    "choice_correct": 8,
+    "choice_total": 10,
+    "choice_accuracy": 0.8,
+    "score_mae": 0.2403328058620294,
+    "choice_failures": [
+      {
+        "id": "internet_002",
+        "correct": false,
+        "expected": "isp",
+        "prediction": "power_utility",
+        "probabilities": {
+          "isp": 0.375966876745224,
+          "power_utility": 0.39865437150001526,
+          "router_manufacturer": 0.22537875175476074
+        }
+      },
+      {
+        "id": "internet_003",
+        "correct": false,
+        "expected": "router_manufacturer",
+        "prediction": "isp",
+        "probabilities": {
+          "isp": 0.9106581807136536,
+          "power_utility": 0.05511820688843727,
+          "router_manufacturer": 0.03422367572784424
+        }
+      }
+    ],
+    "score_results": [
+      {
+        "id": "frustration_001",
+        "prediction": 0.17226814851164818,
+        "expected": 0.0,
+        "error": 0.17226814851164818,
+        "probabilities": {
+          "0": 0.8869202136993408,
+          "1": 0.053891558200120926,
+          "2": 0.059188295155763626
+        }
+      },
+      {
+        "id": "frustration_002",
+        "prediction": 1.4162108302116394,
+        "expected": 1.0,
+        "error": 0.4162108302116394,
+        "probabilities": {
+          "0": 0.03834669664502144,
+          "1": 0.5070956349372864,
+          "2": 0.4545575976371765
+        }
+      },
+      {
+        "id": "frustration_003",
+        "prediction": 1.8674805611371994,
+        "expected": 2.0,
+        "error": 0.1325194388628006,
+        "probabilities": {
+          "0": 0.02553148940205574,
+          "1": 0.08145646750926971,
+          "2": 0.8930120468139648
+        }
+      }
+    ]
+  },
+  {
+    "profile": "F_question_label_only",
+    "choice_correct": 7,
+    "choice_total": 10,
+    "choice_accuracy": 0.7,
+    "score_mae": 0.5121354969839255,
+    "choice_failures": [
+      {
+        "id": "sales_001",
+        "correct": false,
+        "expected": "sales",
+        "prediction": "billing",
+        "probabilities": {
+          "billing": 0.3634065091609955,
+          "technical": 0.3108380436897278,
+          "sales": 0.3257554769515991
+        }
+      },
+      {
+        "id": "internet_001",
+        "correct": false,
+        "expected": "power_utility",
+        "prediction": "isp",
+        "probabilities": {
+          "isp": 0.4982062876224518,
+          "power_utility": 0.41141727566719055,
+          "router_manufacturer": 0.09037639200687408
+        }
+      },
+      {
+        "id": "internet_003",
+        "correct": false,
+        "expected": "router_manufacturer",
+        "prediction": "isp",
+        "probabilities": {
+          "isp": 0.9198439717292786,
+          "power_utility": 0.07120836526155472,
+          "router_manufacturer": 0.00894765555858612
+        }
+      }
+    ],
+    "score_results": [
+      {
+        "id": "frustration_001",
+        "prediction": 0.09342643991112709,
+        "expected": 0.0,
+        "error": 0.09342643991112709,
+        "probabilities": {
+          "0": 0.9323594570159912,
+          "1": 0.04185464605689049,
+          "2": 0.0257858969271183
+        }
+      },
+      {
+        "id": "frustration_002",
+        "prediction": 1.9142487049102783,
+        "expected": 1.0,
+        "error": 0.9142487049102783,
+        "probabilities": {
+          "0": 0.013229770585894585,
+          "1": 0.059291720390319824,
+          "2": 0.9274784922599792
+        }
+      },
+      {
+        "id": "frustration_003",
+        "prediction": 1.471268653869629,
+        "expected": 2.0,
+        "error": 0.5287313461303711,
+        "probabilities": {
+          "0": 0.06818289309740067,
+          "1": 0.3923654556274414,
+          "2": 0.5394515991210938
+        }
+      }
+    ]
+  }
+]
