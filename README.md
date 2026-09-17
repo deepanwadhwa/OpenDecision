@@ -1,33 +1,30 @@
-# OpenDecision
+OpenDecision
 
 [![Tests](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml/badge.svg)](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml)
-
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Model](https://img.shields.io/badge/backend-ModernBERT--large-6f42c1)
 
 OpenDecision is an open-source semantic decision engine.
 
-It takes:
+It takes a state, a natural-language question, and user-defined criteria, then returns a structured decision with probabilities.
 
-- a state, such as text or structured JSON
-- a natural-language question
-- user-defined criteria
+The current backend is MoritzLaurer/ModernBERT-large-zeroshot-v2.0.
 
-and returns structured decisions and probability distributions.
+OpenDecision currently supports three primitives:
 
-OpenDecision currently uses [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0) as its inference backend.
+Choice — select one option from a set of user-defined alternatives.
 
-The current API implements three decision primitives:
+Noul — evaluate a binary natural-language predicate.
 
-- `Choice` — choose one option from a set
-- `Noul` — evaluate a binary natural-language predicate
-- `Score` — score a state against an ordered rubric
+Score — score a state against an ordered rubric.
 
-OpenDecision also exposes a `/v1/systemone` API compatible with the core request and response format used by the TypeSafe Python SDK.
+It also exposes a /v1/systemone endpoint compatible with the core request/response flow used by the TypeSafe Python SDK.
 
-## Example
+Example
 
-Input:
+Request
 
-```json
 {
   "state": "My credit card was charged twice for the same subscription.",
   "questions": {
@@ -43,7 +40,7 @@ Input:
   }
 }
 
-Example output:
+Response
 
 {
   "model": "modernbert-large-zeroshot-v2",
@@ -64,25 +61,23 @@ Example output:
     "output_tokens": 0
   }
 }
+
 Installation
 
-OpenDecision currently uses uv.
+OpenDecision uses uv.
 
-Clone the repository:
-
-git clone https://github.com/YOUR_USERNAME/OpenDecision.git
+git clone https://github.com/deepanwadhwa/OpenDecision.git
 cd OpenDecision
-
-Install dependencies:
-
 uv sync
+
 Run the server
+
 uv run uvicorn opendecision.api.app:app \
   --app-dir src \
   --host 127.0.0.1 \
   --port 8000
 
-Check the server:
+Health check:
 
 curl http://127.0.0.1:8000/health
 
@@ -93,12 +88,15 @@ Expected response:
   "service": "OpenDecision"
 }
 
-Interactive API documentation is available at:
+Interactive API documentation:
 
 http://127.0.0.1:8000/docs
-Python usage
 
-OpenDecision can also be used directly without the HTTP server.
+OpenAPI schema:
+
+http://127.0.0.1:8000/openapi.json
+
+Direct Python usage
 
 from opendecision.engine import OpenDecisionEngine
 
@@ -115,6 +113,7 @@ result = engine.choice(
 )
 
 print(result)
+
 Choice
 
 Choice selects one option from a set of user-defined alternatives.
@@ -129,7 +128,7 @@ result = engine.choice(
     },
 )
 
-Example result:
+Example output:
 
 {
     "type": "choice",
@@ -137,10 +136,11 @@ Example result:
     "probabilities": {
         "billing": 0.91,
         "technical": 0.04,
-        "sales": 0.05,
+        "sales": 0.05
     },
-    "confidence": 0.68,
+    "confidence": 0.68
 }
+
 Noul
 
 Noul evaluates whether a natural-language predicate is supported by the state.
@@ -150,14 +150,14 @@ result = engine.noul(
     instructions="This request is time-sensitive.",
 )
 
-Example result:
+Example output:
 
 {
     "type": "noul",
-    "noul": 0.95,
+    "noul": 0.95
 }
 
-Explicit true and false definitions are also supported:
+Explicit true/false definitions are also supported:
 
 result = engine.noul(
     state=(
@@ -170,6 +170,7 @@ result = engine.noul(
         "false": "The activity is consistent with normal account usage.",
     },
 )
+
 Score
 
 Score evaluates a state against an ordered rubric.
@@ -184,7 +185,7 @@ result = engine.score(
     ],
 )
 
-Example result:
+Example output:
 
 {
     "type": "score",
@@ -192,17 +193,17 @@ Example result:
     "legend": {
         "0": "Calm",
         "1": "Frustrated",
-        "2": "Extremely angry",
+        "2": "Extremely angry"
     },
     "probabilities": {
         "0": 0.03,
         "1": 0.12,
-        "2": 0.85,
+        "2": 0.85
     },
-    "confidence": 0.61,
+    "confidence": 0.61
 }
 
-The score is the probability-weighted position in the rubric.
+The returned score is the probability-weighted position in the rubric.
 
 TypeSafe SDK compatibility
 
@@ -242,47 +243,56 @@ response = client.system_one(
     },
 )
 
+print(response)
+
 OpenDecision is an independent open-source project and is not affiliated with TypeSafe.
 
-Model
+Current model
 
-Current default model:
+Default backend:
 
 MoritzLaurer/ModernBERT-large-zeroshot-v2.0
 
-Properties:
+Current properties:
 
 approximately 400M parameters
+
 zero-shot natural-language classification
+
 user-defined labels at inference time
+
 ModernBERT architecture
+
 up to 8192-token model context
+
 Apache-2.0 model license
 
-The backend is intended to become model-independent. ModernBERT is the first supported backend.
+The backend is intended to be model-independent. ModernBERT is the first supported backend.
 
-Compiler
+Decision compilation
 
 OpenDecision uses different NLI formulations for different decision primitives.
 
-Current implementation:
-
 Choice
+
 state + question
 → semantic candidate descriptions
 → zero-shot classification
 
 Noul
+
 state
 → natural-language predicate
 → direct entailment probability
 
 Score
+
 state
 → question + rubric description hypotheses
-→ weighted probability distribution
+→ probability distribution
+→ weighted score
 
-This produced better results than using one generic zero-shot prompt for all three primitives.
+Using different formulations for the three primitives performed better than using one generic zero-shot formulation.
 
 Evaluation
 
@@ -297,74 +307,146 @@ Noul accuracy:    4/4  = 100.0%
 Score MAE:              0.178
 Total cases:      17
 
-These numbers are from a small development benchmark and should not be interpreted as general model accuracy.
+These numbers come from a small development benchmark and should not be interpreted as general model accuracy.
 
-The benchmark contains examples involving:
+Current benchmark categories include:
 
 customer support routing
-ambiguity
+
 internet troubleshooting
+
+ambiguity
+
 scientific classification
+
 arbitrary invented labels
+
 urgency
+
 security
+
 ordinal scoring
 
-Template/compiler experiments are stored in:
+Run the compiler/template ablation benchmark:
+
+uv run python benchmarks/template_ablation.py
+
+Saved results are stored in:
 
 benchmarks/results/
 
-Run the template ablation benchmark with:
-
-uv run python benchmarks/template_ablation.py
-Known limitations
-
-OpenDecision currently has several limitations.
-
-The benchmark dataset is small.
-Model output probabilities are not yet empirically calibrated.
-confidence measures concentration of the returned distribution. It is not the probability that the answer is correct.
-Zero-shot classification requires evaluating candidate hypotheses separately.
-Long inputs and large candidate sets can increase inference cost.
-ModernBERT can make incorrect semantic decisions even when the correct option is present.
-Structured JSON is currently serialized into text before inference.
 Tests
 
 Run all tests:
 
 uv run pytest -v
 
-Current test suite covers:
+The current test suite covers:
 
 Choice
+
 Noul
+
 Noul with explicit criteria
+
 Score
+
 structured state
+
 arbitrary user-defined labels
+
 HTTP API
-multi-question API requests
+
+multiple question types in one request
+
 request validation
+
+Confidence
+
+confidence currently measures concentration of the returned probability distribution.
+
+It is not the probability that the model is correct.
+
+Empirical calibration is planned separately.
+
+Known limitations
+
+The current benchmark dataset is small.
+
+Model probabilities are not yet empirically calibrated.
+
+Zero-shot classification evaluates candidate hypotheses separately.
+
+Large candidate sets increase inference cost.
+
+Structured JSON is serialized into text before inference.
+
+ModernBERT can still make incorrect semantic decisions even when the correct option is present.
+
+Long-context behavior has not yet been evaluated systematically.
+
 Project status
-M0  Complete  Raw ModernBERT zero-shot baseline
-M1  Complete  Choice, Noul, and Score primitives
-M2  Complete  /v1/systemone HTTP API
-M3  Complete  TypeSafe Python SDK compatibility
-M4  Active    Evaluation and compiler benchmarking
+
+Milestone
+
+Status
+
+Description
+
+M0
+
+Complete
+
+Raw ModernBERT zero-shot baseline
+
+M1
+
+Complete
+
+Choice, Noul, and Score primitives
+
+M2
+
+Complete
+
+/v1/systemone HTTP API
+
+M3
+
+Complete
+
+TypeSafe Python SDK compatibility
+
+M4
+
+Active
+
+Evaluation and compiler benchmarking
 
 Planned work includes:
 
 larger evaluation corpus
+
 additional zero-shot backends
+
 ONNX inference
+
 CPU and GPU benchmarks
+
 dynamic batching
+
 probability calibration
+
 long-context evaluation
+
 confidential-compute deployment
+
 custom classifier training
+
 shared-state multi-question inference
+
 Repository structure
+
 OpenDecision/
 ├── benchmarks/
 │   ├── cases.jsonl
@@ -377,41 +459,9 @@ OpenDecision/
 │       ├── engine.py
 │       └── api/
 ├── tests/
-└── pyproject.toml
+├── pyproject.toml
+└── README.md
+
 License
 
 See LICENSE.
-
-
-For the green **Tests passing** badge, add this file:
-
-```text
-.github/workflows/tests.yml
-
-with:
-
-name: Tests
-
-on:
-  push:
-  pull_request:
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v6
-
-      - name: Set up Python
-        run: uv python install 3.12
-
-      - name: Install dependencies
-        run: uv sync --all-groups
-
-      - name: Run tests
-        run: uv run pytest -v
