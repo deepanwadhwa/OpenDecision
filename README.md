@@ -179,39 +179,39 @@ This uses the same underlying ModernBERT model throughout; no additional router 
 
 ## Evaluation
 
-### OpenDecision Original Choice 500
+### TypeSafe public examples
 
-The project includes an original synthetic benchmark containing **500 Choice cases across 25 domains**:
+Because OpenDecision was inspired by TypeSafe's Jev, I wanted to see how it performed on tasks resembling the examples TypeSafe itself publishes.
 
-- 375 development cases
-- 125 held-out comparison cases
+I created an evaluation set of **80 cases adapted from TypeSafe's public documentation and cookbooks**:
 
-The benchmark covers support routing, function routing, citation relations, semantic extraction, date semantics, product taxonomy, entity matching, policy decisions, software bugs, document types, logistics, security events, scientific methods, word sense, and more.
+- 51 Choice problems
+- 20 Noul problems
+- 9 Score problems
 
-### Results
+Using the default `MoritzLaurer/ModernBERT-large-zeroshot-v2.0` backend, OpenDecision v0.1 achieves:
 
-Backend: `MoritzLaurer/ModernBERT-large-zeroshot-v2.0`
+| Primitive | Result |
+| --- | ---: |
+| Choice | **43/51 — 84.3%** |
+| Noul | **17/20 — 85.0%** |
+| Score | **0.375 MAE** |
 
-| Method | Dev (375) | Holdout (125) |
-|---|---:|---:|
-| Single best universal compiler | 304/375 — **81.1%** | 102/125 — **81.6%** |
-| A + B + semantic adjudicator | 321/375 — **85.6%** | 108/125 — **86.4%** |
-| Per-case A/B oracle upper bound | 340/375 — **90.7%** | 113/125 — **90.4%** |
+These are **not official TypeSafe benchmark results** and should not be interpreted as a direct Jev-vs-OpenDecision comparison. The cases were adapted and paraphrased from examples in TypeSafe's public documentation so they could be evaluated reproducibly with OpenDecision.
 
-On the holdout split:
+The full evaluation set and source provenance are available in [`benchmarks/typesafe_public/`](benchmarks/typesafe_public/).
 
-- A and B agreed on **96/125 (76.8%)** requests.
-- The adjudicator was invoked on **29/125 (23.2%)** requests.
-- It selected the correct answer on **21/29 (72.4%)** disagreements.
-- Final accuracy was **108/125 (86.4%)**.
+### OpenDecision benchmark
 
-The oracle row is **not a deployable system result**. It only measures the maximum possible accuracy if a perfect selector always knew whether Compiler A or Compiler B was correct.
+I also created a separate synthetic benchmark containing **500 Choice problems across 25 domains**.
 
-### Evaluation caveat
+The system architecture was developed on 375 cases and then evaluated on a separate 125-case comparison split.
 
-This is an **internal synthetic benchmark**, not an external standardized benchmark. The final adjudicator profile was selected on the 375-case development split and then evaluated on the 125-case split. The holdout split had also been inspected during earlier compiler-comparison experiments, so the 86.4% result should be treated as an internal held-out comparison rather than a pristine external test result.
+**OpenDecision v0.1 scored 108/125 — 86.4%.**
 
-The benchmark and split manifest are included in the repository so results can be reproduced.
+The benchmark covers tasks including support and function routing, citation relations, semantic extraction, date semantics, product taxonomy, entity matching, policy decisions, software bugs, scientific methods, security events, and word-sense disambiguation.
+
+The dataset and split are available in [`benchmarks/opendecision_original/`](benchmarks/opendecision_original/).
 
 ## TypeSafe SDK compatibility
 

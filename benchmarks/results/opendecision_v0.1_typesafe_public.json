@@ -1,0 +1,1395 @@
+{
+  "generated_at": "2026-09-18T22:12:43.813924+00:00",
+  "cases_file": "benchmarks/typesafe_public/cases.jsonl",
+  "model": "MoritzLaurer/ModernBERT-large-zeroshot-v2.0",
+  "summary": {
+    "choice": {
+      "correct": 43,
+      "total": 51,
+      "accuracy": 0.8431372549019608
+    },
+    "noul": {
+      "correct": 17,
+      "total": 20,
+      "accuracy": 0.85
+    },
+    "score": {
+      "total": 9,
+      "mae": 0.3745885094006856
+    },
+    "total_cases": 80,
+    "failure_count": 11
+  },
+  "results": [
+    {
+      "id": "ts_date_001",
+      "type": "choice",
+      "expected": "absolute",
+      "predicted": "absolute",
+      "correct": true,
+      "probabilities": {
+        "absolute": 0.6753529608249664,
+        "relative": 0.15837496519088745,
+        "none": 0.16627207025885582
+      },
+      "confidence": 0.22151345240999232
+    },
+    {
+      "id": "ts_date_002",
+      "type": "choice",
+      "expected": "january",
+      "predicted": "january",
+      "correct": true,
+      "probabilities": {
+        "january": 0.7613565623760223,
+        "february": 0.021848964504897594,
+        "march": 0.01407451112754643,
+        "april": 0.006849002209492028,
+        "may": 0.0222845763200894,
+        "june": 0.01819545670878142,
+        "july": 0.012158790952526033,
+        "august": 0.01575872884131968,
+        "september": 0.019988269195891917,
+        "october": 0.009831553208641708,
+        "november": 0.032178509049117565,
+        "december": 0.06547507154755294
+      },
+      "confidence": 0.5675183480206298
+    },
+    {
+      "id": "ts_date_003",
+      "type": "choice",
+      "expected": "1",
+      "predicted": "1",
+      "correct": true,
+      "probabilities": {
+        "1": 0.16864702105522156,
+        "2": 0.015995739959180355,
+        "3": 0.012364060152322054,
+        "4": 0.014919816982001066,
+        "5": 0.012741089332848787,
+        "6": 0.01740194484591484,
+        "7": 0.02778681367635727,
+        "8": 0.014423818793147802,
+        "9": 0.017876933328807354,
+        "10": 0.009891963098198175,
+        "11": 0.01581601658836007,
+        "12": 0.039733102545142174,
+        "13": 0.027344493195414543,
+        "14": 0.021792146377265453,
+        "15": 0.015380236320197582,
+        "16": 0.021669568493962288,
+        "17": 0.01638748962432146,
+        "18": 0.020188205875456333,
+        "19": 0.03393840976059437,
+        "20": 0.05565716326236725,
+        "21": 0.03688395954668522,
+        "22": 0.020481789018958807,
+        "23": 0.013840858358889818,
+        "24": 0.03135487996041775,
+        "25": 0.13212129101157188,
+        "26": 0.03681040182709694,
+        "27": 0.036644475534558296,
+        "28": 0.02381921000778675,
+        "29": 0.01947373291477561,
+        "30": 0.02113463170826435,
+        "31": 0.047478714026510715
+      },
+      "confidence": 0.09623135528074356
+    },
+    {
+      "id": "ts_date_004",
+      "type": "choice",
+      "expected": "2025",
+      "predicted": "2025",
+      "correct": true,
+      "probabilities": {
+        "2025": 0.8300544321537018,
+        "2026": 0.008115567965433002,
+        "2027": 0.1417636964470148,
+        "none": 0.020066358149051666
+      },
+      "confidence": 0.6039372037126298
+    },
+    {
+      "id": "ts_date_005",
+      "type": "choice",
+      "expected": "absolute",
+      "predicted": "absolute",
+      "correct": true,
+      "probabilities": {
+        "absolute": 0.6775517463684082,
+        "relative": 0.15594446659088135,
+        "none": 0.16650382056832314
+      },
+      "confidence": 0.22444675404943537
+    },
+    {
+      "id": "ts_date_006",
+      "type": "choice",
+      "expected": "december",
+      "predicted": "december",
+      "correct": true,
+      "probabilities": {
+        "january": 0.015542360953986645,
+        "february": 0.005413423758000135,
+        "march": 0.004558559972792864,
+        "april": 0.00366290588863194,
+        "may": 0.0029895766638219357,
+        "june": 0.004852561745792627,
+        "july": 0.004418307915329933,
+        "august": 0.003495169337838888,
+        "september": 0.003283407539129257,
+        "october": 0.004852561745792627,
+        "november": 0.0076341512612998486,
+        "december": 0.9392970204353333
+      },
+      "confidence": 0.8528210593009671
+    },
+    {
+      "id": "ts_date_007",
+      "type": "choice",
+      "expected": "31",
+      "predicted": "31",
+      "correct": true,
+      "probabilities": {
+        "1": 0.003401106456294656,
+        "2": 0.006843638606369495,
+        "3": 0.006965000182390213,
+        "4": 0.008368640206754208,
+        "5": 0.005673575680702925,
+        "6": 0.007158077321946621,
+        "7": 0.012785600498318672,
+        "8": 0.008770260028541088,
+        "9": 0.012235899455845356,
+        "10": 0.003929970785975456,
+        "11": 0.012562816962599754,
+        "12": 0.1009601429104805,
+        "13": 0.04622292146086693,
+        "14": 0.011305311694741249,
+        "15": 0.008190763182938099,
+        "16": 0.008714765310287476,
+        "17": 0.006803656462579966,
+        "18": 0.007830960676074028,
+        "19": 0.016162512823939323,
+        "20": 0.02124522253870964,
+        "21": 0.04844120517373085,
+        "22": 0.012835641391575336,
+        "23": 0.023333312943577766,
+        "24": 0.01882222481071949,
+        "25": 0.008001023903489113,
+        "26": 0.021495655179023743,
+        "27": 0.10580532252788544,
+        "28": 0.0863557830452919,
+        "29": 0.09633683413267136,
+        "30": 0.11088301986455917,
+        "31": 0.15155912935733795
+      },
+      "confidence": 0.17394240031493935
+    },
+    {
+      "id": "ts_date_008",
+      "type": "choice",
+      "expected": "2027",
+      "predicted": "2027",
+      "correct": true,
+      "probabilities": {
+        "2025": 0.021171165630221367,
+        "2026": 0.011243922635912895,
+        "2027": 0.9287970066070557,
+        "none": 0.038787923753261566
+      },
+      "confidence": 0.7643127671832531
+    },
+    {
+      "id": "ts_date_009",
+      "type": "choice",
+      "expected": "absolute",
+      "predicted": "relative",
+      "correct": false,
+      "probabilities": {
+        "absolute": 0.43512973189353943,
+        "relative": 0.5310536026954651,
+        "none": 0.03381676599383354
+      },
+      "confidence": 0.26024259047170395
+    },
+    {
+      "id": "ts_date_010",
+      "type": "choice",
+      "expected": "august",
+      "predicted": "august",
+      "correct": true,
+      "probabilities": {
+        "january": 0.0020986180752515793,
+        "february": 0.00333930627675727,
+        "march": 0.0034117167815566063,
+        "april": 0.006718198303133249,
+        "may": 0.015003503300249577,
+        "june": 0.010304721188731492,
+        "july": 0.03423642343841493,
+        "august": 0.9136838018894196,
+        "september": 0.00418871664442122,
+        "october": 0.0019206778961233795,
+        "november": 0.002166836115065962,
+        "december": 0.002927445573732257
+      },
+      "confidence": 0.8155050910847402
+    },
+    {
+      "id": "ts_date_011",
+      "type": "choice",
+      "expected": "14",
+      "predicted": "14",
+      "correct": true,
+      "probabilities": {
+        "1": 0.022948917001485825,
+        "2": 0.02478958386927843,
+        "3": 0.015556894708424807,
+        "4": 0.023846911266446114,
+        "5": 0.010441687889397144,
+        "6": 0.013933706097304821,
+        "7": 0.031289588660001755,
+        "8": 0.15521400421857834,
+        "9": 0.01640323828905821,
+        "10": 0.011664735386148095,
+        "11": 0.013781655114144087,
+        "12": 0.014111231546849012,
+        "13": 0.03681782819330692,
+        "14": 0.2843288630247116,
+        "15": 0.010666359681636095,
+        "16": 0.015955733601003885,
+        "17": 0.013189990306273103,
+        "18": 0.02553658140823245,
+        "19": 0.023328818380832672,
+        "20": 0.01756304339505732,
+        "21": 0.02914290502667427,
+        "22": 0.023721510078758,
+        "23": 0.015133843757212162,
+        "24": 0.0238892980851233,
+        "25": 0.016938716173171997,
+        "26": 0.0202518654987216,
+        "27": 0.01640046015381813,
+        "28": 0.023581782821565866,
+        "29": 0.019102540332823992,
+        "30": 0.01304903463460505,
+        "31": 0.017418572213500738
+      },
+      "confidence": 0.17605211152090505
+    },
+    {
+      "id": "ts_date_012",
+      "type": "choice",
+      "expected": "none",
+      "predicted": "none",
+      "correct": true,
+      "probabilities": {
+        "2025": 0.0973893441259861,
+        "2026": 0.1169000193476677,
+        "2027": 0.10851077362895012,
+        "none": 0.6771998405456543
+      },
+      "confidence": 0.2911324169699261
+    },
+    {
+      "id": "ts_date_013",
+      "type": "choice",
+      "expected": "relative",
+      "predicted": "absolute",
+      "correct": false,
+      "probabilities": {
+        "absolute": 0.6079443991184235,
+        "relative": 0.34386518597602844,
+        "none": 0.04819045588374138
+      },
+      "confidence": 0.2574478412018366
+    },
+    {
+      "id": "ts_date_014",
+      "type": "choice",
+      "expected": "today",
+      "predicted": "today",
+      "correct": true,
+      "probabilities": {
+        "today": 0.5286817103624344,
+        "tomorrow": 0.018092824378982186,
+        "day_after": 0.03414864279329777,
+        "weekday": 0.3872019350528717,
+        "none": 0.031874870881438255
+      },
+      "confidence": 0.37736121597161243
+    },
+    {
+      "id": "ts_date_015",
+      "type": "choice",
+      "expected": "relative",
+      "predicted": "relative",
+      "correct": true,
+      "probabilities": {
+        "absolute": 0.4695296585559845,
+        "relative": 0.49592214822769165,
+        "none": 0.034548234194517136
+      },
+      "confidence": 0.2544663715883422
+    },
+    {
+      "id": "ts_date_016",
+      "type": "choice",
+      "expected": "weekday",
+      "predicted": "weekday",
+      "correct": true,
+      "probabilities": {
+        "today": 0.005435106810182333,
+        "tomorrow": 0.007428910583257675,
+        "day_after": 0.36930733919143677,
+        "weekday": 0.5855588912963867,
+        "none": 0.032269712537527084
+      },
+      "confidence": 0.467624122624274
+    },
+    {
+      "id": "ts_date_017",
+      "type": "choice",
+      "expected": "thursday",
+      "predicted": "thursday",
+      "correct": true,
+      "probabilities": {
+        "monday": 0.006737371673807502,
+        "tuesday": 0.005791765986941755,
+        "wednesday": 0.0071345129981637,
+        "thursday": 0.9583883881568909,
+        "friday": 0.007121258764527738,
+        "saturday": 0.007033105241134763,
+        "sunday": 0.007793554104864597
+      },
+      "confidence": 0.872845847209176
+    },
+    {
+      "id": "ts_date_018",
+      "type": "choice",
+      "expected": "next",
+      "predicted": "next",
+      "correct": true,
+      "probabilities": {
+        "next": 0.8924241364002228,
+        "current": 0.02925400622189045,
+        "none": 0.07832181453704834
+      },
+      "confidence": 0.6319285914599793
+    },
+    {
+      "id": "ts_date_019",
+      "type": "choice",
+      "expected": "none",
+      "predicted": "relative",
+      "correct": false,
+      "probabilities": {
+        "absolute": 0.43512973189353943,
+        "relative": 0.5310536026954651,
+        "none": 0.03381676599383354
+      },
+      "confidence": 0.26024259047170395
+    },
+    {
+      "id": "ts_func_001",
+      "type": "choice",
+      "expected": "plot_price",
+      "predicted": "top_movers",
+      "correct": false,
+      "probabilities": {
+        "list_symbols": 0.06624067574739456,
+        "market_summary": 0.10340023785829544,
+        "plot_price": 0.0934143215417862,
+        "intraday_pattern": 0.11093225330114365,
+        "compare_returns": 0.08775464445352554,
+        "rolling_correlation": 0.10502854734659195,
+        "summary_stats": 0.08775464445352554,
+        "volatility": 0.08052817732095718,
+        "top_movers": 0.15401418507099152,
+        "drawdown": 0.11093225330114365
+      },
+      "confidence": 0.010480124557965653
+    },
+    {
+      "id": "ts_func_002",
+      "type": "choice",
+      "expected": "rolling_correlation",
+      "predicted": "rolling_correlation",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.014158228441374376,
+        "market_summary": 0.037974655628204346,
+        "plot_price": 0.005132481805048883,
+        "intraday_pattern": 0.014018538175150752,
+        "compare_returns": 0.15131773427128792,
+        "rolling_correlation": 0.715218722820282,
+        "summary_stats": 0.035041102673858404,
+        "volatility": 0.0073088835924863815,
+        "top_movers": 0.013488436583429575,
+        "drawdown": 0.006341225292999297
+      },
+      "confidence": 0.5481675802501317
+    },
+    {
+      "id": "ts_func_003",
+      "type": "choice",
+      "expected": "intraday_pattern",
+      "predicted": "intraday_pattern",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.03255549166351557,
+        "market_summary": 0.09687478467822075,
+        "plot_price": 0.04211537353694439,
+        "intraday_pattern": 0.5335509926080704,
+        "compare_returns": 0.021334105171263218,
+        "rolling_correlation": 0.020830340683460236,
+        "summary_stats": 0.10716861486434937,
+        "volatility": 0.02259534690529108,
+        "top_movers": 0.10725503042340279,
+        "drawdown": 0.015719929710030556
+      },
+      "confidence": 0.3057174858916082
+    },
+    {
+      "id": "ts_func_004",
+      "type": "choice",
+      "expected": "top_movers",
+      "predicted": "top_movers",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.006440616212785244,
+        "market_summary": 0.080953449010849,
+        "plot_price": 0.018636541441082954,
+        "intraday_pattern": 0.10273527354001999,
+        "compare_returns": 0.049873970448970795,
+        "rolling_correlation": 0.011662449687719345,
+        "summary_stats": 0.04070594906806946,
+        "volatility": 0.008803279139101505,
+        "top_movers": 0.6725401282310486,
+        "drawdown": 0.007648420985788107
+      },
+      "confidence": 0.4695093781402294
+    },
+    {
+      "id": "ts_func_005",
+      "type": "choice",
+      "expected": "list_symbols",
+      "predicted": "list_symbols",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.728047102689743,
+        "market_summary": 0.028295439667999744,
+        "plot_price": 0.033956555649638176,
+        "intraday_pattern": 0.052490126341581345,
+        "compare_returns": 0.025228269398212433,
+        "rolling_correlation": 0.019804087467491627,
+        "summary_stats": 0.026081053540110588,
+        "volatility": 0.018038388341665268,
+        "top_movers": 0.03563128598034382,
+        "drawdown": 0.032427708618342876
+      },
+      "confidence": 0.49207238129387343
+    },
+    {
+      "id": "ts_func_006",
+      "type": "choice",
+      "expected": "market_summary",
+      "predicted": "market_summary",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.00652749664732255,
+        "market_summary": 0.8462753593921661,
+        "plot_price": 0.001341095645329915,
+        "intraday_pattern": 0.011156431341078132,
+        "compare_returns": 0.0031045186624396592,
+        "rolling_correlation": 0.002073430674499832,
+        "summary_stats": 0.12222490180283785,
+        "volatility": 0.0013858871388947591,
+        "top_movers": 0.003795784490648657,
+        "drawdown": 0.0021150968968868256
+      },
+      "confidence": 0.7550271962299657
+    },
+    {
+      "id": "ts_func_007",
+      "type": "choice",
+      "expected": "plot_price",
+      "predicted": "plot_price",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.018145766109228134,
+        "market_summary": 0.023666540160775185,
+        "plot_price": 0.47721564769744873,
+        "intraday_pattern": 0.291716068983078,
+        "compare_returns": 0.08623111248016357,
+        "rolling_correlation": 0.007331551983952522,
+        "summary_stats": 0.01704636961221695,
+        "volatility": 0.04025814309716225,
+        "top_movers": 0.018145766109228134,
+        "drawdown": 0.02024306356906891
+      },
+      "confidence": 0.3609009192499244
+    },
+    {
+      "id": "ts_func_008",
+      "type": "choice",
+      "expected": "compare_returns",
+      "predicted": "compare_returns",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.007194265199359506,
+        "market_summary": 0.18953577056527138,
+        "plot_price": 0.0037691871111746877,
+        "intraday_pattern": 0.01015471387654543,
+        "compare_returns": 0.6874328106641769,
+        "rolling_correlation": 0.029683181433938444,
+        "summary_stats": 0.03319720458239317,
+        "volatility": 0.002619965060148388,
+        "top_movers": 0.031399442348629236,
+        "drawdown": 0.005013477697502822
+      },
+      "confidence": 0.5464825419916116
+    },
+    {
+      "id": "ts_func_009",
+      "type": "choice",
+      "expected": "volatility",
+      "predicted": "volatility",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.010661840962711722,
+        "market_summary": 0.013461737893521786,
+        "plot_price": 0.01241516089066863,
+        "intraday_pattern": 0.17381201684474945,
+        "compare_returns": 0.012308387318626046,
+        "rolling_correlation": 0.006018987158313394,
+        "summary_stats": 0.02483546733856201,
+        "volatility": 0.7153670787811279,
+        "top_movers": 0.01923889492172748,
+        "drawdown": 0.01188042713329196
+      },
+      "confidence": 0.5613621709798906
+    },
+    {
+      "id": "ts_func_010",
+      "type": "choice",
+      "expected": "top_movers",
+      "predicted": "summary_stats",
+      "correct": false,
+      "probabilities": {
+        "list_symbols": 0.08658554404973984,
+        "market_summary": 0.08591173589229584,
+        "plot_price": 0.1202121302485466,
+        "intraday_pattern": 0.09811427444219589,
+        "compare_returns": 0.06285436451435089,
+        "rolling_correlation": 0.09289273619651794,
+        "summary_stats": 0.13099974393844604,
+        "volatility": 0.10691887885332108,
+        "top_movers": 0.09435558319091797,
+        "drawdown": 0.12115496397018433
+      },
+      "confidence": 0.008253106140423072
+    },
+    {
+      "id": "ts_func_011",
+      "type": "choice",
+      "expected": "drawdown",
+      "predicted": "drawdown",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.002383387414738536,
+        "market_summary": 0.015420692972838879,
+        "plot_price": 0.03876761719584465,
+        "intraday_pattern": 0.03188937157392502,
+        "compare_returns": 0.018893826752901077,
+        "rolling_correlation": 0.0035778882447630167,
+        "summary_stats": 0.01102067157626152,
+        "volatility": 0.01371544785797596,
+        "top_movers": 0.01578638330101967,
+        "drawdown": 0.848544716835022
+      },
+      "confidence": 0.6859584434615296
+    },
+    {
+      "id": "ts_func_012",
+      "type": "choice",
+      "expected": "summary_stats",
+      "predicted": "market_summary",
+      "correct": false,
+      "probabilities": {
+        "list_symbols": 0.010204735561273992,
+        "market_summary": 0.6311392337083817,
+        "plot_price": 0.0020332278800196946,
+        "intraday_pattern": 0.005116638727486134,
+        "compare_returns": 0.003615173860453069,
+        "rolling_correlation": 0.0022456077858805656,
+        "summary_stats": 0.3259059265255928,
+        "volatility": 0.008007986703887582,
+        "top_movers": 0.008916533086448908,
+        "drawdown": 0.0028149086865596473
+      },
+      "confidence": 0.6206291393875942
+    },
+    {
+      "id": "ts_func_013",
+      "type": "choice",
+      "expected": "plot_price",
+      "predicted": "plot_price",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.022158287465572357,
+        "market_summary": 0.09475897252559662,
+        "plot_price": 0.3155955374240875,
+        "intraday_pattern": 0.15261203050613403,
+        "compare_returns": 0.04618183523416519,
+        "rolling_correlation": 0.034859877079725266,
+        "summary_stats": 0.07496051490306854,
+        "volatility": 0.11078445613384247,
+        "top_movers": 0.033787354826927185,
+        "drawdown": 0.11430113762617111
+      },
+      "confidence": 0.12363233321929712
+    },
+    {
+      "id": "ts_func_014",
+      "type": "choice",
+      "expected": "rolling_correlation",
+      "predicted": "rolling_correlation",
+      "correct": true,
+      "probabilities": {
+        "list_symbols": 0.07150968164205551,
+        "market_summary": 0.14558649063110352,
+        "plot_price": 0.06562098115682602,
+        "intraday_pattern": 0.14445354044437408,
+        "compare_returns": 0.09039671719074249,
+        "rolling_correlation": 0.19174398481845856,
+        "summary_stats": 0.08103109151124954,
+        "volatility": 0.039184074848890305,
+        "top_movers": 0.11118985712528229,
+        "drawdown": 0.05928361415863037
+      },
+      "confidence": 0.042962922757573185
+    },
+    {
+      "id": "ts_extract_001",
+      "type": "choice",
+      "expected": "personal_reply",
+      "predicted": "personal_reply",
+      "correct": true,
+      "probabilities": {
+        "work_sender": 0.23278076946735382,
+        "billing_alias": 0.141288623213768,
+        "orders_alias": 0.013214962091296911,
+        "personal_reply": 0.6127156317234039
+      },
+      "confidence": 0.2980391736479441
+    },
+    {
+      "id": "ts_extract_002",
+      "type": "choice",
+      "expected": "work_sender",
+      "predicted": "work_sender",
+      "correct": true,
+      "probabilities": {
+        "work_sender": 0.867184579372406,
+        "billing_alias": 0.018861576914787292,
+        "orders_alias": 0.011989147402346134,
+        "personal_reply": 0.10196471959352493
+      },
+      "confidence": 0.6506480268116295
+    },
+    {
+      "id": "ts_extract_003",
+      "type": "choice",
+      "expected": "direct_cell",
+      "predicted": "direct_cell",
+      "correct": true,
+      "probabilities": {
+        "main_desk": 0.18623395077884197,
+        "billing_fax": 0.017433350905776024,
+        "direct_cell": 0.7963327467441559
+      },
+      "confidence": 0.485749013296627
+    },
+    {
+      "id": "ts_extract_004",
+      "type": "choice",
+      "expected": "US",
+      "predicted": "US",
+      "correct": true,
+      "probabilities": {
+        "US": 0.955933690071106,
+        "GB": 0.004259520093910396,
+        "DE": 0.00915852258913219,
+        "FR": 0.0131316555198282,
+        "CA": 0.014416751684620976,
+        "AU": 0.0030998392030596733
+      },
+      "confidence": 0.8631327949036557
+    },
+    {
+      "id": "ts_extract_005",
+      "type": "choice",
+      "expected": "USD",
+      "predicted": "USD",
+      "correct": true,
+      "probabilities": {
+        "USD": 0.65328049659729,
+        "EUR": 0.13363642618060112,
+        "GBP": 0.08032859489321709,
+        "JPY": 0.05673079378902912,
+        "CAD": 0.07602372765541077
+      },
+      "confidence": 0.31135593456788646
+    },
+    {
+      "id": "ts_extract_006",
+      "type": "choice",
+      "expected": "total_due",
+      "predicted": "total_due",
+      "correct": true,
+      "probabilities": {
+        "subtotal": 0.17170238308608532,
+        "tax": 0.14443840831518173,
+        "total_due": 0.5939260274171829,
+        "courtesy_credit": 0.08993321750313044
+      },
+      "confidence": 0.2006969398646291
+    },
+    {
+      "id": "ts_extract_007",
+      "type": "choice",
+      "expected": "courtesy_credit",
+      "predicted": "courtesy_credit",
+      "correct": true,
+      "probabilities": {
+        "subtotal": 0.022187545895576477,
+        "tax": 0.08758221566677094,
+        "total_due": 0.13805554807186127,
+        "courtesy_credit": 0.7521746754646301
+      },
+      "confidence": 0.43349232808528426
+    },
+    {
+      "id": "ts_extract_008",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "p_true": 0.011777843348681927
+    },
+    {
+      "id": "ts_extract_009",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.7221353054046631
+    },
+    {
+      "id": "ts_insurance_001",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "p_true": 0.001782196224667132
+    },
+    {
+      "id": "ts_insurance_002",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.5997195839881897
+    },
+    {
+      "id": "ts_insurance_003",
+      "type": "noul",
+      "expected": true,
+      "predicted": false,
+      "correct": false,
+      "p_true": 0.4440825581550598
+    },
+    {
+      "id": "ts_insurance_004",
+      "type": "noul",
+      "expected": true,
+      "predicted": false,
+      "correct": false,
+      "p_true": 0.3515336513519287
+    },
+    {
+      "id": "ts_insurance_005",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "p_true": 0.0333368256688118
+    },
+    {
+      "id": "ts_insurance_006",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.9959298968315125
+    },
+    {
+      "id": "ts_insurance_007",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.9597620368003845
+    },
+    {
+      "id": "ts_insurance_008",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.7385983467102051
+    },
+    {
+      "id": "ts_score_bug_001",
+      "type": "score",
+      "expected": 0.0,
+      "predicted": 0.88711878657341,
+      "absolute_error": 0.88711878657341,
+      "probabilities": {
+        "0": 0.40354034304618835,
+        "1": 0.3058004081249237,
+        "2": 0.29065918922424316
+      },
+      "confidence": 0.009966307541172337,
+      "legend": {
+        "0": "Cosmetic issue with no functional impact",
+        "1": "Feature is broken or degraded, but a workaround exists",
+        "2": "Blocking issue with no workable alternative"
+      }
+    },
+    {
+      "id": "ts_score_bug_002",
+      "type": "score",
+      "expected": 1.0,
+      "predicted": 0.9746587723493576,
+      "absolute_error": 0.025341227650642395,
+      "probabilities": {
+        "0": 0.09978650510311127,
+        "1": 0.825768232345581,
+        "2": 0.07444527000188828
+      },
+      "confidence": 0.47073957599408445,
+      "legend": {
+        "0": "Cosmetic issue with no functional impact",
+        "1": "Feature is broken or degraded, but a workaround exists",
+        "2": "Blocking issue with no workable alternative"
+      }
+    },
+    {
+      "id": "ts_score_bug_003",
+      "type": "score",
+      "expected": 1.0,
+      "predicted": 1.5128144323825836,
+      "absolute_error": 0.5128144323825836,
+      "probabilities": {
+        "0": 0.08266127109527588,
+        "1": 0.3218630850315094,
+        "2": 0.5954756736755371
+      },
+      "confidence": 0.19931745760192854,
+      "legend": {
+        "0": "Cosmetic issue with no functional impact",
+        "1": "Feature is broken or degraded, but a workaround exists",
+        "2": "Blocking issue with no workable alternative"
+      }
+    },
+    {
+      "id": "ts_score_bug_004",
+      "type": "score",
+      "expected": 1.0,
+      "predicted": 0.9144769012928009,
+      "absolute_error": 0.0855230987071991,
+      "probabilities": {
+        "0": 0.21735639870166779,
+        "1": 0.6508102416992188,
+        "2": 0.13183332979679108
+      },
+      "confidence": 0.20044304064390472,
+      "legend": {
+        "0": "Cosmetic issue with no functional impact",
+        "1": "Feature is broken or degraded, but a workaround exists",
+        "2": "Blocking issue with no workable alternative"
+      }
+    },
+    {
+      "id": "ts_score_bug_005",
+      "type": "score",
+      "expected": 2.0,
+      "predicted": 1.7902618795633316,
+      "absolute_error": 0.2097381204366684,
+      "probabilities": {
+        "0": 0.046666163951158524,
+        "1": 0.11640574038028717,
+        "2": 0.8369280695915222
+      },
+      "confidence": 0.5063246994760913,
+      "legend": {
+        "0": "Cosmetic issue with no functional impact",
+        "1": "Feature is broken or degraded, but a workaround exists",
+        "2": "Blocking issue with no workable alternative"
+      }
+    },
+    {
+      "id": "ts_entity_score_c446",
+      "type": "score",
+      "expected": 2.0,
+      "predicted": 1.1292862594127655,
+      "absolute_error": 0.8707137405872345,
+      "probabilities": {
+        "0": 0.2422095686197281,
+        "1": 0.38629457354545593,
+        "2": 0.3714958429336548
+      },
+      "confidence": 0.01809828635869748,
+      "legend": {
+        "0": "The two descriptions are different products.",
+        "1": "The descriptions are closely related or could be variants, but may not be the same product.",
+        "2": "The descriptions refer to one and the same product."
+      }
+    },
+    {
+      "id": "ts_entity_score_c427",
+      "type": "score",
+      "expected": 0.0,
+      "predicted": 0.47531160712242126,
+      "absolute_error": 0.47531160712242126,
+      "probabilities": {
+        "0": 0.565665066242218,
+        "1": 0.3933583199977875,
+        "2": 0.040976643562316895
+      },
+      "confidence": 0.25340675370871324,
+      "legend": {
+        "0": "The two descriptions are different products.",
+        "1": "The descriptions are closely related or could be variants, but may not be the same product.",
+        "2": "The descriptions refer to one and the same product."
+      }
+    },
+    {
+      "id": "ts_entity_score_c100",
+      "type": "score",
+      "expected": 1.0,
+      "predicted": 0.7574370801448822,
+      "absolute_error": 0.2425629198551178,
+      "probabilities": {
+        "0": 0.4481353759765625,
+        "1": 0.3462921977043152,
+        "2": 0.2055724412202835
+      },
+      "confidence": 0.042300603321617114,
+      "legend": {
+        "0": "The two descriptions are different products.",
+        "1": "The descriptions are closely related or could be variants, but may not be the same product.",
+        "2": "The descriptions refer to one and the same product."
+      }
+    },
+    {
+      "id": "ts_entity_score_c428",
+      "type": "score",
+      "expected": 1.0,
+      "predicted": 0.9378273487091064,
+      "absolute_error": 0.062172651290893555,
+      "probabilities": {
+        "0": 0.3780209422111511,
+        "1": 0.30613070726394653,
+        "2": 0.31584832072257996
+      },
+      "confidence": 0.004076246432568542,
+      "legend": {
+        "0": "The two descriptions are different products.",
+        "1": "The descriptions are closely related or could be variants, but may not be the same product.",
+        "2": "The descriptions refer to one and the same product."
+      }
+    },
+    {
+      "id": "ts_entity_noul_001",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.974821150302887
+    },
+    {
+      "id": "ts_entity_noul_002",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.9802808165550232
+    },
+    {
+      "id": "ts_entity_noul_003",
+      "type": "noul",
+      "expected": true,
+      "predicted": false,
+      "correct": false,
+      "p_true": 0.2799268960952759
+    },
+    {
+      "id": "ts_entity_noul_004",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "p_true": 0.030675802379846573
+    },
+    {
+      "id": "ts_entity_noul_005",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "p_true": 0.014842418022453785
+    },
+    {
+      "id": "ts_entity_noul_006",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "p_true": 0.013222822919487953
+    },
+    {
+      "id": "ts_entity_noul_007",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.9385759830474854
+    },
+    {
+      "id": "ts_entity_noul_008",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.9808759689331055
+    },
+    {
+      "id": "ts_entity_noul_009",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "p_true": 0.030908960849046707
+    },
+    {
+      "id": "ts_entity_noul_010",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "p_true": 0.9828232526779175
+    },
+    {
+      "id": "ts_citation_001",
+      "type": "choice",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "probabilities": {
+        "supports": 0.50858373939991,
+        "contradicts": 0.28461138904094696,
+        "says_nothing": 0.20680483430624008
+      },
+      "confidence": 0.06478563848759045
+    },
+    {
+      "id": "ts_citation_002",
+      "type": "choice",
+      "expected": "contradicts",
+      "predicted": "contradicts",
+      "correct": true,
+      "probabilities": {
+        "supports": 0.3210923969745636,
+        "contradicts": 0.5301678776741028,
+        "says_nothing": 0.14873968064785004
+      },
+      "confidence": 0.10375513872919184
+    },
+    {
+      "id": "ts_citation_003",
+      "type": "choice",
+      "expected": "says_nothing",
+      "predicted": "contradicts",
+      "correct": false,
+      "probabilities": {
+        "supports": 0.10958949476480484,
+        "contradicts": 0.8257339596748352,
+        "says_nothing": 0.06467648595571518
+      },
+      "confidence": 0.47431414097551416
+    },
+    {
+      "id": "ts_citation_004",
+      "type": "choice",
+      "expected": "says_nothing",
+      "predicted": "says_nothing",
+      "correct": true,
+      "probabilities": {
+        "supports": 0.030666643753647804,
+        "contradicts": 0.11416316032409668,
+        "says_nothing": 0.8551702499389648
+      },
+      "confidence": 0.5554352567652823
+    },
+    {
+      "id": "ts_citation_005",
+      "type": "choice",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "probabilities": {
+        "supports": 0.6782809048891068,
+        "contradicts": 0.16242658719420433,
+        "says_nothing": 0.15929247858002782
+      },
+      "confidence": 0.2252572805891564
+    },
+    {
+      "id": "ts_citation_006",
+      "type": "choice",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "probabilities": {
+        "supports": 0.3607613742351532,
+        "contradicts": 0.3183707892894745,
+        "says_nothing": 0.3208678066730499
+      },
+      "confidence": 0.0015253006890194598
+    },
+    {
+      "id": "ts_citation_007",
+      "type": "choice",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "probabilities": {
+        "supports": 0.6670181751251221,
+        "contradicts": 0.11477438360452652,
+        "says_nothing": 0.21820741146802902
+      },
+      "confidence": 0.22562103873580786
+    },
+    {
+      "id": "ts_hier_001",
+      "type": "choice",
+      "expected": "bird_perches",
+      "predicted": "nesting_boxes",
+      "correct": false,
+      "probabilities": {
+        "bird_perches": 0.325993150472641,
+        "unclassified": 0.03923969715833664,
+        "feeding_devices": 0.10562797635793686,
+        "nesting_boxes": 0.5291391611099243
+      },
+      "confidence": 0.230543914104676
+    },
+    {
+      "id": "ts_hier_002",
+      "type": "choice",
+      "expected": "cat_window_beds",
+      "predicted": "cat_window_beds",
+      "correct": true,
+      "probabilities": {
+        "cat_window_beds": 0.7068685293197632,
+        "pet_chairs": 0.22585799545049667,
+        "cat_trees": 0.005739090847782791,
+        "pet_crates": 0.06153439311310649
+      },
+      "confidence": 0.43558400061257085
+    },
+    {
+      "id": "ts_hier_003",
+      "type": "choice",
+      "expected": "crohn_disease",
+      "predicted": "crohn_disease",
+      "correct": true,
+      "probabilities": {
+        "crohn_disease": 0.4997815191745758,
+        "ulcerative_colitis": 0.34082138538360596,
+        "celiac_disease": 0.024882657453417778,
+        "irritable_bowel": 0.13451437652111053
+      },
+      "confidence": 0.22436893899467858
+    },
+    {
+      "id": "ts_hier_004",
+      "type": "choice",
+      "expected": "retrievers_py",
+      "predicted": "retrievers_py",
+      "correct": true,
+      "probabilities": {
+        "retrievers_py": 0.9212775528430939,
+        "ranking_py": 0.014008545782417059,
+        "index_py": 0.04100348427891731,
+        "evaluation_py": 0.02371042058803141
+      },
+      "confidence": 0.7439081846931251
+    }
+  ],
+  "failures": [
+    {
+      "id": "ts_date_009",
+      "type": "choice",
+      "expected": "absolute",
+      "predicted": "relative",
+      "correct": false,
+      "probabilities": {
+        "absolute": 0.43512973189353943,
+        "relative": 0.5310536026954651,
+        "none": 0.03381676599383354
+      },
+      "confidence": 0.26024259047170395
+    },
+    {
+      "id": "ts_date_013",
+      "type": "choice",
+      "expected": "relative",
+      "predicted": "absolute",
+      "correct": false,
+      "probabilities": {
+        "absolute": 0.6079443991184235,
+        "relative": 0.34386518597602844,
+        "none": 0.04819045588374138
+      },
+      "confidence": 0.2574478412018366
+    },
+    {
+      "id": "ts_date_019",
+      "type": "choice",
+      "expected": "none",
+      "predicted": "relative",
+      "correct": false,
+      "probabilities": {
+        "absolute": 0.43512973189353943,
+        "relative": 0.5310536026954651,
+        "none": 0.03381676599383354
+      },
+      "confidence": 0.26024259047170395
+    },
+    {
+      "id": "ts_func_001",
+      "type": "choice",
+      "expected": "plot_price",
+      "predicted": "top_movers",
+      "correct": false,
+      "probabilities": {
+        "list_symbols": 0.06624067574739456,
+        "market_summary": 0.10340023785829544,
+        "plot_price": 0.0934143215417862,
+        "intraday_pattern": 0.11093225330114365,
+        "compare_returns": 0.08775464445352554,
+        "rolling_correlation": 0.10502854734659195,
+        "summary_stats": 0.08775464445352554,
+        "volatility": 0.08052817732095718,
+        "top_movers": 0.15401418507099152,
+        "drawdown": 0.11093225330114365
+      },
+      "confidence": 0.010480124557965653
+    },
+    {
+      "id": "ts_func_010",
+      "type": "choice",
+      "expected": "top_movers",
+      "predicted": "summary_stats",
+      "correct": false,
+      "probabilities": {
+        "list_symbols": 0.08658554404973984,
+        "market_summary": 0.08591173589229584,
+        "plot_price": 0.1202121302485466,
+        "intraday_pattern": 0.09811427444219589,
+        "compare_returns": 0.06285436451435089,
+        "rolling_correlation": 0.09289273619651794,
+        "summary_stats": 0.13099974393844604,
+        "volatility": 0.10691887885332108,
+        "top_movers": 0.09435558319091797,
+        "drawdown": 0.12115496397018433
+      },
+      "confidence": 0.008253106140423072
+    },
+    {
+      "id": "ts_func_012",
+      "type": "choice",
+      "expected": "summary_stats",
+      "predicted": "market_summary",
+      "correct": false,
+      "probabilities": {
+        "list_symbols": 0.010204735561273992,
+        "market_summary": 0.6311392337083817,
+        "plot_price": 0.0020332278800196946,
+        "intraday_pattern": 0.005116638727486134,
+        "compare_returns": 0.003615173860453069,
+        "rolling_correlation": 0.0022456077858805656,
+        "summary_stats": 0.3259059265255928,
+        "volatility": 0.008007986703887582,
+        "top_movers": 0.008916533086448908,
+        "drawdown": 0.0028149086865596473
+      },
+      "confidence": 0.6206291393875942
+    },
+    {
+      "id": "ts_insurance_003",
+      "type": "noul",
+      "expected": true,
+      "predicted": false,
+      "correct": false,
+      "p_true": 0.4440825581550598
+    },
+    {
+      "id": "ts_insurance_004",
+      "type": "noul",
+      "expected": true,
+      "predicted": false,
+      "correct": false,
+      "p_true": 0.3515336513519287
+    },
+    {
+      "id": "ts_entity_noul_003",
+      "type": "noul",
+      "expected": true,
+      "predicted": false,
+      "correct": false,
+      "p_true": 0.2799268960952759
+    },
+    {
+      "id": "ts_citation_003",
+      "type": "choice",
+      "expected": "says_nothing",
+      "predicted": "contradicts",
+      "correct": false,
+      "probabilities": {
+        "supports": 0.10958949476480484,
+        "contradicts": 0.8257339596748352,
+        "says_nothing": 0.06467648595571518
+      },
+      "confidence": 0.47431414097551416
+    },
+    {
+      "id": "ts_hier_001",
+      "type": "choice",
+      "expected": "bird_perches",
+      "predicted": "nesting_boxes",
+      "correct": false,
+      "probabilities": {
+        "bird_perches": 0.325993150472641,
+        "unclassified": 0.03923969715833664,
+        "feeding_devices": 0.10562797635793686,
+        "nesting_boxes": 0.5291391611099243
+      },
+      "confidence": 0.230543914104676
+    }
+  ]
+}
