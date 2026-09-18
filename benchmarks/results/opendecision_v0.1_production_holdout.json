@@ -1,0 +1,2435 @@
+{
+  "generated_at": "2026-09-18T21:52:23.413098+00:00",
+  "cases_file": "benchmarks/opendecision_original/holdout.jsonl",
+  "model": "MoritzLaurer/ModernBERT-large-zeroshot-v2.0",
+  "summary": {
+    "choice": {
+      "correct": 108,
+      "total": 125,
+      "accuracy": 0.864
+    },
+    "noul": {
+      "correct": 0,
+      "total": 0,
+      "accuracy": null
+    },
+    "score": {
+      "total": 0,
+      "mae": null
+    },
+    "total_cases": 125,
+    "failure_count": 17
+  },
+  "results": [
+    {
+      "id": "od_appliance_issue_002",
+      "type": "choice",
+      "expected": "network",
+      "predicted": "network",
+      "correct": true,
+      "probabilities": {
+        "power_supply": 0.0030217207386158407,
+        "network": 0.718307375907898,
+        "mechanical": 0.027349560987204313,
+        "sensor": 0.0207208200590685,
+        "software": 0.09593426808714867,
+        "consumable": 0.01984531059861183,
+        "user_setup": 0.10077572939917445,
+        "professional_service": 0.014045246178284287
+      },
+      "confidence": 0.5057363896984401
+    },
+    {
+      "id": "od_appliance_issue_005",
+      "type": "choice",
+      "expected": "software",
+      "predicted": "software",
+      "correct": true,
+      "probabilities": {
+        "power_supply": 0.006167564104543999,
+        "network": 0.024344225297681987,
+        "mechanical": 0.044319246895611286,
+        "sensor": 0.030592631548643112,
+        "software": 0.8090687394142151,
+        "consumable": 0.032404606812633574,
+        "user_setup": 0.0261666860897094,
+        "professional_service": 0.026936277747154236
+      },
+      "confidence": 0.5951511022281553
+    },
+    {
+      "id": "od_appliance_issue_010",
+      "type": "choice",
+      "expected": "network",
+      "predicted": "network",
+      "correct": true,
+      "probabilities": {
+        "power_supply": 0.003684479699586518,
+        "network": 0.8737300336360931,
+        "mechanical": 0.02874071354744956,
+        "sensor": 0.02037591504631564,
+        "software": 0.017005853354930878,
+        "consumable": 0.022367574041709304,
+        "user_setup": 0.019279062980785966,
+        "professional_service": 0.014816348440945148
+      },
+      "confidence": 0.705329113935705
+    },
+    {
+      "id": "od_appliance_issue_012",
+      "type": "choice",
+      "expected": "sensor",
+      "predicted": "sensor",
+      "correct": true,
+      "probabilities": {
+        "power_supply": 0.013425673823803663,
+        "network": 0.014470923691987991,
+        "mechanical": 0.11013222113251686,
+        "sensor": 0.5947369039058685,
+        "software": 0.05130063742399216,
+        "consumable": 0.05505893100053072,
+        "user_setup": 0.07281230203807354,
+        "professional_service": 0.08806238882243633
+      },
+      "confidence": 0.3325621768111676
+    },
+    {
+      "id": "od_appliance_issue_014",
+      "type": "choice",
+      "expected": "consumable",
+      "predicted": "consumable",
+      "correct": true,
+      "probabilities": {
+        "power_supply": 0.010619417356792837,
+        "network": 0.007946628262288868,
+        "mechanical": 0.08188571035861969,
+        "sensor": 0.04821335361339152,
+        "software": 0.008495279122143984,
+        "consumable": 0.7246738076210022,
+        "user_setup": 0.022959156427532434,
+        "professional_service": 0.09520668908953667
+      },
+      "confidence": 0.5084191284264179
+    },
+    {
+      "id": "od_citation_relation_002",
+      "type": "choice",
+      "expected": "contradicts",
+      "predicted": "supports",
+      "correct": false,
+      "probabilities": {
+        "supports": 0.6151951402425766,
+        "contradicts": 0.2138352245092392,
+        "irrelevant": 0.17096959426999092
+      },
+      "confidence": 0.15283915923657465
+    },
+    {
+      "id": "od_citation_relation_006",
+      "type": "choice",
+      "expected": "irrelevant",
+      "predicted": "supports",
+      "correct": false,
+      "probabilities": {
+        "supports": 0.613081157207489,
+        "contradicts": 0.24577951431274414,
+        "irrelevant": 0.14113929867744446
+      },
+      "confidence": 0.16147477519070175
+    },
+    {
+      "id": "od_citation_relation_007",
+      "type": "choice",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "probabilities": {
+        "supports": 0.5871439576148987,
+        "contradicts": 0.2256828397512436,
+        "irrelevant": 0.1871732398867607
+      },
+      "confidence": 0.1241199409141509
+    },
+    {
+      "id": "od_citation_relation_010",
+      "type": "choice",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "probabilities": {
+        "supports": 0.5836722254753113,
+        "contradicts": 0.23921949416399002,
+        "irrelevant": 0.1771082878112793
+      },
+      "confidence": 0.12343511258935214
+    },
+    {
+      "id": "od_citation_relation_011",
+      "type": "choice",
+      "expected": "contradicts",
+      "predicted": "contradicts",
+      "correct": true,
+      "probabilities": {
+        "supports": 0.11620474979281425,
+        "contradicts": 0.8155944347381592,
+        "irrelevant": 0.0682008471339941
+      },
+      "confidence": 0.45430421662770204
+    },
+    {
+      "id": "od_contract_clause_004",
+      "type": "choice",
+      "expected": "liability",
+      "predicted": "liability",
+      "correct": true,
+      "probabilities": {
+        "termination": 0.024270293302834034,
+        "confidentiality": 0.015542778419330716,
+        "payment": 0.01398690277710557,
+        "liability": 0.8661128580570221,
+        "intellectual_property": 0.025034477468580008,
+        "renewal": 0.018711021752096713,
+        "governing_law": 0.023289653239771724,
+        "force_majeure": 0.01305204106029123
+      },
+      "confidence": 0.6873494882879487
+    },
+    {
+      "id": "od_contract_clause_005",
+      "type": "choice",
+      "expected": "intellectual_property",
+      "predicted": "intellectual_property",
+      "correct": true,
+      "probabilities": {
+        "termination": 0.057035444770008326,
+        "confidentiality": 0.06138670863583684,
+        "payment": 0.054635622538626194,
+        "liability": 0.043780522886663675,
+        "intellectual_property": 0.6531554162502289,
+        "renewal": 0.049386824015527964,
+        "governing_law": 0.04689991706982255,
+        "force_majeure": 0.03371951403096318
+      },
+      "confidence": 0.36760833606853993
+    },
+    {
+      "id": "od_contract_clause_006",
+      "type": "choice",
+      "expected": "renewal",
+      "predicted": "renewal",
+      "correct": true,
+      "probabilities": {
+        "termination": 0.11907588760368526,
+        "confidentiality": 0.002551771583966911,
+        "payment": 0.003414779552258551,
+        "liability": 0.0033145530032925308,
+        "intellectual_property": 0.006798041285946965,
+        "renewal": 0.8567348122596741,
+        "governing_law": 0.0046025775372982025,
+        "force_majeure": 0.003507496672682464
+      },
+      "confidence": 0.7509202339661317
+    },
+    {
+      "id": "od_contract_clause_007",
+      "type": "choice",
+      "expected": "governing_law",
+      "predicted": "governing_law",
+      "correct": true,
+      "probabilities": {
+        "termination": 0.017664390616118908,
+        "confidentiality": 0.019403802463784814,
+        "payment": 0.018766627414152026,
+        "liability": 0.018745544366538525,
+        "intellectual_property": 0.026248014997690916,
+        "renewal": 0.017269706586375833,
+        "governing_law": 0.8683854043483734,
+        "force_majeure": 0.013516444072593004
+      },
+      "confidence": 0.6906332387718408
+    },
+    {
+      "id": "od_contract_clause_008",
+      "type": "choice",
+      "expected": "force_majeure",
+      "predicted": "force_majeure",
+      "correct": true,
+      "probabilities": {
+        "termination": 0.06600388884544373,
+        "confidentiality": 0.05140388011932373,
+        "payment": 0.10103782266378403,
+        "liability": 0.18242064118385315,
+        "intellectual_property": 0.03702482581138611,
+        "renewal": 0.06704330444335938,
+        "governing_law": 0.05100385099649429,
+        "force_majeure": 0.4440617561340332
+      },
+      "confidence": 0.18755228893340925
+    },
+    {
+      "id": "od_database_intent_001",
+      "type": "choice",
+      "expected": "select",
+      "predicted": "aggregate",
+      "correct": false,
+      "probabilities": {
+        "select": 0.21282978355884552,
+        "insert": 0.2283330112695694,
+        "update": 0.013187147676944733,
+        "delete": 0.003661938477307558,
+        "aggregate": 0.45676296949386597,
+        "join": 0.03998953104019165,
+        "schema_change": 0.02663877047598362,
+        "transaction_control": 0.01859685778617859
+      },
+      "confidence": 0.32602562388673784
+    },
+    {
+      "id": "od_database_intent_002",
+      "type": "choice",
+      "expected": "insert",
+      "predicted": "insert",
+      "correct": true,
+      "probabilities": {
+        "select": 0.00356564944377169,
+        "insert": 0.9735578894615173,
+        "update": 0.00216416222974658,
+        "delete": 0.001158133236458525,
+        "aggregate": 0.00417975673917681,
+        "join": 0.0037977583706378937,
+        "schema_change": 0.005029182182624936,
+        "transaction_control": 0.006547434604726732
+      },
+      "confidence": 0.9178152553438301
+    },
+    {
+      "id": "od_database_intent_006",
+      "type": "choice",
+      "expected": "join",
+      "predicted": "insert",
+      "correct": false,
+      "probabilities": {
+        "select": 0.0977291390299797,
+        "insert": 0.5768546462059021,
+        "update": 0.051098860800266266,
+        "delete": 0.00156735151540488,
+        "aggregate": 0.03979583457112312,
+        "join": 0.16494914889335632,
+        "schema_change": 0.053134407848119736,
+        "transaction_control": 0.014870615676045418
+      },
+      "confidence": 0.35039477302870103
+    },
+    {
+      "id": "od_database_intent_017",
+      "type": "choice",
+      "expected": "select",
+      "predicted": "select",
+      "correct": true,
+      "probabilities": {
+        "select": 0.3173293471336365,
+        "insert": 0.034846607595682144,
+        "update": 0.081020787358284,
+        "delete": 0.05745234340429306,
+        "aggregate": 0.14556798338890076,
+        "join": 0.11880913376808167,
+        "schema_change": 0.07611198723316193,
+        "transaction_control": 0.16886182129383087
+      },
+      "confidence": 0.09641826102916962
+    },
+    {
+      "id": "od_database_intent_020",
+      "type": "choice",
+      "expected": "delete",
+      "predicted": "delete",
+      "correct": true,
+      "probabilities": {
+        "select": 0.09755780547857285,
+        "insert": 0.014164765365421772,
+        "update": 0.022991685196757317,
+        "delete": 0.5814943909645081,
+        "aggregate": 0.11585275828838348,
+        "join": 0.021263830363750458,
+        "schema_change": 0.06705043464899063,
+        "transaction_control": 0.07962436228990555
+      },
+      "confidence": 0.3250037674690791
+    },
+    {
+      "id": "od_date_semantics_002",
+      "type": "choice",
+      "expected": "relative_single",
+      "predicted": "recurring",
+      "correct": false,
+      "probabilities": {
+        "absolute_single": 0.18418623134493828,
+        "relative_single": 0.19174592196941376,
+        "recurring": 0.4718988835811615,
+        "date_range": 0.07103201001882553,
+        "deadline": 0.03262466751039028,
+        "none": 0.04851227905601263
+      },
+      "confidence": 0.2024621345081361
+    },
+    {
+      "id": "od_date_semantics_008",
+      "type": "choice",
+      "expected": "relative_single",
+      "predicted": "relative_single",
+      "correct": true,
+      "probabilities": {
+        "absolute_single": 0.2285003662109375,
+        "relative_single": 0.28216028213500977,
+        "recurring": 0.15951897203922272,
+        "date_range": 0.11136218905448914,
+        "deadline": 0.11136218905448914,
+        "none": 0.10709597170352936
+      },
+      "confidence": 0.042690609106915134
+    },
+    {
+      "id": "od_date_semantics_013",
+      "type": "choice",
+      "expected": "absolute_single",
+      "predicted": "absolute_single",
+      "correct": true,
+      "probabilities": {
+        "absolute_single": 0.6418863236904144,
+        "relative_single": 0.1080765500664711,
+        "recurring": 0.09091350808739662,
+        "date_range": 0.0723677221685648,
+        "deadline": 0.0521475151181221,
+        "none": 0.03460836736485362
+      },
+      "confidence": 0.3283086238580766
+    },
+    {
+      "id": "od_date_semantics_014",
+      "type": "choice",
+      "expected": "relative_single",
+      "predicted": "none",
+      "correct": false,
+      "probabilities": {
+        "absolute_single": 0.20977845788002014,
+        "relative_single": 0.1378251239657402,
+        "recurring": 0.1783403903245926,
+        "date_range": 0.081946044228971,
+        "deadline": 0.08855182398110628,
+        "none": 0.3035581484436989
+      },
+      "confidence": 0.056913550567705085
+    },
+    {
+      "id": "od_date_semantics_015",
+      "type": "choice",
+      "expected": "recurring",
+      "predicted": "recurring",
+      "correct": true,
+      "probabilities": {
+        "absolute_single": 0.07406921591609716,
+        "relative_single": 0.021949261892586946,
+        "recurring": 0.7951390445232391,
+        "date_range": 0.025373497046530247,
+        "deadline": 0.02907072682864964,
+        "none": 0.05439824238419533
+      },
+      "confidence": 0.5460675355002926
+    },
+    {
+      "id": "od_document_type_001",
+      "type": "choice",
+      "expected": "invoice",
+      "predicted": "invoice",
+      "correct": true,
+      "probabilities": {
+        "invoice": 0.8417852520942688,
+        "receipt": 0.007060258532874286,
+        "contract": 0.019904747139662504,
+        "resume": 0.0073945999902207404,
+        "incident_report": 0.003113688755547628,
+        "policy": 0.028949202387593687,
+        "purchase_order": 0.08199682086706161,
+        "meeting_notes": 0.009795426041819155
+      },
+      "confidence": 0.6801501425599252
+    },
+    {
+      "id": "od_document_type_003",
+      "type": "choice",
+      "expected": "contract",
+      "predicted": "contract",
+      "correct": true,
+      "probabilities": {
+        "invoice": 0.0033047947799786925,
+        "receipt": 0.004488141858018935,
+        "contract": 0.9352530241012573,
+        "resume": 0.005541430087760091,
+        "incident_report": 0.002226112352218479,
+        "policy": 0.021642979234457016,
+        "purchase_order": 0.022046217694878578,
+        "meeting_notes": 0.005497278296388686
+      },
+      "confidence": 0.8346694361991421
+    },
+    {
+      "id": "od_document_type_004",
+      "type": "choice",
+      "expected": "resume",
+      "predicted": "resume",
+      "correct": true,
+      "probabilities": {
+        "invoice": 0.019727200269699097,
+        "receipt": 0.0210496773943305,
+        "contract": 0.061399927362799644,
+        "resume": 0.6916036456823349,
+        "incident_report": 0.01861829950939864,
+        "policy": 0.09732113708741963,
+        "purchase_order": 0.04080435959622264,
+        "meeting_notes": 0.0494757741689682
+      },
+      "confidence": 0.43964034280779274
+    },
+    {
+      "id": "od_document_type_012",
+      "type": "choice",
+      "expected": "resume",
+      "predicted": "resume",
+      "correct": true,
+      "probabilities": {
+        "invoice": 0.015071534318849444,
+        "receipt": 0.027585521340370178,
+        "contract": 0.042868732707574964,
+        "resume": 0.7237067222595215,
+        "incident_report": 0.015055729541927576,
+        "policy": 0.061017806408926845,
+        "purchase_order": 0.0637555755674839,
+        "meeting_notes": 0.050938373897224665
+      },
+      "confidence": 0.47472463349869365
+    },
+    {
+      "id": "od_document_type_015",
+      "type": "choice",
+      "expected": "purchase_order",
+      "predicted": "purchase_order",
+      "correct": true,
+      "probabilities": {
+        "invoice": 0.04467793833464384,
+        "receipt": 0.013919734861701727,
+        "contract": 0.048237781040370464,
+        "resume": 0.025812564184889197,
+        "incident_report": 0.0195673886773875,
+        "policy": 0.07210268679773435,
+        "purchase_order": 0.7259058207273483,
+        "meeting_notes": 0.04977606644388288
+      },
+      "confidence": 0.4770438965267456
+    },
+    {
+      "id": "od_email_intent_005",
+      "type": "choice",
+      "expected": "escalation",
+      "predicted": "escalation",
+      "correct": true,
+      "probabilities": {
+        "action_request": 0.06365052331238985,
+        "information": 0.04288838990032673,
+        "scheduling": 0.006446934421546757,
+        "approval": 0.006396634271368384,
+        "escalation": 0.8651885688304901,
+        "billing": 0.0032812458812259138,
+        "unsubscribe": 0.0048054789076559246,
+        "spam": 0.007342180353589356
+      },
+      "confidence": 0.7205989960725243
+    },
+    {
+      "id": "od_email_intent_007",
+      "type": "choice",
+      "expected": "unsubscribe",
+      "predicted": "unsubscribe",
+      "correct": true,
+      "probabilities": {
+        "action_request": 0.0031810104846954346,
+        "information": 0.002053814707323909,
+        "scheduling": 0.0010993278119713068,
+        "approval": 0.007751015480607748,
+        "escalation": 0.0011342242360115051,
+        "billing": 0.0008696398581378162,
+        "unsubscribe": 0.8958956003189087,
+        "spam": 0.0880153700709343
+      },
+      "confidence": 0.806502104695056
+    },
+    {
+      "id": "od_email_intent_009",
+      "type": "choice",
+      "expected": "action_request",
+      "predicted": "information",
+      "correct": false,
+      "probabilities": {
+        "action_request": 0.4190862774848938,
+        "information": 0.4610794633626938,
+        "scheduling": 0.005675342865288258,
+        "approval": 0.08261719532310963,
+        "escalation": 0.0064860283164307475,
+        "billing": 0.008743562269955873,
+        "unsubscribe": 0.0035166874949936755,
+        "spam": 0.012795435264706612
+      },
+      "confidence": 0.46786247164391837
+    },
+    {
+      "id": "od_email_intent_015",
+      "type": "choice",
+      "expected": "unsubscribe",
+      "predicted": "unsubscribe",
+      "correct": true,
+      "probabilities": {
+        "action_request": 0.0373646505177021,
+        "information": 0.010882939794100821,
+        "scheduling": 0.012289489270187914,
+        "approval": 0.005956707056611776,
+        "escalation": 0.005797763587906957,
+        "billing": 0.0057848751021083444,
+        "unsubscribe": 0.7399168014526367,
+        "spam": 0.18200675398111343
+      },
+      "confidence": 0.5916093052279159
+    },
+    {
+      "id": "od_email_intent_019",
+      "type": "choice",
+      "expected": "scheduling",
+      "predicted": "scheduling",
+      "correct": true,
+      "probabilities": {
+        "action_request": 0.007262369152158499,
+        "information": 0.17234467342495918,
+        "scheduling": 0.7917565703392029,
+        "approval": 0.007178153842687607,
+        "escalation": 0.005029446037951857,
+        "billing": 0.006562504277098924,
+        "unsubscribe": 0.004774841814651154,
+        "spam": 0.005091476283269003
+      },
+      "confidence": 0.677262835959525
+    },
+    {
+      "id": "od_entity_matching_003",
+      "type": "choice",
+      "expected": "different_entity",
+      "predicted": "different_entity",
+      "correct": true,
+      "probabilities": {
+        "same_entity": 0.23418348655104637,
+        "related_variant": 0.17620109766721725,
+        "different_entity": 0.5896154046058655
+      },
+      "confidence": 0.1285867587538967
+    },
+    {
+      "id": "od_entity_matching_004",
+      "type": "choice",
+      "expected": "same_entity",
+      "predicted": "same_entity",
+      "correct": true,
+      "probabilities": {
+        "same_entity": 0.452190637588501,
+        "related_variant": 0.22210858762264252,
+        "different_entity": 0.3257007300853729
+      },
+      "confidence": 0.03657802299780866
+    },
+    {
+      "id": "od_entity_matching_008",
+      "type": "choice",
+      "expected": "related_variant",
+      "predicted": "different_entity",
+      "correct": false,
+      "probabilities": {
+        "same_entity": 0.2928411737084389,
+        "related_variant": 0.1195383332669735,
+        "different_entity": 0.5876204669475555
+      },
+      "confidence": 0.15713521883450576
+    },
+    {
+      "id": "od_entity_matching_012",
+      "type": "choice",
+      "expected": "different_entity",
+      "predicted": "different_entity",
+      "correct": true,
+      "probabilities": {
+        "same_entity": 0.2831512652337551,
+        "related_variant": 0.10211185552179813,
+        "different_entity": 0.6147369295358658
+      },
+      "confidence": 0.19046320150125828
+    },
+    {
+      "id": "od_entity_matching_013",
+      "type": "choice",
+      "expected": "same_entity",
+      "predicted": "same_entity",
+      "correct": true,
+      "probabilities": {
+        "same_entity": 0.49826961755752563,
+        "related_variant": 0.08541054278612137,
+        "different_entity": 0.4163198471069336
+      },
+      "confidence": 0.16070701115605512
+    },
+    {
+      "id": "od_function_routing_002",
+      "type": "choice",
+      "expected": "file_search",
+      "predicted": "file_search",
+      "correct": true,
+      "probabilities": {
+        "web_search": 0.007280216435901821,
+        "file_search": 0.8686587810516357,
+        "calculator": 0.019329034665133804,
+        "send_email": 0.008915576268918812,
+        "calendar": 0.011456765583716333,
+        "database_query": 0.022454585414379835,
+        "image_generation": 0.002972004978801124,
+        "code_execution": 0.01961356436368078,
+        "summarize_document": 0.03376018744893372,
+        "translate_text": 0.0055592902936041355
+      },
+      "confidence": 0.7174410631660588
+    },
+    {
+      "id": "od_function_routing_008",
+      "type": "choice",
+      "expected": "code_execution",
+      "predicted": "code_execution",
+      "correct": true,
+      "probabilities": {
+        "web_search": 0.008586668642237782,
+        "file_search": 0.008528456964995712,
+        "calculator": 0.048696524230763316,
+        "send_email": 0.002697496733162552,
+        "calendar": 0.017567614559084177,
+        "database_query": 0.023320648819208145,
+        "image_generation": 0.0015389383770525455,
+        "code_execution": 0.8796298205852509,
+        "summarize_document": 0.007916366565041244,
+        "translate_text": 0.0015174607397057116
+      },
+      "confidence": 0.7506284305106294
+    },
+    {
+      "id": "od_function_routing_012",
+      "type": "choice",
+      "expected": "file_search",
+      "predicted": "file_search",
+      "correct": true,
+      "probabilities": {
+        "web_search": 0.06764460261911154,
+        "file_search": 0.7491297721862793,
+        "calculator": 0.026665693847462535,
+        "send_email": 0.009788182796910405,
+        "calendar": 0.01448167796479538,
+        "database_query": 0.028829293325543404,
+        "image_generation": 0.004710083681857213,
+        "code_execution": 0.029232437256723642,
+        "summarize_document": 0.06518836412578821,
+        "translate_text": 0.004329961142502725
+      },
+      "confidence": 0.5508788041391559
+    },
+    {
+      "id": "od_function_routing_019",
+      "type": "choice",
+      "expected": "summarize_document",
+      "predicted": "summarize_document",
+      "correct": true,
+      "probabilities": {
+        "web_search": 0.022935381100978702,
+        "file_search": 0.02463318477384746,
+        "calculator": 0.01243776548653841,
+        "send_email": 0.014788919361308217,
+        "calendar": 0.01952983223600313,
+        "database_query": 0.018882052740082145,
+        "image_generation": 0.004441465192940086,
+        "code_execution": 0.014095407212153077,
+        "summarize_document": 0.8638189136981964,
+        "translate_text": 0.004437066614627838
+      },
+      "confidence": 0.704182503750824
+    },
+    {
+      "id": "od_function_routing_020",
+      "type": "choice",
+      "expected": "translate_text",
+      "predicted": "translate_text",
+      "correct": true,
+      "probabilities": {
+        "web_search": 0.017069809953682125,
+        "file_search": 0.011028384033124894,
+        "calculator": 0.02171975316014141,
+        "send_email": 0.0149638291914016,
+        "calendar": 0.010245741694234312,
+        "database_query": 0.012881256872788072,
+        "image_generation": 0.007638939510798082,
+        "code_execution": 0.014951609540730715,
+        "summarize_document": 0.017611545976251364,
+        "translate_text": 0.8718891143798828
+      },
+      "confidence": 0.7138073900879256
+    },
+    {
+      "id": "od_job_family_009",
+      "type": "choice",
+      "expected": "backend_engineering",
+      "predicted": "backend_engineering",
+      "correct": true,
+      "probabilities": {
+        "backend_engineering": 0.7923811078071594,
+        "frontend_engineering": 0.003652548883110285,
+        "data_science": 0.010401622508652508,
+        "devops_sre": 0.10436184704303741,
+        "product_design": 0.014806505292654037,
+        "product_management": 0.04582053143531084,
+        "sales_engineering": 0.019695524126291275,
+        "support_engineering": 0.008880376350134611
+      },
+      "confidence": 0.6099062436157667
+    },
+    {
+      "id": "od_job_family_010",
+      "type": "choice",
+      "expected": "frontend_engineering",
+      "predicted": "frontend_engineering",
+      "correct": true,
+      "probabilities": {
+        "backend_engineering": 0.02943823440000415,
+        "frontend_engineering": 0.5960510671138763,
+        "data_science": 0.001089017343474552,
+        "devops_sre": 0.008793767308816314,
+        "product_design": 0.3485926240682602,
+        "product_management": 0.006587368668988347,
+        "sales_engineering": 0.005873733549378812,
+        "support_engineering": 0.003574181057047099
+      },
+      "confidence": 0.5614126179043621
+    },
+    {
+      "id": "od_job_family_011",
+      "type": "choice",
+      "expected": "data_science",
+      "predicted": "data_science",
+      "correct": true,
+      "probabilities": {
+        "backend_engineering": 0.06290429085493088,
+        "frontend_engineering": 0.017017021542415023,
+        "data_science": 0.6736674457788467,
+        "devops_sre": 0.1171208992600441,
+        "product_design": 0.06204905780032277,
+        "product_management": 0.03538621310144663,
+        "sales_engineering": 0.018096171785145998,
+        "support_engineering": 0.013758892193436623
+      },
+      "confidence": 0.43114281741886795
+    },
+    {
+      "id": "od_job_family_015",
+      "type": "choice",
+      "expected": "sales_engineering",
+      "predicted": "sales_engineering",
+      "correct": true,
+      "probabilities": {
+        "backend_engineering": 0.026248447597026825,
+        "frontend_engineering": 0.024846569634974003,
+        "data_science": 0.011974009918048978,
+        "devops_sre": 0.014495770679786801,
+        "product_design": 0.06631187535822392,
+        "product_management": 0.26991258561611176,
+        "sales_engineering": 0.5808473825454712,
+        "support_engineering": 0.005363339325413108
+      },
+      "confidence": 0.43314853300155054
+    },
+    {
+      "id": "od_job_family_017",
+      "type": "choice",
+      "expected": "backend_engineering",
+      "predicted": "backend_engineering",
+      "correct": true,
+      "probabilities": {
+        "backend_engineering": 0.8214752376079559,
+        "frontend_engineering": 0.002477057423675433,
+        "data_science": 0.005888399318791926,
+        "devops_sre": 0.08850052393972874,
+        "product_design": 0.013938539894297719,
+        "product_management": 0.04789112973958254,
+        "sales_engineering": 0.01660159311722964,
+        "support_engineering": 0.0032275012927129865
+      },
+      "confidence": 0.6571766366917611
+    },
+    {
+      "id": "od_logistics_exception_004",
+      "type": "choice",
+      "expected": "customs",
+      "predicted": "customs",
+      "correct": true,
+      "probabilities": {
+        "address_issue": 0.03030322166159749,
+        "carrier_delay": 0.04523358214646578,
+        "warehouse_hold": 0.0675160363316536,
+        "customs": 0.7747876644134521,
+        "damaged": 0.014106729067862034,
+        "lost": 0.016648994758725166,
+        "customer_unavailable": 0.02011542464606464,
+        "delivered_dispute": 0.0312883835285902
+      },
+      "confidence": 0.5475005931871537
+    },
+    {
+      "id": "od_logistics_exception_008",
+      "type": "choice",
+      "expected": "delivered_dispute",
+      "predicted": "delivered_dispute",
+      "correct": true,
+      "probabilities": {
+        "address_issue": 0.04675432201474905,
+        "carrier_delay": 0.03321364149451256,
+        "warehouse_hold": 0.018007230013608932,
+        "customs": 0.012224954087287188,
+        "damaged": 0.011998298112303019,
+        "lost": 0.09291643276810646,
+        "customer_unavailable": 0.03072439506649971,
+        "delivered_dispute": 0.7541607618331909
+      },
+      "confidence": 0.5305966797052792
+    },
+    {
+      "id": "od_logistics_exception_009",
+      "type": "choice",
+      "expected": "address_issue",
+      "predicted": "address_issue",
+      "correct": true,
+      "probabilities": {
+        "address_issue": 0.5767772793769836,
+        "carrier_delay": 0.07014117203652859,
+        "warehouse_hold": 0.06538007594645023,
+        "customs": 0.032905422151088715,
+        "damaged": 0.020483288448303938,
+        "lost": 0.036124358884990215,
+        "customer_unavailable": 0.03683452866971493,
+        "delivered_dispute": 0.16135384142398834
+      },
+      "confidence": 0.3219370210060988
+    },
+    {
+      "id": "od_logistics_exception_015",
+      "type": "choice",
+      "expected": "customer_unavailable",
+      "predicted": "customer_unavailable",
+      "correct": true,
+      "probabilities": {
+        "address_issue": 0.01810547336935997,
+        "carrier_delay": 0.0414438396692276,
+        "warehouse_hold": 0.03278477489948273,
+        "customs": 0.00924737099558115,
+        "damaged": 0.007201859727501869,
+        "lost": 0.00666063092648983,
+        "customer_unavailable": 0.8655816912651062,
+        "delivered_dispute": 0.01897437311708927
+      },
+      "confidence": 0.6975095340163513
+    },
+    {
+      "id": "od_logistics_exception_018",
+      "type": "choice",
+      "expected": "carrier_delay",
+      "predicted": "carrier_delay",
+      "correct": true,
+      "probabilities": {
+        "address_issue": 0.022113312501460314,
+        "carrier_delay": 0.8594324290752411,
+        "warehouse_hold": 0.024229363538324833,
+        "customs": 0.0250329808332026,
+        "damaged": 0.007771987933665514,
+        "lost": 0.03285347018390894,
+        "customer_unavailable": 0.012002017814666033,
+        "delivered_dispute": 0.016564421355724335
+      },
+      "confidence": 0.6788099973227678
+    },
+    {
+      "id": "od_manufacturing_defect_002",
+      "type": "choice",
+      "expected": "dimensional",
+      "predicted": "dimensional",
+      "correct": true,
+      "probabilities": {
+        "cosmetic": 0.030966361984610558,
+        "dimensional": 0.7490223348140717,
+        "contamination": 0.013934232178144157,
+        "electrical": 0.017696660244837403,
+        "mechanical": 0.12290303409099579,
+        "packaging": 0.014808576088398695,
+        "labeling": 0.015140862669795752,
+        "process_deviation": 0.03552795760333538
+      },
+      "confidence": 0.5397556185880188
+    },
+    {
+      "id": "od_manufacturing_defect_008",
+      "type": "choice",
+      "expected": "process_deviation",
+      "predicted": "process_deviation",
+      "correct": true,
+      "probabilities": {
+        "cosmetic": 0.022548408713191748,
+        "dimensional": 0.015063104452565312,
+        "contamination": 0.01725069305393845,
+        "electrical": 0.017084382940083742,
+        "mechanical": 0.02263427199795842,
+        "packaging": 0.04400775325484574,
+        "labeling": 0.011386319529265165,
+        "process_deviation": 0.8500250577926636
+      },
+      "confidence": 0.6631105676545992
+    },
+    {
+      "id": "od_manufacturing_defect_009",
+      "type": "choice",
+      "expected": "cosmetic",
+      "predicted": "cosmetic",
+      "correct": true,
+      "probabilities": {
+        "cosmetic": 0.7099752575159073,
+        "dimensional": 0.056702051777392626,
+        "contamination": 0.03643046412616968,
+        "electrical": 0.03093706874642521,
+        "mechanical": 0.037739305291324854,
+        "packaging": 0.04483505594544113,
+        "labeling": 0.03961618896573782,
+        "process_deviation": 0.04376462148502469
+      },
+      "confidence": 0.4412770767890525
+    },
+    {
+      "id": "od_manufacturing_defect_018",
+      "type": "choice",
+      "expected": "dimensional",
+      "predicted": "dimensional",
+      "correct": true,
+      "probabilities": {
+        "cosmetic": 0.0457350155338645,
+        "dimensional": 0.6196466386318207,
+        "contamination": 0.02049638144671917,
+        "electrical": 0.04604375408962369,
+        "mechanical": 0.14474985003471375,
+        "packaging": 0.06317782308906317,
+        "labeling": 0.02064379584044218,
+        "process_deviation": 0.039506787434220314
+      },
+      "confidence": 0.36469659319206094
+    },
+    {
+      "id": "od_manufacturing_defect_019",
+      "type": "choice",
+      "expected": "contamination",
+      "predicted": "contamination",
+      "correct": true,
+      "probabilities": {
+        "cosmetic": 0.022588025778532028,
+        "dimensional": 0.010341552086174488,
+        "contamination": 0.8410133123397827,
+        "electrical": 0.010837852954864502,
+        "mechanical": 0.012280897237360477,
+        "packaging": 0.07150473445653915,
+        "labeling": 0.008845598436892033,
+        "process_deviation": 0.022588025778532028
+      },
+      "confidence": 0.6645016399199293
+    },
+    {
+      "id": "od_meeting_intent_005",
+      "type": "choice",
+      "expected": "retrospective",
+      "predicted": "retrospective",
+      "correct": true,
+      "probabilities": {
+        "status_update": 0.13849257491528988,
+        "planning": 0.012647041585296392,
+        "decision": 0.012625530827790499,
+        "brainstorm": 0.007880568853579462,
+        "retrospective": 0.7823632061481476,
+        "one_on_one": 0.040791064500808716,
+        "incident_review": 0.0014436798519454896,
+        "demo": 0.003756382910069078
+      },
+      "confidence": 0.6271245273365764
+    },
+    {
+      "id": "od_meeting_intent_008",
+      "type": "choice",
+      "expected": "demo",
+      "predicted": "demo",
+      "correct": true,
+      "probabilities": {
+        "status_update": 0.04740550462156534,
+        "planning": 0.01933882851153612,
+        "decision": 0.019307808950543404,
+        "brainstorm": 0.019434007117524743,
+        "retrospective": 0.0234748013317585,
+        "one_on_one": 0.048660275526344776,
+        "incident_review": 0.007888273801654577,
+        "demo": 0.8144904971122742
+      },
+      "confidence": 0.6084839952298458
+    },
+    {
+      "id": "od_meeting_intent_016",
+      "type": "choice",
+      "expected": "demo",
+      "predicted": "demo",
+      "correct": true,
+      "probabilities": {
+        "status_update": 0.09301250614225864,
+        "planning": 0.005083859199658036,
+        "decision": 0.006179050542414188,
+        "brainstorm": 0.018912136321887374,
+        "retrospective": 0.004975666757673025,
+        "one_on_one": 0.025425445288419724,
+        "incident_review": 0.0022380976006388664,
+        "demo": 0.8441731929779053
+      },
+      "confidence": 0.6967271647264687
+    },
+    {
+      "id": "od_meeting_intent_017",
+      "type": "choice",
+      "expected": "status_update",
+      "predicted": "status_update",
+      "correct": true,
+      "probabilities": {
+        "status_update": 0.31319180130958557,
+        "planning": 0.05152814835309982,
+        "decision": 0.03829246759414673,
+        "brainstorm": 0.013868613168597221,
+        "retrospective": 0.23456981778144836,
+        "one_on_one": 0.1216932088136673,
+        "incident_review": 0.0823417454957962,
+        "demo": 0.1445142775774002
+      },
+      "confidence": 0.14291577990172877
+    },
+    {
+      "id": "od_meeting_intent_019",
+      "type": "choice",
+      "expected": "decision",
+      "predicted": "decision",
+      "correct": true,
+      "probabilities": {
+        "status_update": 0.00753600534517318,
+        "planning": 0.015604677144438028,
+        "decision": 0.907113254070282,
+        "brainstorm": 0.023740565055049956,
+        "retrospective": 0.01107977400533855,
+        "one_on_one": 0.02654002606868744,
+        "incident_review": 0.002917487872764468,
+        "demo": 0.005468221090268344
+      },
+      "confidence": 0.7736374717233174
+    },
+    {
+      "id": "od_ml_task_003",
+      "type": "choice",
+      "expected": "clustering",
+      "predicted": "clustering",
+      "correct": true,
+      "probabilities": {
+        "classification": 0.08256948739290237,
+        "regression": 0.07167136599309742,
+        "clustering": 0.6552020311355591,
+        "ranking": 0.054250824730843306,
+        "generation": 0.01347909914329648,
+        "anomaly_detection": 0.03847492439672351,
+        "forecasting": 0.03186304005794227,
+        "dimensionality_reduction": 0.05248925369232893
+      },
+      "confidence": 0.3854815684533205
+    },
+    {
+      "id": "od_ml_task_006",
+      "type": "choice",
+      "expected": "anomaly_detection",
+      "predicted": "anomaly_detection",
+      "correct": true,
+      "probabilities": {
+        "classification": 0.042156144278123975,
+        "regression": 0.01735481433570385,
+        "clustering": 0.017172790598124266,
+        "ranking": 0.022722291760146618,
+        "generation": 0.009686809265986085,
+        "anomaly_detection": 0.8460917770862579,
+        "forecasting": 0.021193388267420232,
+        "dimensionality_reduction": 0.023622032953426242
+      },
+      "confidence": 0.6556256980417413
+    },
+    {
+      "id": "od_ml_task_012",
+      "type": "choice",
+      "expected": "ranking",
+      "predicted": "ranking",
+      "correct": true,
+      "probabilities": {
+        "classification": 0.00929281022399664,
+        "regression": 0.005999889224767685,
+        "clustering": 0.008461200632154942,
+        "ranking": 0.9628195762634277,
+        "generation": 0.002878778148442507,
+        "anomaly_detection": 0.0012975670397281647,
+        "forecasting": 0.0009201128268614411,
+        "dimensionality_reduction": 0.008330021053552628
+      },
+      "confidence": 0.8928488098021464
+    },
+    {
+      "id": "od_ml_task_014",
+      "type": "choice",
+      "expected": "anomaly_detection",
+      "predicted": "anomaly_detection",
+      "correct": true,
+      "probabilities": {
+        "classification": 0.1117113009095192,
+        "regression": 0.02612239122390747,
+        "clustering": 0.03800785541534424,
+        "ranking": 0.021656224504113197,
+        "generation": 0.019111551344394684,
+        "anomaly_detection": 0.6763421893119812,
+        "forecasting": 0.0253186896443367,
+        "dimensionality_reduction": 0.08172973245382309
+      },
+      "confidence": 0.43002688050850624
+    },
+    {
+      "id": "od_ml_task_017",
+      "type": "choice",
+      "expected": "classification",
+      "predicted": "classification",
+      "correct": true,
+      "probabilities": {
+        "classification": 0.8927719295024872,
+        "regression": 0.026033082598587498,
+        "clustering": 0.010839096095878631,
+        "ranking": 0.019546005816664547,
+        "generation": 0.011619580909609795,
+        "anomaly_detection": 0.010574285290203989,
+        "forecasting": 0.010486695100553334,
+        "dimensionality_reduction": 0.018129374599084258
+      },
+      "confidence": 0.739081023193473
+    },
+    {
+      "id": "od_policy_decision_009",
+      "type": "choice",
+      "expected": "manual_review",
+      "predicted": "deny",
+      "correct": false,
+      "probabilities": {
+        "allow": 0.1050783097743988,
+        "deny": 0.7623101472854614,
+        "manual_review": 0.061176594346761703,
+        "request_info": 0.07143494859337807
+      },
+      "confidence": 0.4206999898406186
+    },
+    {
+      "id": "od_policy_decision_013",
+      "type": "choice",
+      "expected": "allow",
+      "predicted": "allow",
+      "correct": true,
+      "probabilities": {
+        "allow": 0.47830259799957275,
+        "deny": 0.27844706177711487,
+        "manual_review": 0.1400119811296463,
+        "request_info": 0.10323835164308548
+      },
+      "confidence": 0.12107543286659872
+    },
+    {
+      "id": "od_policy_decision_015",
+      "type": "choice",
+      "expected": "allow",
+      "predicted": "deny",
+      "correct": false,
+      "probabilities": {
+        "allow": 0.02088022604584694,
+        "deny": 0.5098492503166199,
+        "manual_review": 0.4293360710144043,
+        "request_info": 0.03993447870016098
+      },
+      "confidence": 0.33934712469948736
+    },
+    {
+      "id": "od_policy_decision_016",
+      "type": "choice",
+      "expected": "manual_review",
+      "predicted": "deny",
+      "correct": false,
+      "probabilities": {
+        "allow": 0.02025231346487999,
+        "deny": 0.4868502616882324,
+        "manual_review": 0.45735350251197815,
+        "request_info": 0.03554391860961914
+      },
+      "confidence": 0.34660025057296284
+    },
+    {
+      "id": "od_policy_decision_017",
+      "type": "choice",
+      "expected": "allow",
+      "predicted": "deny",
+      "correct": false,
+      "probabilities": {
+        "allow": 0.3297448754310608,
+        "deny": 0.4317325949668884,
+        "manual_review": 0.12581630423665047,
+        "request_info": 0.11270619556307793
+      },
+      "confidence": 0.10891422732784872
+    },
+    {
+      "id": "od_product_taxonomy_005",
+      "type": "choice",
+      "expected": "apparel_outerwear",
+      "predicted": "apparel_outerwear",
+      "correct": true,
+      "probabilities": {
+        "electronics_networking": 0.010046268347650766,
+        "electronics_audio": 0.003133895108476281,
+        "kitchen_cookware": 0.0023895251215435565,
+        "sports_cycling": 0.042746602557599545,
+        "apparel_outerwear": 0.9246978163719177,
+        "furniture_seating": 0.006845935247838497,
+        "pet_cat_furniture": 0.002895797311794013,
+        "automotive_tools": 0.0020645097829401493,
+        "office_writing": 0.003208305803127587,
+        "home_lighting": 0.0019713836372829974
+      },
+      "confidence": 0.8348058663127949
+    },
+    {
+      "id": "od_product_taxonomy_009",
+      "type": "choice",
+      "expected": "office_writing",
+      "predicted": "office_writing",
+      "correct": true,
+      "probabilities": {
+        "electronics_networking": 0.0289321169257164,
+        "electronics_audio": 0.033255523070693016,
+        "kitchen_cookware": 0.03189413622021675,
+        "sports_cycling": 0.08030529879033566,
+        "apparel_outerwear": 0.0849585784599185,
+        "furniture_seating": 0.06772736646234989,
+        "pet_cat_furniture": 0.04606597777456045,
+        "automotive_tools": 0.0653965212404728,
+        "office_writing": 0.5451745688915253,
+        "home_lighting": 0.016289930325001478
+      },
+      "confidence": 0.2886951844722565
+    },
+    {
+      "id": "od_product_taxonomy_013",
+      "type": "choice",
+      "expected": "kitchen_cookware",
+      "predicted": "kitchen_cookware",
+      "correct": true,
+      "probabilities": {
+        "electronics_networking": 0.01096119824796915,
+        "electronics_audio": 0.005160340340808034,
+        "kitchen_cookware": 0.9234903752803802,
+        "sports_cycling": 0.004249498946592212,
+        "apparel_outerwear": 0.010511430213227868,
+        "furniture_seating": 0.009587088832631707,
+        "pet_cat_furniture": 0.007590919150970876,
+        "automotive_tools": 0.019489798694849014,
+        "office_writing": 0.005870083463378251,
+        "home_lighting": 0.0030892298091202974
+      },
+      "confidence": 0.8142904798356907
+    },
+    {
+      "id": "od_product_taxonomy_015",
+      "type": "choice",
+      "expected": "apparel_outerwear",
+      "predicted": "apparel_outerwear",
+      "correct": true,
+      "probabilities": {
+        "electronics_networking": 0.008841678616590798,
+        "electronics_audio": 0.0027609916287474334,
+        "kitchen_cookware": 0.005331516964361072,
+        "sports_cycling": 0.006036121747456491,
+        "apparel_outerwear": 0.9462880790233612,
+        "furniture_seating": 0.011111038969829679,
+        "pet_cat_furniture": 0.006238847796339542,
+        "automotive_tools": 0.003039996314328164,
+        "office_writing": 0.0074107705149799585,
+        "home_lighting": 0.002940986189059913
+      },
+      "confidence": 0.8602221318876396
+    },
+    {
+      "id": "od_product_taxonomy_016",
+      "type": "choice",
+      "expected": "furniture_seating",
+      "predicted": "furniture_seating",
+      "correct": true,
+      "probabilities": {
+        "electronics_networking": 0.005779523286037147,
+        "electronics_audio": 0.005100559210404754,
+        "kitchen_cookware": 0.008239744929596782,
+        "sports_cycling": 0.006760647054761648,
+        "apparel_outerwear": 0.013977111782878637,
+        "furniture_seating": 0.9412108659744263,
+        "pet_cat_furniture": 0.006452589062973857,
+        "automotive_tools": 0.005150614131707698,
+        "office_writing": 0.004635954333934933,
+        "home_lighting": 0.002692462527193129
+      },
+      "confidence": 0.8491843804924127
+    },
+    {
+      "id": "od_research_method_008",
+      "type": "choice",
+      "expected": "spectroscopy",
+      "predicted": "spectroscopy",
+      "correct": true,
+      "probabilities": {
+        "fluorescence_microscopy": 0.004099986865185201,
+        "optical_tweezers": 0.010877369088120759,
+        "xray_scattering": 0.013829476200044155,
+        "mass_spectrometry": 0.008175631519407034,
+        "chromatography": 0.022170068696141243,
+        "sequencing": 0.004047230875585228,
+        "electrophoresis": 0.005784848995972425,
+        "spectroscopy": 0.9310154318809509
+      },
+      "confidence": 0.8204736778093157
+    },
+    {
+      "id": "od_research_method_013",
+      "type": "choice",
+      "expected": "chromatography",
+      "predicted": "chromatography",
+      "correct": true,
+      "probabilities": {
+        "fluorescence_microscopy": 0.023122607730329037,
+        "optical_tweezers": 0.07854180876165628,
+        "xray_scattering": 0.09967580297961831,
+        "mass_spectrometry": 0.06995882093906403,
+        "chromatography": 0.5403429418802261,
+        "sequencing": 0.03550967387855053,
+        "electrophoresis": 0.0672265226021409,
+        "spectroscopy": 0.08562176395207644
+      },
+      "confidence": 0.2565750766605668
+    },
+    {
+      "id": "od_research_method_015",
+      "type": "choice",
+      "expected": "electrophoresis",
+      "predicted": "chromatography",
+      "correct": false,
+      "probabilities": {
+        "fluorescence_microscopy": 0.0399034209549427,
+        "optical_tweezers": 0.06728903949260712,
+        "xray_scattering": 0.10286689922213554,
+        "mass_spectrometry": 0.10391293466091156,
+        "chromatography": 0.36300502717494965,
+        "sequencing": 0.04248623736202717,
+        "electrophoresis": 0.16591934859752655,
+        "spectroscopy": 0.11461708322167397
+      },
+      "confidence": 0.12105034232775214
+    },
+    {
+      "id": "od_research_method_017",
+      "type": "choice",
+      "expected": "fluorescence_microscopy",
+      "predicted": "fluorescence_microscopy",
+      "correct": true,
+      "probabilities": {
+        "fluorescence_microscopy": 0.9176693260669708,
+        "optical_tweezers": 0.009434284176677465,
+        "xray_scattering": 0.011045044055208564,
+        "mass_spectrometry": 0.006026962073519826,
+        "chromatography": 0.0144230080768466,
+        "sequencing": 0.005605011014267802,
+        "electrophoresis": 0.004132679314352572,
+        "spectroscopy": 0.03166373632848263
+      },
+      "confidence": 0.7953229311503882
+    },
+    {
+      "id": "od_research_method_019",
+      "type": "choice",
+      "expected": "xray_scattering",
+      "predicted": "xray_scattering",
+      "correct": true,
+      "probabilities": {
+        "fluorescence_microscopy": 0.0036676671588793397,
+        "optical_tweezers": 0.029176713433116674,
+        "xray_scattering": 0.9162101745605469,
+        "mass_spectrometry": 0.009136924985796213,
+        "chromatography": 0.01814031321555376,
+        "sequencing": 0.002448755141813308,
+        "electrophoresis": 0.008969697402790189,
+        "spectroscopy": 0.012249804101884365
+      },
+      "confidence": 0.7930037349543411
+    },
+    {
+      "id": "od_return_reason_001",
+      "type": "choice",
+      "expected": "wrong_size",
+      "predicted": "wrong_size",
+      "correct": true,
+      "probabilities": {
+        "wrong_size": 0.7708351910114288,
+        "wrong_item": 0.033244631718844175,
+        "damaged": 0.005629071849398315,
+        "defective": 0.0888592042028904,
+        "changed_mind": 0.01289133494719863,
+        "not_as_described": 0.0523097924888134,
+        "late_delivery": 0.002623019681777805,
+        "duplicate_order": 0.0336077727843076
+      },
+      "confidence": 0.5681002671462508
+    },
+    {
+      "id": "od_return_reason_007",
+      "type": "choice",
+      "expected": "late_delivery",
+      "predicted": "late_delivery",
+      "correct": true,
+      "probabilities": {
+        "wrong_size": 0.046545322984457016,
+        "wrong_item": 0.09654727578163147,
+        "damaged": 0.032264417968690395,
+        "defective": 0.0442200917750597,
+        "changed_mind": 0.06239647604525089,
+        "not_as_described": 0.12467550858855247,
+        "late_delivery": 0.5157991051673889,
+        "duplicate_order": 0.07755175419151783
+      },
+      "confidence": 0.23555924459593514
+    },
+    {
+      "id": "od_return_reason_009",
+      "type": "choice",
+      "expected": "wrong_size",
+      "predicted": "wrong_size",
+      "correct": true,
+      "probabilities": {
+        "wrong_size": 0.6036630868911743,
+        "wrong_item": 0.10649009421467781,
+        "damaged": 0.016762643586844206,
+        "defective": 0.09772002324461937,
+        "changed_mind": 0.04211241006851196,
+        "not_as_described": 0.08979188092052937,
+        "late_delivery": 0.016784775303676724,
+        "duplicate_order": 0.026675078785046935
+      },
+      "confidence": 0.3488245373636101
+    },
+    {
+      "id": "od_return_reason_012",
+      "type": "choice",
+      "expected": "defective",
+      "predicted": "not_as_described",
+      "correct": false,
+      "probabilities": {
+        "wrong_size": 0.04636263847351074,
+        "wrong_item": 0.14619356393814087,
+        "damaged": 0.03965606912970543,
+        "defective": 0.3307417035102844,
+        "changed_mind": 0.054203420877456665,
+        "not_as_described": 0.35622283816337585,
+        "late_delivery": 0.01034490391612053,
+        "duplicate_order": 0.016274817287921906
+      },
+      "confidence": 0.25103322915937876
+    },
+    {
+      "id": "od_return_reason_018",
+      "type": "choice",
+      "expected": "wrong_item",
+      "predicted": "wrong_item",
+      "correct": true,
+      "probabilities": {
+        "wrong_size": 0.009844922926276922,
+        "wrong_item": 0.5811264365911484,
+        "damaged": 0.06767368852160871,
+        "defective": 0.020825763233006,
+        "changed_mind": 0.005919770337641239,
+        "not_as_described": 0.1262775883078575,
+        "late_delivery": 0.004694058559834957,
+        "duplicate_order": 0.18363774567842484
+      },
+      "confidence": 0.3979830181734325
+    },
+    {
+      "id": "od_science_phenomenon_004",
+      "type": "choice",
+      "expected": "fluorescence",
+      "predicted": "fluorescence",
+      "correct": true,
+      "probabilities": {
+        "phase_separation": 0.02315380284562707,
+        "diffusion": 0.01958059216849506,
+        "osmosis": 0.026398316025733948,
+        "fluorescence": 0.777059942483902,
+        "photobleaching": 0.024364469572901726,
+        "denaturation": 0.015385553007945418,
+        "crystallization": 0.028481765650212765,
+        "adsorption": 0.025026483228430152,
+        "polymerization": 0.026907542254775763,
+        "sedimentation": 0.03364156326279044
+      },
+      "confidence": 0.5587930124090436
+    },
+    {
+      "id": "od_science_phenomenon_007",
+      "type": "choice",
+      "expected": "crystallization",
+      "predicted": "crystallization",
+      "correct": true,
+      "probabilities": {
+        "phase_separation": 0.15970694459974766,
+        "diffusion": 0.01300145871937275,
+        "osmosis": 0.015860650688409805,
+        "fluorescence": 0.005795555945951492,
+        "photobleaching": 0.012428905465640128,
+        "denaturation": 0.015021483413875103,
+        "crystallization": 0.6745283156633377,
+        "adsorption": 0.058280400931835175,
+        "polymerization": 0.011673687724396586,
+        "sedimentation": 0.03370268549770117
+      },
+      "confidence": 0.49618911706077995
+    },
+    {
+      "id": "od_science_phenomenon_008",
+      "type": "choice",
+      "expected": "adsorption",
+      "predicted": "osmosis",
+      "correct": false,
+      "probabilities": {
+        "phase_separation": 0.28573471307754517,
+        "diffusion": 0.03507215529680252,
+        "osmosis": 0.37983301281929016,
+        "fluorescence": 0.013521520420908928,
+        "photobleaching": 0.009588194079697132,
+        "denaturation": 0.02999880537390709,
+        "crystallization": 0.07366995513439178,
+        "adsorption": 0.10148464143276215,
+        "polymerization": 0.045033540576696396,
+        "sedimentation": 0.02606341429054737
+      },
+      "confidence": 0.25732449547944325
+    },
+    {
+      "id": "od_science_phenomenon_013",
+      "type": "choice",
+      "expected": "osmosis",
+      "predicted": "osmosis",
+      "correct": true,
+      "probabilities": {
+        "phase_separation": 0.0663817822933197,
+        "diffusion": 0.057673487812280655,
+        "osmosis": 0.6188386082649231,
+        "fluorescence": 0.017048250883817673,
+        "photobleaching": 0.011356583796441555,
+        "denaturation": 0.04491616040468216,
+        "crystallization": 0.04154065623879433,
+        "adsorption": 0.04154065623879433,
+        "polymerization": 0.06044129654765129,
+        "sedimentation": 0.04026258364319801
+      },
+      "confidence": 0.36399824623600585
+    },
+    {
+      "id": "od_science_phenomenon_019",
+      "type": "choice",
+      "expected": "polymerization",
+      "predicted": "polymerization",
+      "correct": true,
+      "probabilities": {
+        "phase_separation": 0.08979106671176851,
+        "diffusion": 0.014534605026710778,
+        "osmosis": 0.018376381951384246,
+        "fluorescence": 0.012023319664876908,
+        "photobleaching": 0.01942023483570665,
+        "denaturation": 0.01233785308431834,
+        "crystallization": 0.028894997434690595,
+        "adsorption": 0.03535421937704086,
+        "polymerization": 0.7356996834278107,
+        "sedimentation": 0.03356760775204748
+      },
+      "confidence": 0.5241844092185329
+    },
+    {
+      "id": "od_security_event_003",
+      "type": "choice",
+      "expected": "malware",
+      "predicted": "malware",
+      "correct": true,
+      "probabilities": {
+        "phishing": 0.05234880046918988,
+        "brute_force": 0.0017427906568627805,
+        "malware": 0.7766702771186829,
+        "impossible_travel": 0.004153598740231246,
+        "privilege_escalation": 0.013701589778065681,
+        "data_exfiltration": 0.13682625442743301,
+        "benign_admin": 0.008500981843098998,
+        "vulnerability_scan": 0.006055740173906088
+      },
+      "confidence": 0.6215552043573411
+    },
+    {
+      "id": "od_security_event_006",
+      "type": "choice",
+      "expected": "data_exfiltration",
+      "predicted": "data_exfiltration",
+      "correct": true,
+      "probabilities": {
+        "phishing": 0.0026938231894746423,
+        "brute_force": 0.0016695202793926,
+        "malware": 0.004301371984183788,
+        "impossible_travel": 0.0022332577500492334,
+        "privilege_escalation": 0.004440229386091232,
+        "data_exfiltration": 0.9714548587799072,
+        "benign_admin": 0.006932205753400922,
+        "vulnerability_scan": 0.006274775485508144
+      },
+      "confidence": 0.9124009527573027
+    },
+    {
+      "id": "od_security_event_013",
+      "type": "choice",
+      "expected": "privilege_escalation",
+      "predicted": "privilege_escalation",
+      "correct": true,
+      "probabilities": {
+        "phishing": 0.01608413178473711,
+        "brute_force": 0.0017974940710701048,
+        "malware": 0.003132362471660599,
+        "impossible_travel": 0.0061560512986034155,
+        "privilege_escalation": 0.9213965535163879,
+        "data_exfiltration": 0.015100020682439208,
+        "benign_admin": 0.02092382311820984,
+        "vulnerability_scan": 0.015409613959491253
+      },
+      "confidence": 0.8022826346903533
+    },
+    {
+      "id": "od_security_event_014",
+      "type": "choice",
+      "expected": "data_exfiltration",
+      "predicted": "data_exfiltration",
+      "correct": true,
+      "probabilities": {
+        "phishing": 0.0030830649193376303,
+        "brute_force": 0.0013003930216655135,
+        "malware": 0.0021448477054946125,
+        "impossible_travel": 0.002702866739127785,
+        "privilege_escalation": 0.007575443712994456,
+        "data_exfiltration": 0.9681284129619598,
+        "benign_admin": 0.008219512179493904,
+        "vulnerability_scan": 0.006845441879704595
+      },
+      "confidence": 0.904993573803835
+    },
+    {
+      "id": "od_security_event_016",
+      "type": "choice",
+      "expected": "vulnerability_scan",
+      "predicted": "vulnerability_scan",
+      "correct": true,
+      "probabilities": {
+        "phishing": 0.00898897647857666,
+        "brute_force": 0.0052678389474749565,
+        "malware": 0.02022565738297999,
+        "impossible_travel": 0.004175078123807907,
+        "privilege_escalation": 0.0059562374372035265,
+        "data_exfiltration": 0.011851678602397442,
+        "benign_admin": 0.008555054664611816,
+        "vulnerability_scan": 0.9349795281887054
+      },
+      "confidence": 0.827630257537455
+    },
+    {
+      "id": "od_semantic_extraction_005",
+      "type": "choice",
+      "expected": "bake",
+      "predicted": "bake",
+      "correct": true,
+      "probabilities": {
+        "bake": 0.8883254528045654,
+        "cool": 0.008440894074738026,
+        "temperature": 0.10323360562324524
+      },
+      "confidence": 0.6541871796221215
+    },
+    {
+      "id": "od_semantic_extraction_006",
+      "type": "choice",
+      "expected": "a",
+      "predicted": "a",
+      "correct": true,
+      "probabilities": {
+        "control": 0.04793347790837288,
+        "a": 0.9331482648849487,
+        "b": 0.018918242305517197
+      },
+      "confidence": 0.7403585651724631
+    },
+    {
+      "id": "od_semantic_extraction_008",
+      "type": "choice",
+      "expected": "quantity",
+      "predicted": "quantity",
+      "correct": true,
+      "probabilities": {
+        "item": 0.07255105674266815,
+        "color": 0.06953360140323639,
+        "quantity": 0.8579153418540955
+      },
+      "confidence": 0.5383418579104364
+    },
+    {
+      "id": "od_semantic_extraction_012",
+      "type": "choice",
+      "expected": "target",
+      "predicted": "target",
+      "correct": true,
+      "probabilities": {
+        "compiler": 0.11864360235631466,
+        "optimization": 0.10838428139686584,
+        "target": 0.7729721069335938
+      },
+      "confidence": 0.3693935978603884
+    },
+    {
+      "id": "od_semantic_extraction_014",
+      "type": "choice",
+      "expected": "journal",
+      "predicted": "journal",
+      "correct": true,
+      "probabilities": {
+        "title": 0.03937334567308426,
+        "journal": 0.6685561537742615,
+        "year": 0.29207053780555725
+      },
+      "confidence": 0.31184787744817943
+    },
+    {
+      "id": "od_software_bug_003",
+      "type": "choice",
+      "expected": "performance",
+      "predicted": "performance",
+      "correct": true,
+      "probabilities": {
+        "crash": 0.02302558533847332,
+        "incorrect_output": 0.11739123612642288,
+        "performance": 0.24490338563919067,
+        "authentication": 0.06610824167728424,
+        "integration": 0.11693356931209564,
+        "ui_visual": 0.24063606560230255,
+        "data_loss": 0.028655802831053734,
+        "configuration": 0.16234616935253143
+      },
+      "confidence": 0.10883367169679625
+    },
+    {
+      "id": "od_software_bug_004",
+      "type": "choice",
+      "expected": "authentication",
+      "predicted": "authentication",
+      "correct": true,
+      "probabilities": {
+        "crash": 0.0017841116059571505,
+        "incorrect_output": 0.04471256397664547,
+        "performance": 0.005193334072828293,
+        "authentication": 0.7759999930858612,
+        "integration": 0.03253744449466467,
+        "ui_visual": 0.08031582273542881,
+        "data_loss": 0.010864759795367718,
+        "configuration": 0.04859194532036781
+      },
+      "confidence": 0.5746781676125323
+    },
+    {
+      "id": "od_software_bug_005",
+      "type": "choice",
+      "expected": "integration",
+      "predicted": "integration",
+      "correct": true,
+      "probabilities": {
+        "crash": 0.004054430522955954,
+        "incorrect_output": 0.05223456583917141,
+        "performance": 0.008196966489776969,
+        "authentication": 0.02254250447731465,
+        "integration": 0.8248200416564941,
+        "ui_visual": 0.04326383862644434,
+        "data_loss": 0.0067932019010186195,
+        "configuration": 0.03809445258229971
+      },
+      "confidence": 0.6371589914214904
+    },
+    {
+      "id": "od_software_bug_006",
+      "type": "choice",
+      "expected": "ui_visual",
+      "predicted": "ui_visual",
+      "correct": true,
+      "probabilities": {
+        "crash": 0.009530983865261078,
+        "incorrect_output": 0.031439425772987306,
+        "performance": 0.008968160080257803,
+        "authentication": 0.02367971677449532,
+        "integration": 0.027237549773417413,
+        "ui_visual": 0.8548635840415955,
+        "data_loss": 0.007720877416431904,
+        "configuration": 0.036559734027832747
+      },
+      "confidence": 0.6755134627723554
+    },
+    {
+      "id": "od_software_bug_009",
+      "type": "choice",
+      "expected": "crash",
+      "predicted": "ui_visual",
+      "correct": false,
+      "probabilities": {
+        "crash": 0.22811907529830933,
+        "incorrect_output": 0.008341757580637932,
+        "performance": 0.00680834474042058,
+        "authentication": 0.0024658190086483955,
+        "integration": 0.00680834474042058,
+        "ui_visual": 0.727798342704773,
+        "data_loss": 0.003068761434406042,
+        "configuration": 0.016589567065238953
+      },
+      "confidence": 0.6264315840025625
+    },
+    {
+      "id": "od_support_routing_002",
+      "type": "choice",
+      "expected": "technical",
+      "predicted": "technical",
+      "correct": true,
+      "probabilities": {
+        "billing": 0.0985026229172945,
+        "technical": 0.6021241992712021,
+        "sales": 0.06937498319894075,
+        "account": 0.09587901458144188,
+        "shipping": 0.05750252120196819,
+        "returns": 0.07661664485931396
+      },
+      "confidence": 0.2718282021869646
+    },
+    {
+      "id": "od_support_routing_003",
+      "type": "choice",
+      "expected": "sales",
+      "predicted": "sales",
+      "correct": true,
+      "probabilities": {
+        "billing": 0.050154042430222034,
+        "technical": 0.024562900071032345,
+        "sales": 0.8478607535362244,
+        "account": 0.04538586118724197,
+        "shipping": 0.015698369417805225,
+        "returns": 0.016338106273906305
+      },
+      "confidence": 0.635074820098616
+    },
+    {
+      "id": "od_support_routing_011",
+      "type": "choice",
+      "expected": "shipping",
+      "predicted": "shipping",
+      "correct": true,
+      "probabilities": {
+        "billing": 0.030509527772665024,
+        "technical": 0.09900416433811188,
+        "sales": 0.017068964429199696,
+        "account": 0.01548839989118278,
+        "shipping": 0.7829795181751251,
+        "returns": 0.05494941398501396
+      },
+      "confidence": 0.5421050947862804
+    },
+    {
+      "id": "od_support_routing_014",
+      "type": "choice",
+      "expected": "technical",
+      "predicted": "technical",
+      "correct": true,
+      "probabilities": {
+        "billing": 0.04110394511371851,
+        "technical": 0.7507749497890472,
+        "sales": 0.022994193946942687,
+        "account": 0.10866070725023746,
+        "shipping": 0.035483954241499305,
+        "returns": 0.04098221467575058
+      },
+      "confidence": 0.48446678008773403
+    },
+    {
+      "id": "od_support_routing_020",
+      "type": "choice",
+      "expected": "technical",
+      "predicted": "technical",
+      "correct": true,
+      "probabilities": {
+        "billing": 0.021255885541904718,
+        "technical": 0.5597829520702362,
+        "sales": 0.029555382090620697,
+        "account": 0.35496002435684204,
+        "shipping": 0.011185834591742605,
+        "returns": 0.023259887704625726
+      },
+      "confidence": 0.4328940089641682
+    },
+    {
+      "id": "od_transaction_type_004",
+      "type": "choice",
+      "expected": "transfer",
+      "predicted": "transfer",
+      "correct": true,
+      "probabilities": {
+        "purchase": 0.056493372889235616,
+        "subscription": 0.004044726490974426,
+        "refund": 0.010659731226041913,
+        "transfer": 0.8828003108501434,
+        "fee": 0.022111985366791487,
+        "payroll": 0.0058763823471963406,
+        "cash_withdrawal": 0.015860566636547446,
+        "interest": 0.0021528633078560233
+      },
+      "confidence": 0.7419986768788347
+    },
+    {
+      "id": "od_transaction_type_006",
+      "type": "choice",
+      "expected": "payroll",
+      "predicted": "payroll",
+      "correct": true,
+      "probabilities": {
+        "purchase": 0.13015778362751007,
+        "subscription": 0.005007490981370211,
+        "refund": 0.011284555308520794,
+        "transfer": 0.07584626227617264,
+        "fee": 0.2548365592956543,
+        "payroll": 0.5028590559959412,
+        "cash_withdrawal": 0.015304126776754856,
+        "interest": 0.004704102408140898
+      },
+      "confidence": 0.36454519023417287
+    },
+    {
+      "id": "od_transaction_type_014",
+      "type": "choice",
+      "expected": "payroll",
+      "predicted": "payroll",
+      "correct": true,
+      "probabilities": {
+        "purchase": 0.05241691693663597,
+        "subscription": 0.009324701502919197,
+        "refund": 0.015738412737846375,
+        "transfer": 0.03057451732456684,
+        "fee": 0.27038702368736267,
+        "payroll": 0.5859836935997009,
+        "cash_withdrawal": 0.018689827993512154,
+        "interest": 0.016884852200746536
+      },
+      "confidence": 0.4324252490654501
+    },
+    {
+      "id": "od_transaction_type_015",
+      "type": "choice",
+      "expected": "cash_withdrawal",
+      "predicted": "cash_withdrawal",
+      "correct": true,
+      "probabilities": {
+        "purchase": 0.12202381202951074,
+        "subscription": 0.0009861400176305324,
+        "refund": 0.00481016153935343,
+        "transfer": 0.13489930401556194,
+        "fee": 0.14090339839458466,
+        "payroll": 0.005402200040407479,
+        "cash_withdrawal": 0.5903802365064621,
+        "interest": 0.0005947472236584872
+      },
+      "confidence": 0.4328839132211909
+    },
+    {
+      "id": "od_transaction_type_018",
+      "type": "choice",
+      "expected": "subscription",
+      "predicted": "subscription",
+      "correct": true,
+      "probabilities": {
+        "purchase": 0.1519000194966793,
+        "subscription": 0.5230714082717896,
+        "refund": 0.014016919769346714,
+        "transfer": 0.15748794004321098,
+        "fee": 0.1230957955121994,
+        "payroll": 0.014461864717304707,
+        "cash_withdrawal": 0.0129911326803267,
+        "interest": 0.0029748971574008465
+      },
+      "confidence": 0.341646979202475
+    },
+    {
+      "id": "od_word_sense_004",
+      "type": "choice",
+      "expected": "animal",
+      "predicted": "animal",
+      "correct": true,
+      "probabilities": {
+        "animal": 0.9499422013759613,
+        "sports": 0.03879203659016639,
+        "blink": 0.011265757973887958
+      },
+      "confidence": 0.7948522888338596
+    },
+    {
+      "id": "od_word_sense_007",
+      "type": "choice",
+      "expected": "coil",
+      "predicted": "season",
+      "correct": false,
+      "probabilities": {
+        "season": 0.7574470043182373,
+        "water": 0.07436765637248755,
+        "coil": 0.16818536072969437
+      },
+      "confidence": 0.3596431007987738
+    },
+    {
+      "id": "od_word_sense_013",
+      "type": "choice",
+      "expected": "water",
+      "predicted": "water",
+      "correct": true,
+      "probabilities": {
+        "electric": 0.06293278001248837,
+        "water": 0.8817539811134338,
+        "present": 0.05531321093440056
+      },
+      "confidence": 0.5948235241249776
+    },
+    {
+      "id": "od_word_sense_014",
+      "type": "choice",
+      "expected": "present",
+      "predicted": "present",
+      "correct": true,
+      "probabilities": {
+        "electric": 0.10179074481129646,
+        "water": 0.06448911689221859,
+        "present": 0.8337201476097107
+      },
+      "confidence": 0.48937875173698564
+    },
+    {
+      "id": "od_word_sense_018",
+      "type": "choice",
+      "expected": "lab",
+      "predicted": "lab",
+      "correct": true,
+      "probabilities": {
+        "society": 0.01620243873912841,
+        "lab": 0.9682023525238037,
+        "arts": 0.015595229808241129
+      },
+      "confidence": 0.8516572163417941
+    }
+  ],
+  "failures": [
+    {
+      "id": "od_citation_relation_002",
+      "type": "choice",
+      "expected": "contradicts",
+      "predicted": "supports",
+      "correct": false,
+      "probabilities": {
+        "supports": 0.6151951402425766,
+        "contradicts": 0.2138352245092392,
+        "irrelevant": 0.17096959426999092
+      },
+      "confidence": 0.15283915923657465
+    },
+    {
+      "id": "od_citation_relation_006",
+      "type": "choice",
+      "expected": "irrelevant",
+      "predicted": "supports",
+      "correct": false,
+      "probabilities": {
+        "supports": 0.613081157207489,
+        "contradicts": 0.24577951431274414,
+        "irrelevant": 0.14113929867744446
+      },
+      "confidence": 0.16147477519070175
+    },
+    {
+      "id": "od_database_intent_001",
+      "type": "choice",
+      "expected": "select",
+      "predicted": "aggregate",
+      "correct": false,
+      "probabilities": {
+        "select": 0.21282978355884552,
+        "insert": 0.2283330112695694,
+        "update": 0.013187147676944733,
+        "delete": 0.003661938477307558,
+        "aggregate": 0.45676296949386597,
+        "join": 0.03998953104019165,
+        "schema_change": 0.02663877047598362,
+        "transaction_control": 0.01859685778617859
+      },
+      "confidence": 0.32602562388673784
+    },
+    {
+      "id": "od_database_intent_006",
+      "type": "choice",
+      "expected": "join",
+      "predicted": "insert",
+      "correct": false,
+      "probabilities": {
+        "select": 0.0977291390299797,
+        "insert": 0.5768546462059021,
+        "update": 0.051098860800266266,
+        "delete": 0.00156735151540488,
+        "aggregate": 0.03979583457112312,
+        "join": 0.16494914889335632,
+        "schema_change": 0.053134407848119736,
+        "transaction_control": 0.014870615676045418
+      },
+      "confidence": 0.35039477302870103
+    },
+    {
+      "id": "od_date_semantics_002",
+      "type": "choice",
+      "expected": "relative_single",
+      "predicted": "recurring",
+      "correct": false,
+      "probabilities": {
+        "absolute_single": 0.18418623134493828,
+        "relative_single": 0.19174592196941376,
+        "recurring": 0.4718988835811615,
+        "date_range": 0.07103201001882553,
+        "deadline": 0.03262466751039028,
+        "none": 0.04851227905601263
+      },
+      "confidence": 0.2024621345081361
+    },
+    {
+      "id": "od_date_semantics_014",
+      "type": "choice",
+      "expected": "relative_single",
+      "predicted": "none",
+      "correct": false,
+      "probabilities": {
+        "absolute_single": 0.20977845788002014,
+        "relative_single": 0.1378251239657402,
+        "recurring": 0.1783403903245926,
+        "date_range": 0.081946044228971,
+        "deadline": 0.08855182398110628,
+        "none": 0.3035581484436989
+      },
+      "confidence": 0.056913550567705085
+    },
+    {
+      "id": "od_email_intent_009",
+      "type": "choice",
+      "expected": "action_request",
+      "predicted": "information",
+      "correct": false,
+      "probabilities": {
+        "action_request": 0.4190862774848938,
+        "information": 0.4610794633626938,
+        "scheduling": 0.005675342865288258,
+        "approval": 0.08261719532310963,
+        "escalation": 0.0064860283164307475,
+        "billing": 0.008743562269955873,
+        "unsubscribe": 0.0035166874949936755,
+        "spam": 0.012795435264706612
+      },
+      "confidence": 0.46786247164391837
+    },
+    {
+      "id": "od_entity_matching_008",
+      "type": "choice",
+      "expected": "related_variant",
+      "predicted": "different_entity",
+      "correct": false,
+      "probabilities": {
+        "same_entity": 0.2928411737084389,
+        "related_variant": 0.1195383332669735,
+        "different_entity": 0.5876204669475555
+      },
+      "confidence": 0.15713521883450576
+    },
+    {
+      "id": "od_policy_decision_009",
+      "type": "choice",
+      "expected": "manual_review",
+      "predicted": "deny",
+      "correct": false,
+      "probabilities": {
+        "allow": 0.1050783097743988,
+        "deny": 0.7623101472854614,
+        "manual_review": 0.061176594346761703,
+        "request_info": 0.07143494859337807
+      },
+      "confidence": 0.4206999898406186
+    },
+    {
+      "id": "od_policy_decision_015",
+      "type": "choice",
+      "expected": "allow",
+      "predicted": "deny",
+      "correct": false,
+      "probabilities": {
+        "allow": 0.02088022604584694,
+        "deny": 0.5098492503166199,
+        "manual_review": 0.4293360710144043,
+        "request_info": 0.03993447870016098
+      },
+      "confidence": 0.33934712469948736
+    },
+    {
+      "id": "od_policy_decision_016",
+      "type": "choice",
+      "expected": "manual_review",
+      "predicted": "deny",
+      "correct": false,
+      "probabilities": {
+        "allow": 0.02025231346487999,
+        "deny": 0.4868502616882324,
+        "manual_review": 0.45735350251197815,
+        "request_info": 0.03554391860961914
+      },
+      "confidence": 0.34660025057296284
+    },
+    {
+      "id": "od_policy_decision_017",
+      "type": "choice",
+      "expected": "allow",
+      "predicted": "deny",
+      "correct": false,
+      "probabilities": {
+        "allow": 0.3297448754310608,
+        "deny": 0.4317325949668884,
+        "manual_review": 0.12581630423665047,
+        "request_info": 0.11270619556307793
+      },
+      "confidence": 0.10891422732784872
+    },
+    {
+      "id": "od_research_method_015",
+      "type": "choice",
+      "expected": "electrophoresis",
+      "predicted": "chromatography",
+      "correct": false,
+      "probabilities": {
+        "fluorescence_microscopy": 0.0399034209549427,
+        "optical_tweezers": 0.06728903949260712,
+        "xray_scattering": 0.10286689922213554,
+        "mass_spectrometry": 0.10391293466091156,
+        "chromatography": 0.36300502717494965,
+        "sequencing": 0.04248623736202717,
+        "electrophoresis": 0.16591934859752655,
+        "spectroscopy": 0.11461708322167397
+      },
+      "confidence": 0.12105034232775214
+    },
+    {
+      "id": "od_return_reason_012",
+      "type": "choice",
+      "expected": "defective",
+      "predicted": "not_as_described",
+      "correct": false,
+      "probabilities": {
+        "wrong_size": 0.04636263847351074,
+        "wrong_item": 0.14619356393814087,
+        "damaged": 0.03965606912970543,
+        "defective": 0.3307417035102844,
+        "changed_mind": 0.054203420877456665,
+        "not_as_described": 0.35622283816337585,
+        "late_delivery": 0.01034490391612053,
+        "duplicate_order": 0.016274817287921906
+      },
+      "confidence": 0.25103322915937876
+    },
+    {
+      "id": "od_science_phenomenon_008",
+      "type": "choice",
+      "expected": "adsorption",
+      "predicted": "osmosis",
+      "correct": false,
+      "probabilities": {
+        "phase_separation": 0.28573471307754517,
+        "diffusion": 0.03507215529680252,
+        "osmosis": 0.37983301281929016,
+        "fluorescence": 0.013521520420908928,
+        "photobleaching": 0.009588194079697132,
+        "denaturation": 0.02999880537390709,
+        "crystallization": 0.07366995513439178,
+        "adsorption": 0.10148464143276215,
+        "polymerization": 0.045033540576696396,
+        "sedimentation": 0.02606341429054737
+      },
+      "confidence": 0.25732449547944325
+    },
+    {
+      "id": "od_software_bug_009",
+      "type": "choice",
+      "expected": "crash",
+      "predicted": "ui_visual",
+      "correct": false,
+      "probabilities": {
+        "crash": 0.22811907529830933,
+        "incorrect_output": 0.008341757580637932,
+        "performance": 0.00680834474042058,
+        "authentication": 0.0024658190086483955,
+        "integration": 0.00680834474042058,
+        "ui_visual": 0.727798342704773,
+        "data_loss": 0.003068761434406042,
+        "configuration": 0.016589567065238953
+      },
+      "confidence": 0.6264315840025625
+    },
+    {
+      "id": "od_word_sense_007",
+      "type": "choice",
+      "expected": "coil",
+      "predicted": "season",
+      "correct": false,
+      "probabilities": {
+        "season": 0.7574470043182373,
+        "water": 0.07436765637248755,
+        "coil": 0.16818536072969437
+      },
+      "confidence": 0.3596431007987738
+    }
+  ]
+}

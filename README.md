@@ -2,85 +2,57 @@
 
 [![Tests](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml/badge.svg)](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml)
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![Model](https://img.shields.io/badge/backend-ModernBERT--large-6f42c1)
+![Python](https://img.shields.io/badge/python-3.13%2B-blue)
+![Backend](https://img.shields.io/badge/backend-ModernBERT--large--zeroshot-6f42c1)
 
-OpenDecision is an open-source semantic decision engine.
+**OpenDecision is an open-source semantic decision engine.**
 
-It takes a state, a natural-language question, and user-defined criteria, then returns a structured decision with probabilities.
+Give it some state, a natural-language question, and answer criteria. It returns a structured decision rather than generating free-form text.
 
-The current backend is [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0).
+## Why I built this
 
-OpenDecision currently supports three primitives:
+A few days ago, I saw TypeSafe announce [Jev, their first "System One Model"](https://typesafe.ai/blog/introducing-system-one-models-and-jev). While it looked impressive, it also kind of tingled my spidey sense.
 
-- **Choice** — select one option from a set of user-defined alternatives.
+A couple of years ago, I had worked on something similar for a client, using zero-shot models in a narrow domain involving healthcare insurance fraud. I also have experience training and building things with zero-shot models through projects like [Zink](https://github.com/deepanwadhwa/zink), so I thought I'd give this a try: build an open-source package that could leverage zero-shot models to provide a similar kind of functionality to what TypeSafe's Jev does.
+
+That experiment became OpenDecision.
+
+OpenDecision currently provides three primitives:
+
+- **Choice** — select one answer from a supplied set.
 - **Noul** — evaluate a binary natural-language predicate.
-- **Score** — score a state against an ordered rubric.
+- **Score** — score state against an ordered natural-language rubric.
 
-It also exposes a `/v1/systemone` endpoint compatible with the core request/response flow used by the TypeSafe Python SDK.
+The default backend is [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0), a compact zero-shot NLI model.
 
----
+## Why?
 
-## Example
+Many application decisions do not require a generative LLM.
 
-### Request
+Examples:
 
-```json
-{
-  "state": "My credit card was charged twice for the same subscription.",
-  "questions": {
-    "department": {
-      "type": "choice",
-      "instructions": "Which department should handle this?",
-      "criteria": {
-        "billing": "Payments, invoices, refunds, and subscription charges",
-        "technical": "Software bugs and integration problems",
-        "sales": "Pricing and new purchases"
-      }
-    }
-  }
-}
-```
+- route a support request,
+- choose a tool or function,
+- classify a document,
+- apply a semantic policy,
+- match an entity,
+- detect whether a condition is true,
+- score severity against a rubric.
 
-### Response
+OpenDecision turns those problems into small, typed semantic decisions.
 
-```json
-{
-  "model": "modernbert-large-zeroshot-v2",
-  "answers": {
-    "department": {
-      "type": "choice",
-      "choice": "billing",
-      "probabilities": {
-        "billing": 0.78,
-        "technical": 0.05,
-        "sales": 0.17
-      },
-      "confidence": 0.41
-    }
-  },
-  "usage": {
-    "input_tokens": 89,
-    "output_tokens": 0
-  }
-}
-```
+## Install and run
 
----
-
-## Installation
-
-OpenDecision uses [`uv`](https://docs.astral.sh/uv/).
+Python 3.13 is recommended.
 
 ```bash
 git clone https://github.com/deepanwadhwa/OpenDecision.git
 cd OpenDecision
-uv sync
+
+uv sync --python 3.13 --all-groups
 ```
 
----
-
-## Run the server
+Start the API:
 
 ```bash
 uv run uvicorn opendecision.api.app:app \
@@ -89,36 +61,21 @@ uv run uvicorn opendecision.api.app:app \
   --port 8000
 ```
 
+Then open:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
 Health check:
 
 ```bash
 curl http://127.0.0.1:8000/health
 ```
 
-Expected response:
+The model is downloaded from Hugging Face on first use.
 
-```json
-{
-  "status": "ok",
-  "service": "OpenDecision"
-}
-```
-
-Interactive API documentation:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-OpenAPI schema:
-
-```text
-http://127.0.0.1:8000/openapi.json
-```
-
----
-
-## Direct Python usage
+## Python quickstart
 
 ```python
 from opendecision.engine import OpenDecisionEngine
@@ -126,363 +83,202 @@ from opendecision.engine import OpenDecisionEngine
 engine = OpenDecisionEngine()
 
 result = engine.choice(
-    state="My internet stopped working after a power outage.",
-    instructions="Who should this person contact first?",
+    state="The customer says the router has no power and the ISP line is working.",
+    instructions="Who should handle this issue?",
     criteria={
-        "isp": "Internet provider responsible for internet service",
-        "power_utility": "Company responsible for electrical service",
-        "router_manufacturer": "Company that manufactured the networking hardware",
+        "isp": "The internet service provider should investigate the connection.",
+        "router_manufacturer": "The router or its power hardware should be investigated.",
+        "electric_utility": "The electricity provider should investigate an outage.",
     },
 )
 
-print(result)
+print(result["choice"])
+print(result["probabilities"])
+print(result["confidence"])
 ```
 
----
-
-## Choice
-
-`Choice` selects one option from a set of user-defined alternatives.
-
-```python
-result = engine.choice(
-    state="My card was charged twice.",
-    instructions="Which department should handle this?",
-    criteria={
-        "billing": "Payments, invoices, refunds, and charges",
-        "technical": "Software and integration problems",
-        "sales": "Pricing and purchasing",
-    },
-)
-```
-
-Example output:
+A `Choice` response has the form:
 
 ```python
 {
     "type": "choice",
-    "choice": "billing",
+    "choice": "router_manufacturer",
     "probabilities": {
-        "billing": 0.91,
-        "technical": 0.04,
-        "sales": 0.05
+        "isp": ...,
+        "router_manufacturer": ...,
+        "electric_utility": ...,
     },
-    "confidence": 0.68
+    "confidence": ...,
 }
 ```
 
----
-
-## Noul
-
-`Noul` evaluates whether a natural-language predicate is supported by the state.
-
-```python
-result = engine.noul(
-    state="I need this fixed before my presentation in thirty minutes.",
-    instructions="This request is time-sensitive.",
-)
-```
-
-Example output:
-
-```python
-{
-    "type": "noul",
-    "noul": 0.95
-}
-```
-
-Explicit true/false definitions are also supported:
-
-```python
-result = engine.noul(
-    state=(
-        "The account logged in from California and then "
-        "from Germany ten minutes later."
-    ),
-    instructions="The login activity is suspicious.",
-    criteria={
-        "true": "The activity is inconsistent with normal account usage.",
-        "false": "The activity is consistent with normal account usage.",
-    },
-)
-```
-
----
-
-## Score
-
-`Score` evaluates a state against an ordered rubric.
-
-```python
-result = engine.score(
-    state="This is ridiculous. I have contacted you five times already.",
-    instructions="How frustrated is the customer?",
-    criteria=[
-        "Calm",
-        "Frustrated",
-        "Extremely angry",
-    ],
-)
-```
-
-Example output:
-
-```python
-{
-    "type": "score",
-    "score": 1.82,
-    "legend": {
-        "0": "Calm",
-        "1": "Frustrated",
-        "2": "Extremely angry"
-    },
-    "probabilities": {
-        "0": 0.03,
-        "1": 0.12,
-        "2": 0.85
-    },
-    "confidence": 0.61
-}
-```
-
-The returned score is the probability-weighted position in the rubric.
-
----
-
-## TypeSafe SDK compatibility
-
-OpenDecision implements the core `/v1/systemone` request and response format used by the TypeSafe Python SDK.
-
-The official client can be pointed at a local OpenDecision server:
-
-```python
-from typesafe_sdk import Choice, Noul, Score, TypeSafeClient
-
-client = TypeSafeClient(
-    api_key="local",
-    base_url="http://127.0.0.1:8000",
-)
-
-response = client.system_one(
-    state="I was charged twice and need this fixed before my meeting.",
-    questions={
-        "department": Choice(
-            instructions="Which department should handle this?",
-            criteria={
-                "billing": "Payments and refunds",
-                "technical": "Software problems",
-                "sales": "Purchasing questions",
-            },
-        ),
-        "urgent": Noul(
-            instructions="This request is time-sensitive.",
-        ),
-        "frustration": Score(
-            instructions="How frustrated is the customer?",
-            criteria=[
-                "Calm",
-                "Frustrated",
-                "Extremely angry",
-            ],
-        ),
-    },
-)
-
-print(response)
-```
-
-OpenDecision is an independent open-source project and is not affiliated with TypeSafe.
-
----
-
-## Current model
-
-Default backend:
-
-[`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0)
-
-Current properties:
-
-- approximately 400M parameters
-- zero-shot natural-language classification
-- user-defined labels at inference time
-- ModernBERT architecture
-- up to 8192-token model context
-- Apache-2.0 model license
-
-The backend is intended to be model-independent. ModernBERT is the first supported backend.
-
----
-
-## Decision compilation
-
-OpenDecision uses different NLI formulations for different decision primitives.
-
-### Choice
-
-```text
-state + question
-→ semantic candidate descriptions
-→ zero-shot classification
-```
+`confidence` is a normalized measure of concentration in the returned probability distribution. It is **not** a calibrated probability that the answer is correct.
 
 ### Noul
 
-```text
-state
-→ natural-language predicate
-→ direct entailment probability
+```python
+result = engine.noul(
+    state="The request says the production service is currently unavailable.",
+    instructions="This request is time-sensitive.",
+)
+
+print(result["noul"])
 ```
 
 ### Score
 
-```text
-state
-→ question + rubric description hypotheses
-→ probability distribution
-→ weighted score
+```python
+result = engine.score(
+    state="The application crashes for every user at startup.",
+    instructions="How severe is this software bug?",
+    criteria={
+        "0": "Cosmetic or negligible impact.",
+        "1": "Minor impact with an easy workaround.",
+        "2": "Significant impact, but the core workflow remains usable.",
+        "3": "Major failure blocking an important workflow.",
+        "4": "Critical failure preventing normal use.",
+    },
+)
+
+print(result["score"])
 ```
 
-Using different formulations for the three primitives performed better than using one generic zero-shot formulation.
+## Choice architecture
 
----
+OpenDecision does not rely on one fixed textual formulation for `Choice`.
+
+The current v0.1 strategy evaluates the request with two complementary semantic compilers:
+
+**Compiler A**
+
+```text
+premise:    state
+candidates: answer descriptions
+hypothesis: question-conditioned
+```
+
+**Compiler B**
+
+```text
+premise:    state
+candidates: label + description
+hypothesis: default NLI hypothesis
+```
+
+If A and B agree, their answer is returned.
+
+If they disagree, OpenDecision runs a small semantic adjudication over the two competing answers:
+
+```text
+premise:    state + question
+candidates: labels only
+hypothesis: default NLI hypothesis
+```
+
+This uses the same underlying ModernBERT model throughout; no additional router model is required.
 
 ## Evaluation
 
-Run the current benchmark:
+### OpenDecision Original Choice 500
 
-```bash
-uv run python benchmarks/run_eval.py
-```
+The project includes an original synthetic benchmark containing **500 Choice cases across 25 domains**:
 
-Current seed benchmark:
+- 375 development cases
+- 125 held-out comparison cases
+
+The benchmark covers support routing, function routing, citation relations, semantic extraction, date semantics, product taxonomy, entity matching, policy decisions, software bugs, document types, logistics, security events, scientific methods, word sense, and more.
+
+### Results
+
+Backend: `MoritzLaurer/ModernBERT-large-zeroshot-v2.0`
+
+| Method | Dev (375) | Holdout (125) |
+|---|---:|---:|
+| Single best universal compiler | 304/375 — **81.1%** | 102/125 — **81.6%** |
+| A + B + semantic adjudicator | 321/375 — **85.6%** | 108/125 — **86.4%** |
+| Per-case A/B oracle upper bound | 340/375 — **90.7%** | 113/125 — **90.4%** |
+
+On the holdout split:
+
+- A and B agreed on **96/125 (76.8%)** requests.
+- The adjudicator was invoked on **29/125 (23.2%)** requests.
+- It selected the correct answer on **21/29 (72.4%)** disagreements.
+- Final accuracy was **108/125 (86.4%)**.
+
+The oracle row is **not a deployable system result**. It only measures the maximum possible accuracy if a perfect selector always knew whether Compiler A or Compiler B was correct.
+
+### Evaluation caveat
+
+This is an **internal synthetic benchmark**, not an external standardized benchmark. The final adjudicator profile was selected on the 375-case development split and then evaluated on the 125-case split. The holdout split had also been inspected during earlier compiler-comparison experiments, so the 86.4% result should be treated as an internal held-out comparison rather than a pristine external test result.
+
+The benchmark and split manifest are included in the repository so results can be reproduced.
+
+## TypeSafe SDK compatibility
+
+OpenDecision exposes a `/v1/systemone` endpoint compatible with the core request/response flow used by the TypeSafe SDK.
+
+A local OpenDecision server can therefore be used as a `base_url` for compatible clients.
+
+## API
+
+Once the server is running:
 
 ```text
-Choice accuracy:  9/10 = 90.0%
-Noul accuracy:    4/4  = 100.0%
-Score MAE:              0.178
-Total cases:      17
+GET  /health
+POST /v1/systemone
+GET  /docs
+GET  /openapi.json
 ```
 
-These numbers come from a small development benchmark and should not be interpreted as general model accuracy.
+FastAPI's interactive documentation at `/docs` is the easiest way to inspect the exact request schema and try requests manually.
 
-Current benchmark categories include:
+## Run the evaluations
 
-- customer support routing
-- internet troubleshooting
-- ambiguity
-- scientific classification
-- arbitrary invented labels
-- urgency
-- security
-- ordinal scoring
-
-Run the compiler/template ablation benchmark:
+General benchmark runner:
 
 ```bash
-uv run python benchmarks/template_ablation.py
+uv run python benchmarks/run_eval.py \
+  --cases benchmarks/cases.jsonl
 ```
 
-Saved results are stored in:
-
-```text
-benchmarks/results/
-```
-
----
-
-## Tests
-
-Run all tests:
+Original benchmark:
 
 ```bash
-uv run pytest -v
+uv run python benchmarks/run_eval.py \
+  --cases benchmarks/opendecision_original/dev.jsonl
 ```
 
-The current test suite covers:
+The experimental compiler/adjudicator scripts live under `benchmarks/`.
 
-- Choice
-- Noul
-- Noul with explicit criteria
-- Score
-- structured state
-- arbitrary user-defined labels
-- HTTP API
-- multiple question types in one request
-- request validation
+## Run tests
 
----
+```bash
+uv run --python 3.13 pytest -v
+```
 
-## Confidence
+CI runs the same test suite on GitHub Actions.
 
-`confidence` currently measures concentration of the returned probability distribution.
+## Design principles
 
-It is not the probability that the model is correct.
+OpenDecision is intentionally small:
 
-Empirical calibration is planned separately.
+- structured outputs instead of token generation,
+- explicit answer criteria,
+- local/open model backend,
+- typed decision primitives,
+- reproducible compiler formulations,
+- inspectable probabilities,
+- no hosted service dependency.
 
----
+## Current limitations
 
-## Known limitations
-
-- The current benchmark dataset is small.
-- Model probabilities are not yet empirically calibrated.
-- Zero-shot classification evaluates candidate hypotheses separately.
-- Large candidate sets increase inference cost.
-- Structured JSON is serialized into text before inference.
-- ModernBERT can still make incorrect semantic decisions even when the correct option is present.
-- Long-context behavior has not yet been evaluated systematically.
-
----
+- The default probabilities are NLI scores and should not be assumed calibrated.
+- Some tasks involving exact dates, symbolic reasoning, close citation relations, or subtle policies remain difficult for the current ~400M backend.
+- The original benchmark is synthetic and should be supplemented with external task-specific evaluations before making strong general-performance claims.
+- The adjudicated `Choice` path may require three classifier passes when the two primary compilers disagree.
 
 ## Project status
 
-| Milestone | Status | Description |
-| --- | --- | --- |
-| M0 | Complete | Raw ModernBERT zero-shot baseline |
-| M1 | Complete | Choice, Noul, and Score primitives |
-| M2 | Complete | `/v1/systemone` HTTP API |
-| M3 | Complete | TypeSafe Python SDK compatibility |
-| M4 | Active | Evaluation and compiler benchmarking |
+**v0.1.0** is intended as a developer preview.
 
-Planned work includes:
-
-- larger evaluation corpus
-- additional zero-shot backends
-- ONNX inference
-- CPU and GPU benchmarks
-- dynamic batching
-- probability calibration
-- long-context evaluation
-- confidential-compute deployment
-- custom classifier training
-- shared-state multi-question inference
-
----
-
-## Repository structure
-
-```text
-OpenDecision/
-├── benchmarks/
-│   ├── cases.jsonl
-│   ├── run_eval.py
-│   ├── template_ablation.py
-│   └── results/
-├── examples/
-├── src/
-│   └── opendecision/
-│       ├── engine.py
-│       └── api/
-├── tests/
-├── pyproject.toml
-└── README.md
-```
-
----
-
-## License
-
-See [`LICENSE`](LICENSE).
+The core primitives, local API, SDK-compatible endpoint, evaluation harness, and reproducible benchmark are available for experimentation.

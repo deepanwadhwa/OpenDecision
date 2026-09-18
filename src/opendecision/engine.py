@@ -199,6 +199,87 @@ class OpenDecisionEngine:
     # CHOICE
     # ---------------------------------------------------------
 
+    def _choice_profile(
+        self,
+        *,
+        state: Any,
+        instructions: str,
+        criteria: Mapping[str, str | None],
+        premise_mode: str,
+        candidate_mode: str,
+        hypothesis_mode: str,
+    ) -> tuple[str, dict[str, float]]:
+
+        state_text = _serialize_state(state)
+
+        if premise_mode == "state":
+            sequence = state_text
+        elif premise_mode == "state_question":
+            sequence = f"{state_text}\n\nQuestion: {instructions}"
+        else:
+            raise ValueError(f"Unknown premise mode: {premise_mode}")
+
+        rendered_candidates = []
+        reverse_mapping = {}
+
+        for name, description in criteria.items():
+            natural_name = name.replace("_", " ")
+
+            if candidate_mode == "description":
+                rendered = description or natural_name
+            elif candidate_mode == "label":
+                rendered = natural_name
+            elif candidate_mode == "label_description":
+                rendered = (
+                    f"{natural_name}: {description}"
+                    if description
+                    else natural_name
+                )
+            else:
+                raise ValueError(
+                    f"Unknown candidate mode: {candidate_mode}"
+                )
+
+            if rendered in reverse_mapping:
+                rendered = f"{natural_name}: {rendered}"
+
+            rendered_candidates.append(rendered)
+            reverse_mapping[rendered] = name
+
+        kwargs = {
+            "candidate_labels": rendered_candidates,
+            "multi_label": False,
+        }
+
+        if hypothesis_mode == "question":
+            kwargs["hypothesis_template"] = (
+                f'The answer to the question '
+                f'"{instructions}" is {{}}.'
+            )
+        elif hypothesis_mode != "default":
+            raise ValueError(
+                f"Unknown hypothesis mode: {hypothesis_mode}"
+            )
+
+        raw = self.classifier(sequence, **kwargs)
+
+        probabilities = {
+            reverse_mapping[label]: float(score)
+            for label, score in zip(
+                raw["labels"],
+                raw["scores"],
+            )
+        }
+
+        probabilities = {
+            name: probabilities[name]
+            for name in criteria
+        }
+
+        winner = max(probabilities, key=probabilities.get)
+
+        return winner, probabilities
+
     def choice(
         self,
         *,
@@ -209,23 +290,69 @@ class OpenDecisionEngine:
         if len(criteria) < 2:
             raise ValueError("Choice requires at least two candidates.")
 
-        probabilities = self._classify(
+        # Compiler A
+        answer_a, probabilities_a = self._choice_profile(
             state=state,
             instructions=instructions,
-            candidates=criteria,
+            criteria=criteria,
+            premise_mode="state",
+            candidate_mode="description",
+            hypothesis_mode="question",
         )
 
-        winner = max(
-            probabilities,
-            key=probabilities.get,
+        # Compiler B
+        answer_b, probabilities_b = self._choice_profile(
+            state=state,
+            instructions=instructions,
+            criteria=criteria,
+            premise_mode="state",
+            candidate_mode="label_description",
+            hypothesis_mode="default",
         )
+
+        if answer_a == answer_b:
+            winner = answer_a
+
+            probabilities = {
+                name: (
+                    probabilities_a[name]
+                    + probabilities_b[name]
+                ) / 2.0
+                for name in criteria
+            }
+
+        else:
+            disputed = {
+                name: criteria[name]
+                for name in criteria
+                if name in {answer_a, answer_b}
+            }
+
+            # Frozen adjudicator selected on development data:
+            # state + question / labels only / default hypothesis
+            winner, _ = self._choice_profile(
+                state=state,
+                instructions=instructions,
+                criteria=disputed,
+                premise_mode="state_question",
+                candidate_mode="label",
+                hypothesis_mode="default",
+            )
+
+            probabilities = (
+                probabilities_a
+                if winner == answer_a
+                else probabilities_b
+            )
 
         return {
-        "type": "choice",
-        "choice": winner,
-        "probabilities": probabilities,
-        "confidence": _distribution_confidence(probabilities),
-    }
+            "type": "choice",
+            "choice": winner,
+            "probabilities": probabilities,
+            "confidence": _distribution_confidence(
+                probabilities
+            ),
+        }
 
     # ---------------------------------------------------------
     # NOUL

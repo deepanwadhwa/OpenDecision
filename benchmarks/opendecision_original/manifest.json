@@ -1,0 +1,719 @@
+{
+  "name": "OpenDecision Original Choice 500",
+  "version": "1.0",
+  "created": "2026-09-18",
+  "total_cases": 500,
+  "type": "choice",
+  "domains": 25,
+  "cases_per_domain": 20,
+  "split": {
+    "strategy": "stratified deterministic 75/25 split within every domain",
+    "seed": 20260918,
+    "dev_cases": 375,
+    "holdout_cases": 125
+  },
+  "domain_counts": {
+    "appliance_issue": 20,
+    "citation_relation": 20,
+    "contract_clause": 20,
+    "database_intent": 20,
+    "date_semantics": 20,
+    "document_type": 20,
+    "email_intent": 20,
+    "entity_matching": 20,
+    "function_routing": 20,
+    "job_family": 20,
+    "logistics_exception": 20,
+    "manufacturing_defect": 20,
+    "meeting_intent": 20,
+    "ml_task": 20,
+    "policy_decision": 20,
+    "product_taxonomy": 20,
+    "research_method": 20,
+    "return_reason": 20,
+    "science_phenomenon": 20,
+    "security_event": 20,
+    "semantic_extraction": 20,
+    "software_bug": 20,
+    "support_routing": 20,
+    "transaction_type": 20,
+    "word_sense": 20
+  },
+  "split_membership": {
+    "appliance_issue": {
+      "total": 20,
+      "dev": [
+        "od_appliance_issue_008",
+        "od_appliance_issue_009",
+        "od_appliance_issue_004",
+        "od_appliance_issue_001",
+        "od_appliance_issue_020",
+        "od_appliance_issue_007",
+        "od_appliance_issue_019",
+        "od_appliance_issue_018",
+        "od_appliance_issue_016",
+        "od_appliance_issue_003",
+        "od_appliance_issue_015",
+        "od_appliance_issue_006",
+        "od_appliance_issue_011",
+        "od_appliance_issue_013",
+        "od_appliance_issue_017"
+      ],
+      "holdout": [
+        "od_appliance_issue_012",
+        "od_appliance_issue_014",
+        "od_appliance_issue_002",
+        "od_appliance_issue_005",
+        "od_appliance_issue_010"
+      ]
+    },
+    "citation_relation": {
+      "total": 20,
+      "dev": [
+        "od_citation_relation_019",
+        "od_citation_relation_020",
+        "od_citation_relation_003",
+        "od_citation_relation_001",
+        "od_citation_relation_012",
+        "od_citation_relation_014",
+        "od_citation_relation_017",
+        "od_citation_relation_015",
+        "od_citation_relation_009",
+        "od_citation_relation_005",
+        "od_citation_relation_013",
+        "od_citation_relation_008",
+        "od_citation_relation_018",
+        "od_citation_relation_016",
+        "od_citation_relation_004"
+      ],
+      "holdout": [
+        "od_citation_relation_010",
+        "od_citation_relation_006",
+        "od_citation_relation_011",
+        "od_citation_relation_002",
+        "od_citation_relation_007"
+      ]
+    },
+    "contract_clause": {
+      "total": 20,
+      "dev": [
+        "od_contract_clause_018",
+        "od_contract_clause_017",
+        "od_contract_clause_010",
+        "od_contract_clause_013",
+        "od_contract_clause_011",
+        "od_contract_clause_003",
+        "od_contract_clause_002",
+        "od_contract_clause_016",
+        "od_contract_clause_009",
+        "od_contract_clause_012",
+        "od_contract_clause_001",
+        "od_contract_clause_014",
+        "od_contract_clause_015",
+        "od_contract_clause_019",
+        "od_contract_clause_020"
+      ],
+      "holdout": [
+        "od_contract_clause_004",
+        "od_contract_clause_006",
+        "od_contract_clause_008",
+        "od_contract_clause_005",
+        "od_contract_clause_007"
+      ]
+    },
+    "database_intent": {
+      "total": 20,
+      "dev": [
+        "od_database_intent_014",
+        "od_database_intent_013",
+        "od_database_intent_012",
+        "od_database_intent_003",
+        "od_database_intent_009",
+        "od_database_intent_011",
+        "od_database_intent_015",
+        "od_database_intent_004",
+        "od_database_intent_008",
+        "od_database_intent_005",
+        "od_database_intent_018",
+        "od_database_intent_010",
+        "od_database_intent_016",
+        "od_database_intent_007",
+        "od_database_intent_019"
+      ],
+      "holdout": [
+        "od_database_intent_020",
+        "od_database_intent_017",
+        "od_database_intent_006",
+        "od_database_intent_001",
+        "od_database_intent_002"
+      ]
+    },
+    "date_semantics": {
+      "total": 20,
+      "dev": [
+        "od_date_semantics_009",
+        "od_date_semantics_020",
+        "od_date_semantics_010",
+        "od_date_semantics_005",
+        "od_date_semantics_019",
+        "od_date_semantics_018",
+        "od_date_semantics_003",
+        "od_date_semantics_007",
+        "od_date_semantics_017",
+        "od_date_semantics_012",
+        "od_date_semantics_006",
+        "od_date_semantics_004",
+        "od_date_semantics_001",
+        "od_date_semantics_011",
+        "od_date_semantics_016"
+      ],
+      "holdout": [
+        "od_date_semantics_013",
+        "od_date_semantics_015",
+        "od_date_semantics_014",
+        "od_date_semantics_008",
+        "od_date_semantics_002"
+      ]
+    },
+    "document_type": {
+      "total": 20,
+      "dev": [
+        "od_document_type_018",
+        "od_document_type_017",
+        "od_document_type_019",
+        "od_document_type_002",
+        "od_document_type_005",
+        "od_document_type_010",
+        "od_document_type_013",
+        "od_document_type_011",
+        "od_document_type_007",
+        "od_document_type_016",
+        "od_document_type_020",
+        "od_document_type_006",
+        "od_document_type_009",
+        "od_document_type_008",
+        "od_document_type_014"
+      ],
+      "holdout": [
+        "od_document_type_015",
+        "od_document_type_012",
+        "od_document_type_001",
+        "od_document_type_003",
+        "od_document_type_004"
+      ]
+    },
+    "email_intent": {
+      "total": 20,
+      "dev": [
+        "od_email_intent_001",
+        "od_email_intent_004",
+        "od_email_intent_018",
+        "od_email_intent_017",
+        "od_email_intent_008",
+        "od_email_intent_002",
+        "od_email_intent_011",
+        "od_email_intent_020",
+        "od_email_intent_012",
+        "od_email_intent_014",
+        "od_email_intent_003",
+        "od_email_intent_010",
+        "od_email_intent_006",
+        "od_email_intent_013",
+        "od_email_intent_016"
+      ],
+      "holdout": [
+        "od_email_intent_015",
+        "od_email_intent_007",
+        "od_email_intent_005",
+        "od_email_intent_009",
+        "od_email_intent_019"
+      ]
+    },
+    "entity_matching": {
+      "total": 20,
+      "dev": [
+        "od_entity_matching_018",
+        "od_entity_matching_009",
+        "od_entity_matching_005",
+        "od_entity_matching_006",
+        "od_entity_matching_017",
+        "od_entity_matching_016",
+        "od_entity_matching_011",
+        "od_entity_matching_001",
+        "od_entity_matching_020",
+        "od_entity_matching_015",
+        "od_entity_matching_007",
+        "od_entity_matching_002",
+        "od_entity_matching_019",
+        "od_entity_matching_010",
+        "od_entity_matching_014"
+      ],
+      "holdout": [
+        "od_entity_matching_013",
+        "od_entity_matching_003",
+        "od_entity_matching_004",
+        "od_entity_matching_008",
+        "od_entity_matching_012"
+      ]
+    },
+    "function_routing": {
+      "total": 20,
+      "dev": [
+        "od_function_routing_005",
+        "od_function_routing_018",
+        "od_function_routing_007",
+        "od_function_routing_015",
+        "od_function_routing_006",
+        "od_function_routing_001",
+        "od_function_routing_017",
+        "od_function_routing_003",
+        "od_function_routing_014",
+        "od_function_routing_009",
+        "od_function_routing_011",
+        "od_function_routing_010",
+        "od_function_routing_016",
+        "od_function_routing_004",
+        "od_function_routing_013"
+      ],
+      "holdout": [
+        "od_function_routing_012",
+        "od_function_routing_019",
+        "od_function_routing_020",
+        "od_function_routing_002",
+        "od_function_routing_008"
+      ]
+    },
+    "job_family": {
+      "total": 20,
+      "dev": [
+        "od_job_family_007",
+        "od_job_family_008",
+        "od_job_family_001",
+        "od_job_family_016",
+        "od_job_family_013",
+        "od_job_family_003",
+        "od_job_family_004",
+        "od_job_family_020",
+        "od_job_family_002",
+        "od_job_family_012",
+        "od_job_family_014",
+        "od_job_family_006",
+        "od_job_family_005",
+        "od_job_family_019",
+        "od_job_family_018"
+      ],
+      "holdout": [
+        "od_job_family_015",
+        "od_job_family_009",
+        "od_job_family_017",
+        "od_job_family_010",
+        "od_job_family_011"
+      ]
+    },
+    "logistics_exception": {
+      "total": 20,
+      "dev": [
+        "od_logistics_exception_013",
+        "od_logistics_exception_006",
+        "od_logistics_exception_020",
+        "od_logistics_exception_001",
+        "od_logistics_exception_017",
+        "od_logistics_exception_019",
+        "od_logistics_exception_002",
+        "od_logistics_exception_014",
+        "od_logistics_exception_007",
+        "od_logistics_exception_016",
+        "od_logistics_exception_012",
+        "od_logistics_exception_011",
+        "od_logistics_exception_005",
+        "od_logistics_exception_003",
+        "od_logistics_exception_010"
+      ],
+      "holdout": [
+        "od_logistics_exception_018",
+        "od_logistics_exception_009",
+        "od_logistics_exception_004",
+        "od_logistics_exception_015",
+        "od_logistics_exception_008"
+      ]
+    },
+    "manufacturing_defect": {
+      "total": 20,
+      "dev": [
+        "od_manufacturing_defect_003",
+        "od_manufacturing_defect_020",
+        "od_manufacturing_defect_005",
+        "od_manufacturing_defect_017",
+        "od_manufacturing_defect_015",
+        "od_manufacturing_defect_006",
+        "od_manufacturing_defect_007",
+        "od_manufacturing_defect_004",
+        "od_manufacturing_defect_013",
+        "od_manufacturing_defect_016",
+        "od_manufacturing_defect_014",
+        "od_manufacturing_defect_012",
+        "od_manufacturing_defect_010",
+        "od_manufacturing_defect_011",
+        "od_manufacturing_defect_001"
+      ],
+      "holdout": [
+        "od_manufacturing_defect_018",
+        "od_manufacturing_defect_002",
+        "od_manufacturing_defect_019",
+        "od_manufacturing_defect_009",
+        "od_manufacturing_defect_008"
+      ]
+    },
+    "meeting_intent": {
+      "total": 20,
+      "dev": [
+        "od_meeting_intent_010",
+        "od_meeting_intent_018",
+        "od_meeting_intent_007",
+        "od_meeting_intent_004",
+        "od_meeting_intent_012",
+        "od_meeting_intent_001",
+        "od_meeting_intent_020",
+        "od_meeting_intent_015",
+        "od_meeting_intent_014",
+        "od_meeting_intent_011",
+        "od_meeting_intent_003",
+        "od_meeting_intent_002",
+        "od_meeting_intent_013",
+        "od_meeting_intent_006",
+        "od_meeting_intent_009"
+      ],
+      "holdout": [
+        "od_meeting_intent_005",
+        "od_meeting_intent_016",
+        "od_meeting_intent_008",
+        "od_meeting_intent_017",
+        "od_meeting_intent_019"
+      ]
+    },
+    "ml_task": {
+      "total": 20,
+      "dev": [
+        "od_ml_task_001",
+        "od_ml_task_018",
+        "od_ml_task_007",
+        "od_ml_task_020",
+        "od_ml_task_005",
+        "od_ml_task_016",
+        "od_ml_task_002",
+        "od_ml_task_011",
+        "od_ml_task_019",
+        "od_ml_task_008",
+        "od_ml_task_010",
+        "od_ml_task_015",
+        "od_ml_task_009",
+        "od_ml_task_013",
+        "od_ml_task_004"
+      ],
+      "holdout": [
+        "od_ml_task_017",
+        "od_ml_task_012",
+        "od_ml_task_014",
+        "od_ml_task_006",
+        "od_ml_task_003"
+      ]
+    },
+    "policy_decision": {
+      "total": 20,
+      "dev": [
+        "od_policy_decision_008",
+        "od_policy_decision_018",
+        "od_policy_decision_004",
+        "od_policy_decision_001",
+        "od_policy_decision_006",
+        "od_policy_decision_012",
+        "od_policy_decision_011",
+        "od_policy_decision_005",
+        "od_policy_decision_007",
+        "od_policy_decision_020",
+        "od_policy_decision_002",
+        "od_policy_decision_003",
+        "od_policy_decision_019",
+        "od_policy_decision_010",
+        "od_policy_decision_014"
+      ],
+      "holdout": [
+        "od_policy_decision_015",
+        "od_policy_decision_016",
+        "od_policy_decision_017",
+        "od_policy_decision_013",
+        "od_policy_decision_009"
+      ]
+    },
+    "product_taxonomy": {
+      "total": 20,
+      "dev": [
+        "od_product_taxonomy_020",
+        "od_product_taxonomy_010",
+        "od_product_taxonomy_018",
+        "od_product_taxonomy_008",
+        "od_product_taxonomy_007",
+        "od_product_taxonomy_003",
+        "od_product_taxonomy_017",
+        "od_product_taxonomy_014",
+        "od_product_taxonomy_019",
+        "od_product_taxonomy_001",
+        "od_product_taxonomy_002",
+        "od_product_taxonomy_011",
+        "od_product_taxonomy_006",
+        "od_product_taxonomy_004",
+        "od_product_taxonomy_012"
+      ],
+      "holdout": [
+        "od_product_taxonomy_015",
+        "od_product_taxonomy_009",
+        "od_product_taxonomy_013",
+        "od_product_taxonomy_005",
+        "od_product_taxonomy_016"
+      ]
+    },
+    "research_method": {
+      "total": 20,
+      "dev": [
+        "od_research_method_001",
+        "od_research_method_004",
+        "od_research_method_014",
+        "od_research_method_005",
+        "od_research_method_009",
+        "od_research_method_007",
+        "od_research_method_012",
+        "od_research_method_018",
+        "od_research_method_020",
+        "od_research_method_006",
+        "od_research_method_011",
+        "od_research_method_010",
+        "od_research_method_003",
+        "od_research_method_002",
+        "od_research_method_016"
+      ],
+      "holdout": [
+        "od_research_method_013",
+        "od_research_method_015",
+        "od_research_method_008",
+        "od_research_method_017",
+        "od_research_method_019"
+      ]
+    },
+    "return_reason": {
+      "total": 20,
+      "dev": [
+        "od_return_reason_011",
+        "od_return_reason_002",
+        "od_return_reason_019",
+        "od_return_reason_004",
+        "od_return_reason_010",
+        "od_return_reason_006",
+        "od_return_reason_005",
+        "od_return_reason_003",
+        "od_return_reason_008",
+        "od_return_reason_015",
+        "od_return_reason_014",
+        "od_return_reason_016",
+        "od_return_reason_013",
+        "od_return_reason_020",
+        "od_return_reason_017"
+      ],
+      "holdout": [
+        "od_return_reason_007",
+        "od_return_reason_009",
+        "od_return_reason_018",
+        "od_return_reason_012",
+        "od_return_reason_001"
+      ]
+    },
+    "science_phenomenon": {
+      "total": 20,
+      "dev": [
+        "od_science_phenomenon_006",
+        "od_science_phenomenon_005",
+        "od_science_phenomenon_014",
+        "od_science_phenomenon_018",
+        "od_science_phenomenon_010",
+        "od_science_phenomenon_003",
+        "od_science_phenomenon_009",
+        "od_science_phenomenon_016",
+        "od_science_phenomenon_017",
+        "od_science_phenomenon_011",
+        "od_science_phenomenon_012",
+        "od_science_phenomenon_015",
+        "od_science_phenomenon_002",
+        "od_science_phenomenon_001",
+        "od_science_phenomenon_020"
+      ],
+      "holdout": [
+        "od_science_phenomenon_013",
+        "od_science_phenomenon_019",
+        "od_science_phenomenon_008",
+        "od_science_phenomenon_007",
+        "od_science_phenomenon_004"
+      ]
+    },
+    "security_event": {
+      "total": 20,
+      "dev": [
+        "od_security_event_009",
+        "od_security_event_008",
+        "od_security_event_012",
+        "od_security_event_007",
+        "od_security_event_020",
+        "od_security_event_001",
+        "od_security_event_019",
+        "od_security_event_011",
+        "od_security_event_010",
+        "od_security_event_005",
+        "od_security_event_018",
+        "od_security_event_004",
+        "od_security_event_002",
+        "od_security_event_015",
+        "od_security_event_017"
+      ],
+      "holdout": [
+        "od_security_event_013",
+        "od_security_event_016",
+        "od_security_event_014",
+        "od_security_event_006",
+        "od_security_event_003"
+      ]
+    },
+    "semantic_extraction": {
+      "total": 20,
+      "dev": [
+        "od_semantic_extraction_017",
+        "od_semantic_extraction_001",
+        "od_semantic_extraction_016",
+        "od_semantic_extraction_010",
+        "od_semantic_extraction_015",
+        "od_semantic_extraction_018",
+        "od_semantic_extraction_013",
+        "od_semantic_extraction_011",
+        "od_semantic_extraction_020",
+        "od_semantic_extraction_019",
+        "od_semantic_extraction_009",
+        "od_semantic_extraction_003",
+        "od_semantic_extraction_002",
+        "od_semantic_extraction_007",
+        "od_semantic_extraction_004"
+      ],
+      "holdout": [
+        "od_semantic_extraction_005",
+        "od_semantic_extraction_014",
+        "od_semantic_extraction_008",
+        "od_semantic_extraction_012",
+        "od_semantic_extraction_006"
+      ]
+    },
+    "software_bug": {
+      "total": 20,
+      "dev": [
+        "od_software_bug_016",
+        "od_software_bug_001",
+        "od_software_bug_012",
+        "od_software_bug_013",
+        "od_software_bug_017",
+        "od_software_bug_020",
+        "od_software_bug_014",
+        "od_software_bug_019",
+        "od_software_bug_007",
+        "od_software_bug_018",
+        "od_software_bug_010",
+        "od_software_bug_011",
+        "od_software_bug_015",
+        "od_software_bug_008",
+        "od_software_bug_002"
+      ],
+      "holdout": [
+        "od_software_bug_009",
+        "od_software_bug_003",
+        "od_software_bug_005",
+        "od_software_bug_006",
+        "od_software_bug_004"
+      ]
+    },
+    "support_routing": {
+      "total": 20,
+      "dev": [
+        "od_support_routing_018",
+        "od_support_routing_015",
+        "od_support_routing_013",
+        "od_support_routing_012",
+        "od_support_routing_017",
+        "od_support_routing_008",
+        "od_support_routing_004",
+        "od_support_routing_005",
+        "od_support_routing_001",
+        "od_support_routing_006",
+        "od_support_routing_019",
+        "od_support_routing_010",
+        "od_support_routing_007",
+        "od_support_routing_009",
+        "od_support_routing_016"
+      ],
+      "holdout": [
+        "od_support_routing_011",
+        "od_support_routing_002",
+        "od_support_routing_014",
+        "od_support_routing_003",
+        "od_support_routing_020"
+      ]
+    },
+    "transaction_type": {
+      "total": 20,
+      "dev": [
+        "od_transaction_type_002",
+        "od_transaction_type_001",
+        "od_transaction_type_016",
+        "od_transaction_type_019",
+        "od_transaction_type_011",
+        "od_transaction_type_009",
+        "od_transaction_type_012",
+        "od_transaction_type_017",
+        "od_transaction_type_003",
+        "od_transaction_type_008",
+        "od_transaction_type_007",
+        "od_transaction_type_020",
+        "od_transaction_type_010",
+        "od_transaction_type_005",
+        "od_transaction_type_013"
+      ],
+      "holdout": [
+        "od_transaction_type_004",
+        "od_transaction_type_014",
+        "od_transaction_type_015",
+        "od_transaction_type_018",
+        "od_transaction_type_006"
+      ]
+    },
+    "word_sense": {
+      "total": 20,
+      "dev": [
+        "od_word_sense_008",
+        "od_word_sense_019",
+        "od_word_sense_002",
+        "od_word_sense_006",
+        "od_word_sense_011",
+        "od_word_sense_001",
+        "od_word_sense_016",
+        "od_word_sense_003",
+        "od_word_sense_020",
+        "od_word_sense_015",
+        "od_word_sense_012",
+        "od_word_sense_009",
+        "od_word_sense_010",
+        "od_word_sense_017",
+        "od_word_sense_005"
+      ],
+      "holdout": [
+        "od_word_sense_004",
+        "od_word_sense_018",
+        "od_word_sense_014",
+        "od_word_sense_013",
+        "od_word_sense_007"
+      ]
+    }
+  }
+}
