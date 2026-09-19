@@ -7,7 +7,7 @@
 
 **OpenDecision is an open-source semantic decision engine.**
 
-Give it some state, a natural-language question, and answer criteria. It returns a structured decision rather than generating free-form text.
+Give it some state, a natural-language question, and answer criteria. It returns a structured decision.
 
 ## Why I built this
 
