@@ -1,0 +1,570 @@
+{
+  "model": "tasksource/ModernBERT-large-nli",
+  "chunks": 2,
+  "answers": {
+    "covered": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": true,
+      "status": "confirmed",
+      "binary": {
+        "answer": true,
+        "probabilities": {
+          "true": 0.9851478934288025,
+          "false": 0.01485210657119751
+        },
+        "confidence": 0.9851478934288025
+      },
+      "three_way": {
+        "answer": true,
+        "relation": "supports",
+        "scores": {
+          "supports": 0.9838418960571289,
+          "contradicts": 0.003249937202781439,
+          "unknown": 0.01290812622755766
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Is the loss covered under the policy's collision coverage?\" is yes.",
+        "contradiction": "The answer to the question \"Is the loss covered under the policy's collision coverage?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "exclusion": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": true,
+      "status": "confirmed",
+      "binary": {
+        "answer": true,
+        "probabilities": {
+          "true": 0.8658429980278015,
+          "false": 0.1341570019721985
+        },
+        "confidence": 0.8658429980278015
+      },
+      "three_way": {
+        "answer": true,
+        "relation": "supports",
+        "scores": {
+          "supports": 0.6845816969871521,
+          "contradicts": 0.22508996725082397,
+          "unknown": 0.09032837301492691
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Does a policy exclusion apply to this loss?\" is yes.",
+        "contradiction": "The answer to the question \"Does a policy exclusion apply to this loss?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "on_circuit": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": false,
+      "status": "confirmed",
+      "binary": {
+        "answer": false,
+        "probabilities": {
+          "true": 0.018711846321821213,
+          "false": 0.9812881536781788
+        },
+        "confidence": 0.9812881536781788
+      },
+      "three_way": {
+        "answer": false,
+        "relation": "contradicts",
+        "scores": {
+          "supports": 0.014823227189481258,
+          "contradicts": 0.9811262488365173,
+          "unknown": 0.0040505919605493546
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Did the collision happen while the vehicle was being driven on the racetrack itself?\" is yes.",
+        "contradiction": "The answer to the question \"Did the collision happen while the vehicle was being driven on the racetrack itself?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "deductible": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": true,
+      "status": "confirmed",
+      "binary": {
+        "answer": true,
+        "probabilities": {
+          "true": 0.8414847254753113,
+          "false": 0.15851527452468872
+        },
+        "confidence": 0.8414847254753113
+      },
+      "three_way": {
+        "answer": true,
+        "relation": "supports",
+        "scores": {
+          "supports": 0.7003214955329895,
+          "contradicts": 0.16915932297706604,
+          "unknown": 0.13051918148994446
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Would the $500 deductible be correctly applied before any payout?\" is yes.",
+        "contradiction": "The answer to the question \"Would the $500 deductible be correctly applied before any payout?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "docs_sufficient": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": false,
+      "status": "tentative",
+      "binary": {
+        "answer": false,
+        "probabilities": {
+          "true": 0.4038797914981842,
+          "false": 0.5961202085018158
+        },
+        "confidence": 0.5961202085018158
+      },
+      "three_way": {
+        "answer": null,
+        "relation": "unknown",
+        "scores": {
+          "supports": 0.276975154876709,
+          "contradicts": 0.18264612555503845,
+          "unknown": 0.540378749370575
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Is the attached documentation sufficient to adjudicate the claim as-is?\" is yes.",
+        "contradiction": "The answer to the question \"Is the attached documentation sufficient to adjudicate the claim as-is?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "within_limit": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": true,
+      "status": "confirmed",
+      "binary": {
+        "answer": true,
+        "probabilities": {
+          "true": 0.6927974224090576,
+          "false": 0.3072025775909424
+        },
+        "confidence": 0.6927974224090576
+      },
+      "three_way": {
+        "answer": true,
+        "relation": "supports",
+        "scores": {
+          "supports": 0.8353362679481506,
+          "contradicts": 0.13492104411125183,
+          "unknown": 0.029742687940597534
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Is the amount claimed within the per-incident coverage limit?\" is yes.",
+        "contradiction": "The answer to the question \"Is the amount claimed within the per-incident coverage limit?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "within_window": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": true,
+      "status": "confirmed",
+      "binary": {
+        "answer": true,
+        "probabilities": {
+          "true": 0.874722421169281,
+          "false": 0.125277578830719
+        },
+        "confidence": 0.874722421169281
+      },
+      "three_way": {
+        "answer": true,
+        "relation": "supports",
+        "scores": {
+          "supports": 0.8730981349945068,
+          "contradicts": 0.09129393100738525,
+          "unknown": 0.035607967525720596
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Did the loss occur within the policy's active coverage period?\" is yes.",
+        "contradiction": "The answer to the question \"Did the loss occur within the policy's active coverage period?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "reported_timely": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": true,
+      "status": "confirmed",
+      "binary": {
+        "answer": true,
+        "probabilities": {
+          "true": 0.5373997688293457,
+          "false": 0.4626002311706543
+        },
+        "confidence": 0.5373997688293457
+      },
+      "three_way": {
+        "answer": true,
+        "relation": "supports",
+        "scores": {
+          "supports": 0.6108006834983826,
+          "contradicts": 0.2973523736000061,
+          "unknown": 0.09184696525335312
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Was the loss reported within the policy's required window?\" is yes.",
+        "contradiction": "The answer to the question \"Was the loss reported within the policy's required window?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "rental_eligible": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": false,
+      "status": "confirmed",
+      "binary": {
+        "answer": false,
+        "probabilities": {
+          "true": 0.025599436834454536,
+          "false": 0.9744005631655455
+        },
+        "confidence": 0.9744005631655455
+      },
+      "three_way": {
+        "answer": false,
+        "relation": "contradicts",
+        "scores": {
+          "supports": 0.018579909577965736,
+          "contradicts": 0.9781036376953125,
+          "unknown": 0.0033163800835609436
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Is the rental-car cost eligible for reimbursement under this policy?\" is yes.",
+        "contradiction": "The answer to the question \"Is the rental-car cost eligible for reimbursement under this policy?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "fraud_flag": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": true,
+      "status": "tentative",
+      "binary": {
+        "answer": true,
+        "probabilities": {
+          "true": 0.5337153673171997,
+          "false": 0.4662846326828003
+        },
+        "confidence": 0.5337153673171997
+      },
+      "three_way": {
+        "answer": null,
+        "relation": "unknown",
+        "scores": {
+          "supports": 0.11546006798744202,
+          "contradicts": 0.29578354954719543,
+          "unknown": 0.5887564420700073
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Are there indicators that warrant a fraud review?\" is yes.",
+        "contradiction": "The answer to the question \"Are there indicators that warrant a fraud review?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "human_review": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": false,
+      "status": "tentative",
+      "binary": {
+        "answer": false,
+        "probabilities": {
+          "true": 0.3342630863189697,
+          "false": 0.6657369136810303
+        },
+        "confidence": 0.6657369136810303
+      },
+      "three_way": {
+        "answer": null,
+        "relation": "unknown",
+        "scores": {
+          "supports": 0.12350739538669586,
+          "contradicts": 0.17668192088603973,
+          "unknown": 0.6998107433319092
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Was payment approved by automated triage without a human adjuster's review?\" is yes.",
+        "contradiction": "The answer to the question \"Was payment approved by automated triage without a human adjuster's review?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "manual_review": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": false,
+      "status": "tentative",
+      "binary": {
+        "answer": false,
+        "probabilities": {
+          "true": 0.2956005930900574,
+          "false": 0.7043994069099426
+        },
+        "confidence": 0.7043994069099426
+      },
+      "three_way": {
+        "answer": null,
+        "relation": "unknown",
+        "scores": {
+          "supports": 0.05814207345247269,
+          "contradicts": 0.4446970820426941,
+          "unknown": 0.49716079235076904
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Should this claim be routed for manual/supervisor review before payout?\" is yes.",
+        "contradiction": "The answer to the question \"Should this claim be routed for manual/supervisor review before payout?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "line_items_sum": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": true,
+      "status": "confirmed",
+      "binary": {
+        "answer": true,
+        "probabilities": {
+          "true": 0.9252541661262512,
+          "false": 0.07474583387374878
+        },
+        "confidence": 0.9252541661262512
+      },
+      "three_way": {
+        "answer": true,
+        "relation": "supports",
+        "scores": {
+          "supports": 0.9239875078201294,
+          "contradicts": 0.055373672395944595,
+          "unknown": 0.020638814195990562
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Do the claimed line-item costs add up to the total amount claimed?\" is yes.",
+        "contradiction": "The answer to the question \"Do the claimed line-item costs add up to the total amount claimed?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    },
+    "subrogation": {
+      "type": "document_noul",
+      "mode": "both",
+      "answer": false,
+      "status": "tentative",
+      "binary": {
+        "answer": false,
+        "probabilities": {
+          "true": 0.43103983998298645,
+          "false": 0.5689601600170135
+        },
+        "confidence": 0.5689601600170135
+      },
+      "three_way": {
+        "answer": null,
+        "relation": "unknown",
+        "scores": {
+          "supports": 0.048373375087976456,
+          "contradicts": 0.3546694219112396,
+          "unknown": 0.5969571471214294
+        }
+      },
+      "compiler": "generic_yes_no",
+      "compiled": {
+        "proposition": "The answer to the question \"Is there a potentially at-fault third party the insurer could pursue for subrogation recovery?\" is yes.",
+        "contradiction": "The answer to the question \"Is there a potentially at-fault third party the insurer could pursue for subrogation recovery?\" is no."
+      },
+      "evidence": [
+        {
+          "id": "section-001",
+          "text": "{\n  \"adjuster_notes\": [\n    {\n      \"author\": \"auto-triage\",\n      \"note\": \"Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days.\"\n    }\n  ],\n  \"claim\": {\n    \"amount_claimed\": 3250.0,\n    \"claim_id\": \"CLM-55029\",\n    \"description\": \"Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.\",\n    \"documentation\": [\n      \"repair estimate (PDF)\",\n      \"8 damage photos\"\n    ],\n    \"driver\": \"Sam M.\",\n    \"incident_date\": \"2026-06-28\",\n    \"line_items\": [\n      {\n        \"cost\": 1700.0,\n        \"item\": \"rear bumper replacement\"\n      },\n      {\n        \"cost\": 800.0,\n        \"item\": \"paint + refinish\"\n      },\n      {\n        \"cost\": 450.0,\n        \"item\": \"parking-sensor recalibration\"\n      },\n      {\n        \"cost\": 300.0,\n        \"item\": \"rental car (6 days)\"\n      }\n    ],\n    \"reported_date\": \"2026-07-04\"\n  },\n  \"claim_history\": {\n    \"claims_last_12mo\": 2,\n    \"prior_denied\": 0\n  },\n  \"policy\": {\n    \"coverages\": {\n      \"collision\": true,\n      \"rental_reimbursement\": false",
+          "relevance": 1.0
+        },
+        {
+          "id": "section-002",
+          "text": "},\n    \"deductible\": 500.0,\n    \"effective\": \"2026-01-15\",\n    \"exclusions\": [\n      \"track/competitive driving\",\n      \"drivers not listed on the policy\"\n    ],\n    \"expires\": \"2027-01-15\",\n    \"listed_drivers\": [\n      \"Dana M.\",\n      \"Sam M.\"\n    ],\n    \"per_incident_limit\": 10000.0,\n    \"police_report_required_over\": 2000.0,\n    \"policy_id\": \"AP-77413\",\n    \"policyholder\": \"Dana M.\",\n    \"reporting_window_days\": 10\n  }\n}",
+          "relevance": 1.0
+        }
+      ]
+    }
+  },
+  "usage": {
+    "input_tokens": 925,
+    "output_tokens": 0
+  }
+}

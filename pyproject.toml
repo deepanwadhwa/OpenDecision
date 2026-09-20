@@ -1,16 +1,50 @@
 [project]
-name = "opendecision"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
+name = "OpenDecision"
+version = "0.1.1"
+description = "Open-source semantic decision engine for structured state and documents"
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.13"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Deepan Wadhwa" },
+]
+keywords = [
+    "classification",
+    "decision-engine",
+    "natural-language-inference",
+    "nli",
+    "semantic-classification",
+    "zero-shot-classification",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
 dependencies = [
     "fastapi>=0.141.1",
     "torch>=2.14.0",
     "transformers>=5.17.0",
-    "typesafe-sdk>=0.6.0",
     "uvicorn>=0.53.0",
 ]
+
+[project.optional-dependencies]
+typesafe = [
+    "typesafe-sdk>=0.6.0",
+]
+
+[project.scripts]
+opendecision = "opendecision.cli:main"
+
+[project.urls]
+Documentation = "https://github.com/deepanwadhwa/OpenDecision/tree/main/docs"
+Issues = "https://github.com/deepanwadhwa/OpenDecision/issues"
+Repository = "https://github.com/deepanwadhwa/OpenDecision"
 
 [build-system]
 requires = ["hatchling"]
@@ -19,8 +53,17 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/opendecision"]
 
+[tool.hatch.build.targets.sdist]
+include = [
+    "/LICENSE",
+    "/README.md",
+    "/pyproject.toml",
+    "/src/opendecision",
+]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 
 [dependency-groups]
 dev = [

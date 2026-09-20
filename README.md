@@ -1,294 +1,158 @@
 # OpenDecision
 
 [![Tests](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml/badge.svg)](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml)
-![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Version](https://img.shields.io/badge/version-0.1.1-blue)
 ![Python](https://img.shields.io/badge/python-3.13%2B-blue)
-![Backend](https://img.shields.io/badge/backend-ModernBERT--large--zeroshot-6f42c1)
+![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 
-**OpenDecision is an open-source semantic decision engine.**
+OpenDecision is the open-source equivalent of [TypeSafe's Jev](https://docs.typesafe.ai/introduction).
 
-Give it some state, a natural-language question, and answer criteria. It returns a structured decision.
+Send it application state or a document and typed questions. It returns structured answers that code can use directly.
 
-## OpenDecision controls a bot in ViZDoom in real time
+Jev and OpenDecision use the same core pattern: state plus typed questions in, structured answers out. Both provide `Choice`, `Noul`, and `Score`.
 
-**A ~400M zero-shot model navigating and fighting through ViZDoom's Deadly Corridor at wall-clock speed from structured state. Runs locally with no generative LLM and no visual input.**
+OpenDecision provides:
 
-[Skill 1: goal reached](demos/doom/opendecision-doom-skill1.mp4) · [Skill 3: goal reached](demos/doom/opendecision-doom-skill3.mp4) · [Skill 5: goal reached](demos/doom/opendecision-doom-skill5-hero.mp4) · [run it locally](demos/doom/README.md)
+- `Choice` to select one option from a list.
+- `Noul` to measure whether a statement is true.
+- `Score` to place state on an ordered scale.
+- `Relation` to report `supports`, `contradicts`, `unknown`, or `conflicted`.
+- Document processing with evidence retrieval and source passages.
+- A Python API, a FastAPI server, and a TypeSafe SDK compatible endpoint.
 
-All three use the same ViZDoom seed; asynchronous action timing is still machine-load dependent. The environment uses Freedoom assets; the model sees health, ammo, enemy and goal geometry, and damage—not pixels.
+The default backend is [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0). It runs locally and produces classification scores without generating text.
 
-OpenDecision selects tactical actions. The opt-in demo also discloses its game-specific rule router, target-tracking actuator, and one-tic damage reflex in the on-screen panel and [demo notes](demos/doom/README.md).
+OpenDecision is licensed under Apache 2.0.
 
-## Why I built this
+## What can it do?
 
-A few days ago, I saw TypeSafe announce [Jev, their first "System One Model"](https://typesafe.ai/blog/introducing-system-one-models-and-jev). While it looked impressive, it also kind of tingled my spidey sense.
+### Play Doom
 
-A couple of years ago, I had worked on something similar for a client, using zero-shot models in a narrow domain involving healthcare insurance fraud. I also have experience training and building things with zero-shot models through projects like [Zink](https://github.com/deepanwadhwa/zink), so I thought I'd give this a try: build an open-source package that could leverage zero-shot models to provide a similar kind of functionality to what TypeSafe's Jev does.
+OpenDecision can choose actions for a bot in ViZDoom's Deadly Corridor at wall-clock speed.
 
-That experiment became OpenDecision.
+The input is structured game state: health, ammo, kills, target position, goal position, and recent damage. The demo uses a disclosed tactical router, a target-tracking actuator, and a one-tic damage reflex. OpenDecision chooses between the actions available in the current tactical situation.
 
-OpenDecision currently provides three primitives:
+[![OpenDecision plays Doom at skill 5](https://raw.githubusercontent.com/deepanwadhwa/OpenDecision/main/demos/doom/opendecision-doom-skill5-preview.gif)](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill5-hero.mp4)
 
-- **Choice** — select one answer from a supplied set.
-- **Noul** — evaluate a binary natural-language predicate.
-- **Score** — score state against an ordered natural-language rubric.
+[Watch skill 1](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill1.mp4) · [Watch skill 3](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill3.mp4) · [Run the demo](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/README.md)
 
-The default backend is [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0), a compact zero-shot NLI model.
+These are fixed-seed recordings. No win rate has been measured.
 
-## Why?
+### Answer questions about data and documents
 
-Many application decisions do not require a generative LLM.
+OpenDecision accepts plain text, JSON, or other Python values as state. The document API splits long documents, finds relevant passages, answers each question, and returns the passages used.
 
-Examples:
+#### Insurance claim example
 
-- route a support request,
-- choose a tool or function,
-- classify a document,
-- apply a semantic policy,
-- match an entity,
-- detect whether a condition is true,
-- score severity against a rubric.
+The sample claim contains a demand letter, policy facts, a police report, medical records, bills, and employer records.
 
-OpenDecision turns those problems into small, typed semantic decisions.
+| Question | Answer |
+| --- | --- |
+| Are the medical expenses documented? | `established` |
+| Is a serious injury documented? | `refuted` |
+| Is the rental need fully supported? | `unknown` |
+| Are documents still outstanding? | `established` |
 
-## Install and run
+The current synthetic claim experiment retrieves all 17 required facts and matches all 10 composed decisions. This is one development case. See the [insurance claim benchmark](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/insurance_claim/README.md).
 
-Python 3.13 is recommended.
+#### GDPR example
+
+The GDPR example uses a 54,171-character document split into 31 sections.
+
+| Question | Answer |
+| --- | --- |
+| Must a personal data breach be reported within 72 hours? | `true` |
+| Must every organization appoint a Data Protection Officer? | `false` |
+| Can pre-ticked boxes count as valid consent? | `false` |
+| What is the maximum fine for serious infringements? | `EUR 20 million or 4% of worldwide turnover` |
+
+The current retrieval experiment answers 9 of 10 objective questions correctly. See the [questions](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/gdpr_wiki/questions.py) and [saved results](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/results/gdpr_wiki_retrieved.json).
+
+#### Yes/no answer modes
+
+`POST /v1/documents/decide` has one `noul_mode` setting:
+
+| Mode | Result |
+| --- | --- |
+| `binary` | Always chooses `true` or `false`. |
+| `three_way` | Returns `supports`, `contradicts`, or `unknown`. |
+| `both` | Runs both evaluations. This is the default. |
+
+In `both` mode, OpenDecision reports `confirmed`, `tentative`, or `conflicted`. A conflict has `answer: null`. Both score distributions remain in the response.
+
+These modes are for document `Noul` questions. They are separate from the internal scoring used by `Choice`.
+
+## Get started
+
+OpenDecision requires Python 3.13 or later.
 
 ```bash
-git clone https://github.com/deepanwadhwa/OpenDecision.git
-cd OpenDecision
+pip install OpenDecision
+```
 
-uv sync --python 3.13 --all-groups
+Or add it to a `uv` project:
+
+```bash
+uv add OpenDecision
+```
+
+Run a decision in Python:
+
+```python
+from opendecision import OpenDecisionEngine
+
+engine = OpenDecisionEngine()
+
+result = engine.choice(
+    state="The customer was charged twice for one subscription.",
+    instructions="Which team should handle this request?",
+    criteria={
+        "billing": "Payments, invoices, refunds, and duplicate charges",
+        "technical": "Software bugs and integration problems",
+        "sales": "Pricing and new purchases",
+    },
+)
+
+print(result["choice"])
+# billing
 ```
 
 Start the API:
 
 ```bash
-uv run uvicorn opendecision.api.app:app \
-  --app-dir src \
-  --host 127.0.0.1 \
-  --port 8000
+opendecision serve
 ```
 
-Then open:
+In a `uv` project, run `uv run opendecision serve`.
 
-```text
-http://127.0.0.1:8000/docs
-```
+Open `http://127.0.0.1:8000/docs` to send requests from the interactive API page.
 
-Health check:
+The model downloads from Hugging Face on first use.
 
-```bash
-curl http://127.0.0.1:8000/health
-```
+## Documentation
 
-The model is downloaded from Hugging Face on first use.
+- [Documentation index](https://github.com/deepanwadhwa/OpenDecision/tree/main/docs)
+- [Quick start and API](https://github.com/deepanwadhwa/OpenDecision/blob/main/docs/quickstart.md)
+- [Choice, Noul, Score, and Relation](https://github.com/deepanwadhwa/OpenDecision/blob/main/docs/primitives.md)
+- [Documents, evidence, and yes/no modes](https://github.com/deepanwadhwa/OpenDecision/blob/main/docs/document-decisions.md)
+- [Evidence relations and rules](https://github.com/deepanwadhwa/OpenDecision/blob/main/docs/evidence-and-rules.md)
+- [Doom demo](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/README.md)
+- [Benchmarks](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/opendecision_original/README.md)
 
-## Python quickstart
-
-```python
-from opendecision.engine import OpenDecisionEngine
-
-engine = OpenDecisionEngine()
-
-result = engine.choice(
-    state="The customer says the router has no power and the ISP line is working.",
-    instructions="Who should handle this issue?",
-    criteria={
-        "isp": "The internet service provider should investigate the connection.",
-        "router_manufacturer": "The router or its power hardware should be investigated.",
-        "electric_utility": "The electricity provider should investigate an outage.",
-    },
-)
-
-print(result["choice"])
-print(result["probabilities"])
-print(result["confidence"])
-```
-
-A `Choice` response has the form:
-
-```python
-{
-    "type": "choice",
-    "choice": "router_manufacturer",
-    "probabilities": {
-        "isp": ...,
-        "router_manufacturer": ...,
-        "electric_utility": ...,
-    },
-    "confidence": ...,
-}
-```
-
-`confidence` is a normalized measure of concentration in the returned probability distribution. It is **not** a calibrated probability that the answer is correct.
-
-### Noul
-
-```python
-result = engine.noul(
-    state="The request says the production service is currently unavailable.",
-    instructions="This request is time-sensitive.",
-)
-
-print(result["noul"])
-```
-
-### Score
-
-```python
-result = engine.score(
-    state="The application crashes for every user at startup.",
-    instructions="How severe is this software bug?",
-    criteria={
-        "0": "Cosmetic or negligible impact.",
-        "1": "Minor impact with an easy workaround.",
-        "2": "Significant impact, but the core workflow remains usable.",
-        "3": "Major failure blocking an important workflow.",
-        "4": "Critical failure preventing normal use.",
-    },
-)
-
-print(result["score"])
-```
-
-## Choice architecture
-
-OpenDecision does not rely on one fixed textual formulation for `Choice`.
-
-The current v0.1 strategy evaluates the request with two complementary semantic compilers:
-
-**Compiler A**
-
-```text
-premise:    state
-candidates: answer descriptions
-hypothesis: question-conditioned
-```
-
-**Compiler B**
-
-```text
-premise:    state
-candidates: label + description
-hypothesis: default NLI hypothesis
-```
-
-If A and B agree, their answer is returned.
-
-If they disagree, OpenDecision runs a small semantic adjudication over the two competing answers:
-
-```text
-premise:    state + question
-candidates: labels only
-hypothesis: default NLI hypothesis
-```
-
-This uses the same underlying ModernBERT model throughout; no additional router model is required.
-
-## Evaluation
-
-### TypeSafe public examples
-
-Because OpenDecision was inspired by TypeSafe's Jev, I wanted to see how it performed on tasks resembling the examples TypeSafe itself publishes.
-
-I created an evaluation set of **80 cases adapted from TypeSafe's public documentation and cookbooks**:
-
-- 51 Choice problems
-- 20 Noul problems
-- 9 Score problems
-
-Using the default `MoritzLaurer/ModernBERT-large-zeroshot-v2.0` backend, OpenDecision v0.1 achieves:
-
-| Primitive | Result |
-| --- | ---: |
-| Choice | **43/51 — 84.3%** |
-| Noul | **17/20 — 85.0%** |
-| Score | **0.375 MAE** |
-
-These are **not official TypeSafe benchmark results** and should not be interpreted as a direct Jev-vs-OpenDecision comparison. The cases were adapted and paraphrased from examples in TypeSafe's public documentation so they could be evaluated reproducibly with OpenDecision.
-
-The full evaluation set and source provenance are available in [`benchmarks/typesafe_public/`](benchmarks/typesafe_public/).
-
-### OpenDecision benchmark
-
-I also created a separate synthetic benchmark containing **500 Choice problems across 25 domains**.
-
-The system architecture was developed on 375 cases and then evaluated on a separate 125-case comparison split.
-
-**OpenDecision v0.1 scored 108/125 — 86.4%.**
-
-The benchmark covers tasks including support and function routing, citation relations, semantic extraction, date semantics, product taxonomy, entity matching, policy decisions, software bugs, scientific methods, security events, and word-sense disambiguation.
-
-The dataset and split are available in [`benchmarks/opendecision_original/`](benchmarks/opendecision_original/).
-
-## TypeSafe SDK compatibility
-
-OpenDecision exposes a `/v1/systemone` endpoint compatible with the core request/response flow used by the TypeSafe SDK.
-
-A local OpenDecision server can therefore be used as a `base_url` for compatible clients.
-
-## API
-
-Once the server is running:
+## API surface
 
 ```text
 GET  /health
 POST /v1/systemone
+POST /v1/documents/decide
 GET  /docs
 GET  /openapi.json
 ```
 
-FastAPI's interactive documentation at `/docs` is the easiest way to inspect the exact request schema and try requests manually.
+`POST /v1/systemone` accepts the core TypeSafe request shape. A local OpenDecision server can be used as the `base_url` for compatible clients.
 
-## Run the evaluations
+## Current status
 
-General benchmark runner:
+OpenDecision v0.1.1 is a developer preview.
 
-```bash
-uv run python benchmarks/run_eval.py \
-  --cases benchmarks/cases.jsonl
-```
-
-Original benchmark:
-
-```bash
-uv run python benchmarks/run_eval.py \
-  --cases benchmarks/opendecision_original/dev.jsonl
-```
-
-The experimental compiler/adjudicator scripts live under `benchmarks/`.
-
-## Run tests
-
-```bash
-uv run --python 3.13 pytest -v
-```
-
-CI runs the same test suite on GitHub Actions.
-
-## Design principles
-
-OpenDecision is intentionally small:
-
-- structured outputs instead of token generation,
-- explicit answer criteria,
-- local/open model backend,
-- typed decision primitives,
-- reproducible compiler formulations,
-- inspectable probabilities,
-- no hosted service dependency.
-
-## Current limitations
-
-- The default probabilities are NLI scores and should not be assumed calibrated.
-- Some tasks involving exact dates, symbolic reasoning, close citation relations, or subtle policies remain difficult for the current ~400M backend.
-- The original benchmark is synthetic and should be supplemented with external task-specific evaluations before making strong general-performance claims.
-- The adjudicated `Choice` path may require three classifier passes when the two primary compilers disagree.
-
-## Project status
-
-**v0.1.0** is intended as a developer preview.
-
-The core primitives, local API, SDK-compatible endpoint, evaluation harness, and reproducible benchmark are available for experimentation.
+Treat the model scores as uncalibrated. Evaluate the model and thresholds on your own data before using the results in an automated decision process.

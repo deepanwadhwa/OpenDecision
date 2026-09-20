@@ -23,3 +23,9 @@ jobs:
 
       - name: Run tests
         run: uv run --python 3.13 pytest -v
+
+      - name: Build wheel and source distribution
+        run: uv build --python 3.13 --clear
+
+      - name: Check distribution metadata
+        run: uvx twine check dist/*

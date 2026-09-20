@@ -655,14 +655,18 @@ wheels = [
 
 [[package]]
 name = "opendecision"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi" },
     { name = "torch" },
     { name = "transformers" },
-    { name = "typesafe-sdk" },
     { name = "uvicorn" },
+]
+
+[package.optional-dependencies]
+typesafe = [
+    { name = "typesafe-sdk" },
 ]
 
 [package.dev-dependencies]
@@ -676,9 +680,10 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.141.1" },
     { name = "torch", specifier = ">=2.14.0" },
     { name = "transformers", specifier = ">=5.17.0" },
-    { name = "typesafe-sdk", specifier = ">=0.6.0" },
+    { name = "typesafe-sdk", marker = "extra == 'typesafe'", specifier = ">=0.6.0" },
     { name = "uvicorn", specifier = ">=0.53.0" },
 ]
+provides-extras = ["typesafe"]
 
 [package.metadata.requires-dev]
 dev = [

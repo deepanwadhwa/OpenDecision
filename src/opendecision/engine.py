@@ -4,6 +4,8 @@ import math
 import torch
 from transformers import pipeline
 
+from opendecision.evidence import EvidenceBackend, NliEvidenceBackend
+
 
 DEFAULT_MODEL = "MoritzLaurer/ModernBERT-large-zeroshot-v2.0"
 DEFAULT_BATCH_SIZE = 8
@@ -83,6 +85,7 @@ class OpenDecisionEngine:
         model: str = DEFAULT_MODEL,
         device=None,
         batch_size: int = DEFAULT_BATCH_SIZE,
+        evidence_backend: EvidenceBackend | None = None,
     ):
         if batch_size < 1:
             raise ValueError("batch_size must be at least 1.")
@@ -99,6 +102,15 @@ class OpenDecisionEngine:
             device=device,
         )
         self.batch_size = batch_size
+        self.evidence_backend = (
+            evidence_backend
+            if evidence_backend is not None
+            else NliEvidenceBackend(
+                classifier=self.classifier,
+                batch_size=self.batch_size,
+                serializer=_serialize_state,
+            )
+        )
 
     def _inference_batch_size(self, item_count: int) -> int:
         return min(self.batch_size, item_count)
@@ -472,6 +484,49 @@ class OpenDecisionEngine:
         entailment_id = model.config.label2id["entailment"]
 
         return float(logits[entailment_id])
+
+    def relations(
+        self,
+        *,
+        items: Sequence[Mapping[str, Any]],
+        threshold: float = 0.5,
+    ) -> list[dict]:
+        return self.evidence_backend.relations(
+            items=items,
+            threshold=threshold,
+        )
+
+    def relation(
+        self,
+        *,
+        state: Any,
+        proposition: str,
+        contradiction: str,
+        threshold: float = 0.5,
+    ) -> dict:
+        return self.evidence_backend.relation(
+            state=state,
+            proposition=proposition,
+            contradiction=contradiction,
+            threshold=threshold,
+        )
+
+    def rank_evidence(
+        self,
+        *,
+        evidence: Sequence[Mapping[str, Any]],
+        proposition: str,
+        contradiction: str | None = None,
+        top_k: int | None = None,
+        anchors: Sequence[str] | None = None,
+    ) -> list[dict]:
+        return self.evidence_backend.rank_evidence(
+            evidence=evidence,
+            proposition=proposition,
+            contradiction=contradiction,
+            top_k=top_k,
+            anchors=anchors,
+        )
 
     def noul(
         self,

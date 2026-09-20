@@ -1,0 +1,16 @@
+{
+  "covered": true,
+  "exclusion": false,
+  "on_circuit": false,
+  "deductible": true,
+  "docs_sufficient": false,
+  "within_limit": true,
+  "within_window": true,
+  "reported_timely": true,
+  "rental_eligible": false,
+  "fraud_flag": false,
+  "human_review": true,
+  "manual_review": true,
+  "line_items_sum": true,
+  "subrogation": true
+}

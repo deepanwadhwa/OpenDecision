@@ -92,6 +92,22 @@ def test_noul_with_criteria(engine):
     assert result["noul"] > 0.5
 
 
+def test_relation_with_explicit_opposite(engine):
+    result = engine.relation(
+        state="Cervical spine X-ray: No acute fracture or dislocation.",
+        proposition=(
+            "The X-ray found no acute fracture or dislocation."
+        ),
+        contradiction=(
+            "The X-ray found an acute fracture or dislocation."
+        ),
+    )
+
+    assert result["type"] == "relation"
+    assert result["relation"] == "supports"
+    assert result["scores"]["supports"] > 0.5
+
+
 def test_score_high(engine):
     result = engine.score(
         state=(

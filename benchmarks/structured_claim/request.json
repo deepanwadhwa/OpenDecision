@@ -1,0 +1,125 @@
+{
+  "document": {
+    "policy": {
+      "policy_id": "AP-77413",
+      "policyholder": "Dana M.",
+      "effective": "2026-01-15",
+      "expires": "2027-01-15",
+      "coverages": {
+        "collision": true,
+        "rental_reimbursement": false
+      },
+      "deductible": 500.0,
+      "per_incident_limit": 10000.0,
+      "listed_drivers": [
+        "Dana M.",
+        "Sam M."
+      ],
+      "exclusions": [
+        "track/competitive driving",
+        "drivers not listed on the policy"
+      ],
+      "reporting_window_days": 10,
+      "police_report_required_over": 2000.0
+    },
+    "claim": {
+      "claim_id": "CLM-55029",
+      "incident_date": "2026-06-28",
+      "reported_date": "2026-07-04",
+      "driver": "Sam M.",
+      "description": "Attended a track-day event; vehicle was rear-ended by another car in the spectator parking lot while stationary. Not on the circuit.",
+      "amount_claimed": 3250.0,
+      "line_items": [
+        {
+          "item": "rear bumper replacement",
+          "cost": 1700.0
+        },
+        {
+          "item": "paint + refinish",
+          "cost": 800.0
+        },
+        {
+          "item": "parking-sensor recalibration",
+          "cost": 450.0
+        },
+        {
+          "item": "rental car (6 days)",
+          "cost": 300.0
+        }
+      ],
+      "documentation": [
+        "repair estimate (PDF)",
+        "8 damage photos"
+      ]
+    },
+    "adjuster_notes": [
+      {
+        "author": "auto-triage",
+        "note": "Collision coverage active. Approved. Pay full amount $3,250 to policyholder, 5-10 business days."
+      }
+    ],
+    "claim_history": {
+      "claims_last_12mo": 2,
+      "prior_denied": 0
+    }
+  },
+  "noul_mode": "both",
+  "questions": {
+    "covered": {
+      "type": "noul",
+      "instructions": "Is the loss covered under the policy's collision coverage?"
+    },
+    "exclusion": {
+      "type": "noul",
+      "instructions": "Does a policy exclusion apply to this loss?"
+    },
+    "on_circuit": {
+      "type": "noul",
+      "instructions": "Did the collision happen while the vehicle was being driven on the racetrack itself?"
+    },
+    "deductible": {
+      "type": "noul",
+      "instructions": "Would the $500 deductible be correctly applied before any payout?"
+    },
+    "docs_sufficient": {
+      "type": "noul",
+      "instructions": "Is the attached documentation sufficient to adjudicate the claim as-is?"
+    },
+    "within_limit": {
+      "type": "noul",
+      "instructions": "Is the amount claimed within the per-incident coverage limit?"
+    },
+    "within_window": {
+      "type": "noul",
+      "instructions": "Did the loss occur within the policy's active coverage period?"
+    },
+    "reported_timely": {
+      "type": "noul",
+      "instructions": "Was the loss reported within the policy's required window?"
+    },
+    "rental_eligible": {
+      "type": "noul",
+      "instructions": "Is the rental-car cost eligible for reimbursement under this policy?"
+    },
+    "fraud_flag": {
+      "type": "noul",
+      "instructions": "Are there indicators that warrant a fraud review?"
+    },
+    "human_review": {
+      "type": "noul",
+      "instructions": "Was payment approved by automated triage without a human adjuster's review?"
+    },
+    "manual_review": {
+      "type": "noul",
+      "instructions": "Should this claim be routed for manual/supervisor review before payout?"
+    },
+    "line_items_sum": {
+      "type": "noul",
+      "instructions": "Do the claimed line-item costs add up to the total amount claimed?"
+    },
+    "subrogation": {
+      "type": "noul",
+      "instructions": "Is there a potentially at-fault third party the insurer could pursue for subrogation recovery?"
+    }
+  }
+}

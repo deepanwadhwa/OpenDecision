@@ -1,0 +1,151 @@
+{
+  "document": "tests/GDPR_wiki_test.txt",
+  "model": "tasksource/ModernBERT-large-nli",
+  "characters": 54171,
+  "summary": {
+    "objective_correct": 9,
+    "objective_total": 10,
+    "objective_accuracy": 0.9,
+    "score_questions": 3
+  },
+  "results": [
+    {
+      "id": "breach_72h",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "metric": 0.703167200088501
+    },
+    {
+      "id": "applies_non_eu",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "metric": 0.9782895445823669
+    },
+    {
+      "id": "dpo_all_orgs",
+      "type": "noul",
+      "expected": false,
+      "predicted": true,
+      "correct": false,
+      "metric": 0.6070675253868103
+    },
+    {
+      "id": "pre_ticked_consent",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "metric": 0.05801701545715332
+    },
+    {
+      "id": "right_erasure",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "metric": 0.6029364466667175
+    },
+    {
+      "id": "data_portability",
+      "type": "noul",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "metric": 0.6219079494476318
+    },
+    {
+      "id": "us_federal_law",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "metric": 0.057137660682201385
+    },
+    {
+      "id": "criminal_penalties",
+      "type": "noul",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "metric": 0.07288875430822372
+    },
+    {
+      "id": "instrument_type",
+      "type": "choice",
+      "expected": "Regulation",
+      "predicted": "Regulation",
+      "correct": true,
+      "metric": 0.6521276831626892,
+      "probabilities": {
+        "Regulation": 0.6521276831626892,
+        "Directive": 0.17375562340021133,
+        "Treaty": 0.05883941426873207,
+        "Recommendation": 0.11527733877301216
+      }
+    },
+    {
+      "id": "max_fine",
+      "type": "choice",
+      "expected": "TwentyM_or_4pct",
+      "predicted": "TwentyM_or_4pct",
+      "correct": true,
+      "metric": 0.40198278427124023,
+      "probabilities": {
+        "TwentyM_or_4pct": 0.40198278427124023,
+        "TenM_or_2pct": 0.2510477975010872,
+        "FixedCap": 0.16841061413288116,
+        "NoFines": 0.17855878546833992
+      }
+    },
+    {
+      "id": "individual_rights",
+      "type": "score",
+      "expected": 3,
+      "predicted": 2,
+      "correct": false,
+      "score": 2.3395874425768852,
+      "metric": 0.7798624808589617,
+      "probabilities": {
+        "0": 0.11090568453073502,
+        "1": 0.06669750064611435,
+        "2": 0.19430036842823029,
+        "3": 0.6280964016914368
+      }
+    },
+    {
+      "id": "penalty_severity",
+      "type": "score",
+      "expected": 3,
+      "predicted": 2,
+      "correct": false,
+      "score": 1.7582958787679672,
+      "metric": 0.5860986262559891,
+      "probabilities": {
+        "0": 0.1474834829568863,
+        "1": 0.07755228877067566,
+        "2": 0.6441491842269897,
+        "3": 0.1308150738477707
+      }
+    },
+    {
+      "id": "compliance_burden",
+      "type": "score",
+      "expected": 3,
+      "predicted": 3,
+      "correct": true,
+      "score": 2.5152553766965866,
+      "metric": 0.6288138441741467,
+      "probabilities": {
+        "0": 0.04703820124268532,
+        "1": 0.1029273122549057,
+        "2": 0.3318801820278168,
+        "3": 0.324049711227417,
+        "4": 0.1941046416759491
+      }
+    }
+  ]
+}

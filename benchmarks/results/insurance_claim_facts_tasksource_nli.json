@@ -1,0 +1,250 @@
+{
+  "summary": {
+    "correct": 17,
+    "total": 17,
+    "accuracy": 1.0,
+    "threshold": 0.5
+  },
+  "results": [
+    {
+      "id": "police_rear_impact",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.8988308906555176,
+        "contradicts": 0.09097103774547577,
+        "unknown": 0.01019810326397419
+      },
+      "source_ids": [
+        "police_report:narrative"
+      ]
+    },
+    {
+      "id": "witness_rear_impact",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9981232285499573,
+        "contradicts": 7.398812886094674e-05,
+        "unknown": 0.001802764367312193
+      },
+      "source_ids": [
+        "police_report:witness"
+      ]
+    },
+    {
+      "id": "no_acute_fracture",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.993178129196167,
+        "contradicts": 0.00032290283706970513,
+        "unknown": 0.006499053910374641
+      },
+      "source_ids": [
+        "emergency_department:imaging"
+      ]
+    },
+    {
+      "id": "no_neurological_deficit",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9965053796768188,
+        "contradicts": 0.00020580283307936043,
+        "unknown": 0.0032888816203922033
+      },
+      "source_ids": [
+        "emergency_department:examination"
+      ]
+    },
+    {
+      "id": "discharged_home",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9953742623329163,
+        "contradicts": 0.0002619170118123293,
+        "unknown": 0.004363863728940487
+      },
+      "source_ids": [
+        "emergency_department:disposition"
+      ]
+    },
+    {
+      "id": "no_hospitalization",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.994147777557373,
+        "contradicts": 0.0010203442070633173,
+        "unknown": 0.004831790924072266
+      },
+      "source_ids": [
+        "adjuster_note:injury_summary"
+      ]
+    },
+    {
+      "id": "prior_neck_stiffness",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9838448166847229,
+        "contradicts": 0.003998120781034231,
+        "unknown": 0.012157096527516842
+      },
+      "source_ids": [
+        "prior_medical_record:history"
+      ]
+    },
+    {
+      "id": "prior_no_imaging",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9947808384895325,
+        "contradicts": 0.0013207666343078017,
+        "unknown": 0.0038982934784144163
+      },
+      "source_ids": [
+        "prior_medical_record:treatment"
+      ]
+    },
+    {
+      "id": "prior_no_prescription",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9965404868125916,
+        "contradicts": 0.00083310337504372,
+        "unknown": 0.002626366913318634
+      },
+      "source_ids": [
+        "prior_medical_record:treatment"
+      ]
+    },
+    {
+      "id": "prior_no_active_treatment",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.972396731376648,
+        "contradicts": 0.0010033322032541037,
+        "unknown": 0.026599958539009094
+      },
+      "source_ids": [
+        "adjuster_note:prior_condition_summary"
+      ]
+    },
+    {
+      "id": "employer_two_absences",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.8298782706260681,
+        "contradicts": 0.0900803729891777,
+        "unknown": 0.08004134148359299
+      },
+      "source_ids": [
+        "employment_statement:verification"
+      ]
+    },
+    {
+      "id": "employer_no_wage_calculation",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.8858763575553894,
+        "contradicts": 0.0015274247853085399,
+        "unknown": 0.11259615421295166
+      },
+      "source_ids": [
+        "employment_statement:verification"
+      ]
+    },
+    {
+      "id": "pickup_confirmation_outstanding",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9545134902000427,
+        "contradicts": 0.0059288740158081055,
+        "unknown": 0.03955768421292305
+      },
+      "source_ids": [
+        "file_status:outstanding"
+      ]
+    },
+    {
+      "id": "payroll_statement_outstanding",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9771538972854614,
+        "contradicts": 0.0010599051602184772,
+        "unknown": 0.02178618684411049
+      },
+      "source_ids": [
+        "file_status:outstanding"
+      ]
+    },
+    {
+      "id": "emergency_bill_matches_demand",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9899981617927551,
+        "contradicts": 0.002047416754066944,
+        "unknown": 0.00795446801930666
+      },
+      "source_ids": [
+        "medical_bill:total",
+        "claimant_demand:medical_amount"
+      ]
+    },
+    {
+      "id": "therapy_bill_matches_demand",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.9866237044334412,
+        "contradicts": 0.005102808587253094,
+        "unknown": 0.008273513056337833
+      },
+      "source_ids": [
+        "physical_therapy_bill:total",
+        "claimant_demand:therapy_amount"
+      ]
+    },
+    {
+      "id": "claimant_collision_mechanism",
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "scores": {
+        "supports": 0.8924574255943298,
+        "contradicts": 0.013352964073419571,
+        "unknown": 0.09418970346450806
+      },
+      "source_ids": [
+        "claim_intake:collision_account"
+      ]
+    }
+  ]
+}

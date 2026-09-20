@@ -1,0 +1,208 @@
+{
+  "document": "tests/GDPR_wiki_test.txt",
+  "model": "tasksource/ModernBERT-large-nli",
+  "characters": 54171,
+  "sections": 31,
+  "top_k": 4,
+  "summary": {
+    "objective_correct": 9,
+    "objective_total": 10,
+    "objective_accuracy": 0.9,
+    "score_questions": 3
+  },
+  "results": [
+    {
+      "id": "breach_72h",
+      "type": "noul_via_relation",
+      "expected": true,
+      "predicted": true,
+      "relation": "supports",
+      "correct": true,
+      "metric": 0.9685455560684204,
+      "sources": [
+        "Security of personal data",
+        "Controller and processor",
+        "GDPR Certification",
+        "Website views and revenue"
+      ]
+    },
+    {
+      "id": "applies_non_eu",
+      "type": "noul_via_relation",
+      "expected": true,
+      "predicted": true,
+      "relation": "supports",
+      "correct": true,
+      "metric": 0.981421947479248,
+      "sources": [
+        "Applicability outside of the European Union",
+        "Misconceptions",
+        "Enforcement and inconsistency",
+        "GDPR Certification"
+      ]
+    },
+    {
+      "id": "dpo_all_orgs",
+      "type": "noul_via_relation",
+      "expected": false,
+      "predicted": false,
+      "relation": "contradicts",
+      "correct": true,
+      "metric": 0.05776030942797661,
+      "sources": [
+        "Controller and processor",
+        "Data protection officer",
+        "Reception",
+        "EU Representative"
+      ]
+    },
+    {
+      "id": "pre_ticked_consent",
+      "type": "noul_via_relation",
+      "expected": false,
+      "predicted": false,
+      "relation": "contradicts",
+      "correct": true,
+      "metric": 0.016712915152311325,
+      "sources": [
+        "Principles and lawful purposes",
+        "Enforcement and inconsistency",
+        "Website views and revenue",
+        "GDPR Certification"
+      ]
+    },
+    {
+      "id": "right_erasure",
+      "type": "noul_via_relation",
+      "expected": true,
+      "predicted": true,
+      "relation": "supports",
+      "correct": true,
+      "metric": 0.9113265872001648,
+      "sources": [
+        "Rectification and erasure",
+        "Controller and processor",
+        "Misconceptions",
+        "Information and access"
+      ]
+    },
+    {
+      "id": "data_portability",
+      "type": "noul_via_relation",
+      "expected": true,
+      "predicted": true,
+      "relation": "supports",
+      "correct": true,
+      "metric": 0.9629596471786499,
+      "sources": [
+        "Information and access",
+        "Controller and processor",
+        "Remedies, liability and penalties",
+        "Third countries"
+      ]
+    },
+    {
+      "id": "us_federal_law",
+      "type": "noul_via_relation",
+      "expected": false,
+      "predicted": false,
+      "relation": "contradicts",
+      "correct": true,
+      "metric": 0.001938405679538846,
+      "sources": [
+        "Misconceptions",
+        "United Kingdom implementation",
+        "GDPR Certification",
+        "Impact"
+      ]
+    },
+    {
+      "id": "criminal_penalties",
+      "type": "noul_via_relation",
+      "expected": false,
+      "predicted": false,
+      "relation": "contradicts",
+      "correct": true,
+      "metric": 0.006228996440768242,
+      "sources": [
+        "Remedies, liability and penalties",
+        "GDPR Certification",
+        "See also",
+        "Third countries"
+      ]
+    },
+    {
+      "id": "instrument_type",
+      "type": "choice",
+      "expected": "Regulation",
+      "predicted": "Directive",
+      "correct": false,
+      "metric": 0.32814955711364746,
+      "sources": [
+        "Impact",
+        "Controller and processor",
+        "Records of processing activities",
+        "Enforcement and inconsistency"
+      ]
+    },
+    {
+      "id": "max_fine",
+      "type": "choice",
+      "expected": "TwentyM_or_4pct",
+      "predicted": "TwentyM_or_4pct",
+      "correct": true,
+      "metric": 0.8946785926818848,
+      "sources": [
+        "Principles and lawful purposes",
+        "Controller and processor",
+        "Information and access",
+        "Pseudonymisation"
+      ]
+    },
+    {
+      "id": "individual_rights",
+      "type": "score",
+      "expected": 3,
+      "predicted": 1,
+      "correct": false,
+      "score": 1.492038533091545,
+      "metric": 0.4973461776971817,
+      "sources": [
+        "Right to compensation",
+        "GDPR Certification",
+        "Data protection officer",
+        "Principles and lawful purposes"
+      ]
+    },
+    {
+      "id": "penalty_severity",
+      "type": "score",
+      "expected": 3,
+      "predicted": 2,
+      "correct": false,
+      "score": 1.6568720042705536,
+      "metric": 0.5522906680901846,
+      "sources": [
+        "GDPR Certification",
+        "Data protection officer",
+        "Information and access",
+        "Principles and lawful purposes"
+      ]
+    },
+    {
+      "id": "compliance_burden",
+      "type": "score",
+      "expected": 3,
+      "predicted": 2,
+      "correct": false,
+      "score": 1.647078961133957,
+      "metric": 0.4117697402834892,
+      "sources": [
+        "Remedies, liability and penalties",
+        "Information and access",
+        "EU Representative",
+        "Right to object and automated decisions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+[
+  {
+    "id": "independent_liability_support",
+    "expected": "established",
+    "rule": {"any": ["police_rear_impact", "witness_rear_impact"]}
+  },
+  {
+    "id": "prompt_medical_treatment",
+    "expected": "established",
+    "rule": "treatment_within_24_hours"
+  },
+  {
+    "id": "serious_injury_documented",
+    "expected": "refuted",
+    "rule": {
+      "any": [
+        {"not": "no_acute_fracture"},
+        {"not": "no_neurological_deficit"},
+        {"not": "no_hospitalization"}
+      ]
+    }
+  },
+  {
+    "id": "preexisting_neck_condition",
+    "expected": "established",
+    "rule": "prior_neck_stiffness"
+  },
+  {
+    "id": "prior_active_treatment",
+    "expected": "refuted",
+    "rule": {
+      "any": [
+        {"not": "prior_no_imaging"},
+        {"not": "prior_no_prescription"},
+        {"not": "prior_no_active_treatment"}
+      ]
+    }
+  },
+  {
+    "id": "lost_wages_fully_supported",
+    "expected": "refuted",
+    "rule": {
+      "all": [
+        {"not": "employer_two_absences"},
+        {"not": "employer_no_wage_calculation"}
+      ]
+    }
+  },
+  {
+    "id": "rental_fully_supported",
+    "expected": "unknown",
+    "rule": "rental_necessity_established"
+  },
+  {
+    "id": "documents_outstanding",
+    "expected": "established",
+    "rule": {
+      "any": [
+        "payroll_statement_outstanding",
+        "pickup_confirmation_outstanding"
+      ]
+    }
+  },
+  {
+    "id": "medical_expenses_documented",
+    "expected": "established",
+    "rule": {
+      "all": [
+        "emergency_bill_matches_demand",
+        "therapy_bill_matches_demand"
+      ]
+    }
+  },
+  {
+    "id": "collision_accounts_consistent",
+    "expected": "established",
+    "rule": {
+      "all": [
+        "claimant_collision_mechanism",
+        "police_rear_impact",
+        "witness_rear_impact"
+      ]
+    }
+  }
+]

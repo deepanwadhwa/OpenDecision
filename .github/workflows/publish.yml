@@ -1,0 +1,58 @@
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    name: Build distributions
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Install Python
+        run: uv python install 3.13
+
+      - name: Check release tag
+        run: test "v$(uv version --short)" = "$GITHUB_REF_NAME"
+
+      - name: Build wheel and source distribution
+        run: uv build --python 3.13 --clear
+
+      - name: Check distribution metadata
+        run: uvx twine check dist/*
+
+      - name: Upload distributions
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-distributions
+          path: dist/
+          if-no-files-found: error
+
+  publish:
+    name: Publish distributions
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/opendecision/
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Download distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: python-distributions
+          path: dist/
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

@@ -1,0 +1,259 @@
+{
+  "summary": {
+    "correct": 10,
+    "total": 10,
+    "accuracy": 1.0
+  },
+  "results": [
+    {
+      "id": "independent_liability_support",
+      "expected": "established",
+      "predicted": "established",
+      "correct": true,
+      "trace": {
+        "op": "any",
+        "status": "established",
+        "children": [
+          {
+            "op": "fact",
+            "fact": "police_rear_impact",
+            "status": "established"
+          },
+          {
+            "op": "fact",
+            "fact": "witness_rear_impact",
+            "status": "established"
+          }
+        ]
+      }
+    },
+    {
+      "id": "prompt_medical_treatment",
+      "expected": "established",
+      "predicted": "established",
+      "correct": true,
+      "trace": {
+        "op": "fact",
+        "fact": "treatment_within_24_hours",
+        "status": "established"
+      }
+    },
+    {
+      "id": "serious_injury_documented",
+      "expected": "refuted",
+      "predicted": "refuted",
+      "correct": true,
+      "trace": {
+        "op": "any",
+        "status": "refuted",
+        "children": [
+          {
+            "op": "not",
+            "status": "refuted",
+            "children": [
+              {
+                "op": "fact",
+                "fact": "no_acute_fracture",
+                "status": "established"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "status": "refuted",
+            "children": [
+              {
+                "op": "fact",
+                "fact": "no_neurological_deficit",
+                "status": "established"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "status": "refuted",
+            "children": [
+              {
+                "op": "fact",
+                "fact": "no_hospitalization",
+                "status": "established"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "preexisting_neck_condition",
+      "expected": "established",
+      "predicted": "established",
+      "correct": true,
+      "trace": {
+        "op": "fact",
+        "fact": "prior_neck_stiffness",
+        "status": "established"
+      }
+    },
+    {
+      "id": "prior_active_treatment",
+      "expected": "refuted",
+      "predicted": "refuted",
+      "correct": true,
+      "trace": {
+        "op": "any",
+        "status": "refuted",
+        "children": [
+          {
+            "op": "not",
+            "status": "refuted",
+            "children": [
+              {
+                "op": "fact",
+                "fact": "prior_no_imaging",
+                "status": "established"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "status": "refuted",
+            "children": [
+              {
+                "op": "fact",
+                "fact": "prior_no_prescription",
+                "status": "established"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "status": "refuted",
+            "children": [
+              {
+                "op": "fact",
+                "fact": "prior_no_active_treatment",
+                "status": "established"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "lost_wages_fully_supported",
+      "expected": "refuted",
+      "predicted": "refuted",
+      "correct": true,
+      "trace": {
+        "op": "all",
+        "status": "refuted",
+        "children": [
+          {
+            "op": "not",
+            "status": "refuted",
+            "children": [
+              {
+                "op": "fact",
+                "fact": "employer_two_absences",
+                "status": "established"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "status": "refuted",
+            "children": [
+              {
+                "op": "fact",
+                "fact": "employer_no_wage_calculation",
+                "status": "established"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "rental_fully_supported",
+      "expected": "unknown",
+      "predicted": "unknown",
+      "correct": true,
+      "trace": {
+        "op": "fact",
+        "fact": "rental_necessity_established",
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "documents_outstanding",
+      "expected": "established",
+      "predicted": "established",
+      "correct": true,
+      "trace": {
+        "op": "any",
+        "status": "established",
+        "children": [
+          {
+            "op": "fact",
+            "fact": "payroll_statement_outstanding",
+            "status": "established"
+          },
+          {
+            "op": "fact",
+            "fact": "pickup_confirmation_outstanding",
+            "status": "established"
+          }
+        ]
+      }
+    },
+    {
+      "id": "medical_expenses_documented",
+      "expected": "established",
+      "predicted": "established",
+      "correct": true,
+      "trace": {
+        "op": "all",
+        "status": "established",
+        "children": [
+          {
+            "op": "fact",
+            "fact": "emergency_bill_matches_demand",
+            "status": "established"
+          },
+          {
+            "op": "fact",
+            "fact": "therapy_bill_matches_demand",
+            "status": "established"
+          }
+        ]
+      }
+    },
+    {
+      "id": "collision_accounts_consistent",
+      "expected": "established",
+      "predicted": "established",
+      "correct": true,
+      "trace": {
+        "op": "all",
+        "status": "established",
+        "children": [
+          {
+            "op": "fact",
+            "fact": "claimant_collision_mechanism",
+            "status": "established"
+          },
+          {
+            "op": "fact",
+            "fact": "police_rear_impact",
+            "status": "established"
+          },
+          {
+            "op": "fact",
+            "fact": "witness_rear_impact",
+            "status": "established"
+          }
+        ]
+      }
+    }
+  ]
+}

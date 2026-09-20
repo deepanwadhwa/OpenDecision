@@ -1,0 +1,545 @@
+CLAIM FILE: AUTO-2026-04187
+Policyholder: Elena Ramirez
+Policy Number: AU-8841932
+Carrier: Northstar Mutual Insurance
+Claim Status: Open
+Date Opened: April 18, 2026
+
+
+============================================================
+CLAIM INTAKE FORM
+============================================================
+
+Claimant Name: Elena Ramirez
+Address: 418 Pine Ridge Drive, Asheville, NC 28803
+Phone: (828) 555-0147
+Email: elena.ramirez@example.com
+
+Policy Effective Dates:
+January 1, 2026 – January 1, 2027
+
+Vehicle:
+2022 Toyota RAV4 XLE
+VIN: 2T3P1RFV8NC184921
+License Plate: NC HLR-4821
+
+Reported Date of Loss:
+April 16, 2026
+
+Reported Time of Loss:
+Approximately 6:40 PM
+
+Location of Loss:
+Intersection of Hendersonville Road and Sweeten Creek Road,
+Asheville, North Carolina
+
+Claimant Statement:
+
+"I was driving north on Hendersonville Road when traffic slowed
+near the intersection. I stopped behind another vehicle. A few
+seconds later I felt a hard impact from behind and my car was
+pushed forward.
+
+I had pain in my neck almost immediately but thought it might go
+away. I drove home after the accident. The next morning my neck
+and upper back were much worse, so my husband took me to the
+emergency room.
+
+The rear bumper and liftgate of my vehicle were damaged. The
+other driver apologized and said he had been looking down at his
+phone."
+
+
+Passengers:
+None reported.
+
+Police Responded:
+Yes
+
+Vehicle Tow Required:
+No
+
+Injury Reported:
+Yes – neck and upper back pain
+
+
+============================================================
+POLICE REPORT SUMMARY
+============================================================
+
+Agency:
+Asheville Police Department
+
+Report Number:
+APD-26-0416-773
+
+Incident Date:
+April 16, 2026
+
+Incident Time:
+18:43
+
+Vehicles Involved:
+Vehicle 1 – 2022 Toyota RAV4, operated by Elena Ramirez
+Vehicle 2 – 2019 Ford F-150, operated by Marcus Hill
+
+Narrative Summary:
+
+Vehicle 1 was stopped in the northbound traffic lane at a red
+traffic signal. Vehicle 2 failed to stop and struck the rear of
+Vehicle 1.
+
+Driver of Vehicle 2 stated that traffic stopped more quickly than
+expected and that he was unable to stop in time.
+
+No citations were issued at the scene.
+
+Both drivers declined ambulance transport.
+
+The driver of Vehicle 1 reported mild neck discomfort but stated
+that she intended to seek medical evaluation if symptoms
+continued.
+
+Vehicle 1 showed visible damage to the rear bumper and lower
+liftgate.
+
+Vehicle 2 showed minor front bumper damage.
+
+Witnesses:
+One witness, Daniel Cho, reported seeing Vehicle 2 strike the rear
+of Vehicle 1 while Vehicle 1 was stationary.
+
+
+============================================================
+EMERGENCY DEPARTMENT RECORD
+============================================================
+
+Facility:
+Mission Hospital Emergency Department
+
+Patient:
+Elena Ramirez
+
+Date of Service:
+April 17, 2026
+
+Arrival Time:
+09:18 AM
+
+Chief Complaint:
+Neck pain and upper back pain following motor vehicle collision.
+
+History of Present Illness:
+
+Patient is a 38-year-old female presenting after a motor vehicle
+collision yesterday evening.
+
+Patient reports that she was the restrained driver of a vehicle
+that was struck from behind while stopped at an intersection.
+
+No airbag deployment.
+
+Patient denies loss of consciousness, head strike, dizziness,
+vomiting, numbness, or weakness.
+
+Patient reports increasing stiffness overnight, primarily in the
+left side of the neck and upper thoracic region.
+
+Pain reported as 6/10 with movement and 3/10 while resting.
+
+Physical Examination:
+
+Alert and oriented.
+
+No acute distress.
+
+Tenderness over left cervical paraspinal muscles.
+
+Mild tenderness across upper thoracic musculature.
+
+No midline cervical spine tenderness.
+
+Full strength in upper and lower extremities.
+
+No neurological deficit observed.
+
+Imaging:
+
+Cervical spine X-ray:
+No acute fracture or dislocation.
+
+Assessment:
+
+Cervical strain following motor vehicle collision.
+
+Thoracic muscular strain.
+
+Treatment:
+
+Ibuprofen 600 mg administered.
+
+Cyclobenzaprine prescribed as needed for muscle spasm.
+
+Patient instructed to use heat, perform gentle range-of-motion
+exercises, and follow up with primary care if symptoms persist.
+
+Disposition:
+
+Discharged home in stable condition.
+
+
+============================================================
+MEDICAL BILL
+============================================================
+
+Mission Hospital
+Account Number: MH-67190381
+
+Date of Service:
+April 17, 2026
+
+Emergency Department Evaluation             $1,180.00
+Cervical Spine X-Ray                         $420.00
+Radiology Interpretation                     $165.00
+Medication Administration                     $48.00
+Facility Charge                              $690.00
+
+TOTAL CHARGES:                             $2,503.00
+
+
+============================================================
+PHYSICAL THERAPY RECORD
+============================================================
+
+Provider:
+Blue Ridge Physical Therapy
+
+Initial Evaluation:
+April 24, 2026
+
+Referral Diagnosis:
+Cervical strain following motor vehicle accident.
+
+Patient reports continued stiffness and intermittent neck pain,
+particularly after working at a computer for several hours.
+
+Patient states symptoms have improved since the first several days
+after the collision.
+
+Pain:
+Current: 3/10
+Worst during previous week: 6/10
+
+Treatment Plan:
+
+Therapeutic exercise
+Postural training
+Soft tissue mobilization
+Home exercise program
+
+Recommended frequency:
+Two visits per week for four weeks.
+
+Progress Note – May 8, 2026:
+
+Patient reports significant improvement.
+
+Pain currently 1–2/10.
+
+Full cervical range of motion with mild discomfort during left
+rotation.
+
+Patient has resumed most normal activities.
+
+Progress Note – May 19, 2026:
+
+Patient reports minimal symptoms.
+
+Patient requested discharge from physical therapy.
+
+Total completed visits:
+5
+
+
+============================================================
+PHYSICAL THERAPY BILL
+============================================================
+
+Initial evaluation                           $210.00
+Therapeutic exercise – 5 visits              $625.00
+Manual therapy – 4 visits                    $360.00
+
+TOTAL:                                     $1,195.00
+
+
+============================================================
+VEHICLE DAMAGE ESTIMATE
+============================================================
+
+Repair Facility:
+Mountain City Collision
+
+Inspection Date:
+April 18, 2026
+
+Vehicle:
+2022 Toyota RAV4 XLE
+
+Damage Observed:
+
+Rear bumper cover cracked
+Rear bumper reinforcement damaged
+Liftgate lower panel dented
+Rear parking sensor bracket damaged
+Minor paint damage to left rear quarter panel
+
+Estimated Repairs:
+
+Rear bumper assembly                        $1,420.00
+Liftgate repair and refinishing               $880.00
+Parking sensor components                     $310.00
+Paint/materials                               $465.00
+Labor                                         $920.00
+
+ESTIMATED TOTAL:                            $3,995.00
+
+Estimated repair duration:
+5–7 business days.
+
+
+============================================================
+RENTAL VEHICLE INVOICE
+============================================================
+
+Provider:
+Carolina Auto Rental
+
+Rental Start:
+April 22, 2026
+
+Rental Return:
+May 2, 2026
+
+Vehicle:
+2025 Nissan Rogue
+
+Daily Rate:
+$47.00
+
+Number of billed days:
+11
+
+Base Rental:
+$517.00
+
+Taxes and fees:
+$74.61
+
+TOTAL:
+$591.61
+
+
+============================================================
+EMPLOYMENT / LOST WAGE STATEMENT
+============================================================
+
+Employer:
+Appalachian Design Group
+
+Employee:
+Elena Ramirez
+
+Position:
+Senior Graphic Designer
+
+Normal Work Schedule:
+Monday–Friday, 8:30 AM–5:00 PM
+
+Hourly Equivalent Compensation:
+$41.25
+
+Claimant reports missing work on:
+
+April 17, 2026
+April 20, 2026
+April 21, 2026
+
+Claimed lost work time:
+24 hours
+
+Claimed lost wages:
+$990.00
+
+Employer Verification:
+
+Human Resources confirmed that Ms. Ramirez was absent on
+April 17 and April 20.
+
+Company records show Ms. Ramirez worked remotely for approximately
+five hours on April 21.
+
+The employer did not provide a calculation of actual wages lost.
+
+
+============================================================
+CLAIMANT FOLLOW-UP STATEMENT
+============================================================
+
+Recorded April 28, 2026
+
+Claimant stated:
+
+"My neck is getting better, but I still have stiffness if I sit at
+my desk too long. I've been going to physical therapy and it seems
+to help.
+
+The repair shop has my vehicle. They told me it should probably be
+ready sometime next week.
+
+I missed about three full days of work because I was sore and
+because of appointments."
+
+
+Adjuster asked whether claimant had experienced neck problems
+before the accident.
+
+Claimant responded:
+
+"I had some neck stiffness a couple years ago from working at a
+computer, but nothing that required treatment."
+
+
+============================================================
+PRIOR MEDICAL RECORD NOTE
+============================================================
+
+Provider:
+Asheville Family Medicine
+
+Date:
+November 3, 2024
+
+Reason for Visit:
+Annual physical.
+
+Patient reported occasional neck and shoulder stiffness associated
+with prolonged computer work.
+
+No injury reported.
+
+No imaging performed.
+
+No prescription medication provided.
+
+Provider recommended workstation adjustment, stretching, and
+regular breaks.
+
+
+============================================================
+REPAIR SHOP FINAL INVOICE
+============================================================
+
+Mountain City Collision
+
+Repair Start:
+April 23, 2026
+
+Repair Completed:
+May 1, 2026
+
+Rear bumper assembly                        $1,387.00
+Liftgate repair                               $845.00
+Parking sensor bracket                        $282.00
+Paint and materials                           $481.00
+Labor                                         $945.00
+
+FINAL REPAIR TOTAL:                         $3,940.00
+
+
+============================================================
+ADJUSTER INTERNAL NOTE
+============================================================
+
+May 5, 2026
+
+Liability appears reasonably clear based on police report and
+rear-impact configuration.
+
+Medical treatment appears temporally related to the collision.
+Emergency department visit occurred the morning following the
+accident.
+
+Prior primary-care record documents intermittent neck stiffness in
+2024, although no prior injury, imaging, or active treatment is
+documented.
+
+Claimant reported three full missed workdays. Employer information
+currently verifies two full absences and approximately three hours
+of absence on April 21.
+
+Rental invoice covers April 22 through May 2. Repair facility
+records indicate repairs began April 23 and were completed May 1.
+
+Need to verify whether rental coverage through May 2 is reasonable
+given vehicle completion date.
+
+No ambulance charges.
+
+No surgery, injections, neurological injury, fracture, or
+hospitalization documented.
+
+Physical therapy course was five visits rather than the eight
+visits initially recommended.
+
+
+============================================================
+CLAIMANT DEMAND
+============================================================
+
+Received:
+May 27, 2026
+
+Claimant requests reimbursement for:
+
+Emergency medical care                    $2,503.00
+Physical therapy                          $1,195.00
+Vehicle repairs                           $3,940.00
+Rental vehicle                              $591.61
+Lost wages                                  $990.00
+Pain and inconvenience                    $4,500.00
+
+TOTAL DEMAND:                            $13,719.61
+
+
+Claimant statement:
+
+"I was not responsible for this accident. The collision caused
+several weeks of pain, required medical treatment and physical
+therapy, caused me to miss work, and left me without my vehicle
+while it was being repaired."
+
+
+============================================================
+CURRENT FILE STATUS
+============================================================
+
+Documents currently present:
+
+[X] Claim intake form
+[X] Police report
+[X] Emergency department record
+[X] Emergency department bill
+[X] Physical therapy records
+[X] Physical therapy invoice
+[X] Repair estimate
+[X] Final repair invoice
+[X] Rental invoice
+[X] Employer verification
+[X] Prior primary-care note
+[X] Claimant demand
+
+Outstanding:
+
+[ ] Detailed payroll statement showing actual wage loss
+[ ] Confirmation from repair facility regarding exact vehicle
+    pickup time

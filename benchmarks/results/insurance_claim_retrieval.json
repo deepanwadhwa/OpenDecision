@@ -1,0 +1,762 @@
+{
+  "summary": {
+    "cases": 17,
+    "top_k": 4,
+    "mean_gold_section_recall": 1.0,
+    "all_gold_retrieved": 17,
+    "relation_correct": 17,
+    "relation_accuracy": 1.0
+  },
+  "results": [
+    {
+      "id": "police_rear_impact",
+      "gold_sections": [
+        "POLICE REPORT SUMMARY"
+      ],
+      "retrieved_sections": [
+        "POLICE REPORT SUMMARY",
+        "EMPLOYMENT / LOST WAGE STATEMENT",
+        "MEDICAL BILL",
+        "PHYSICAL THERAPY BILL"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "POLICE REPORT SUMMARY",
+          "relevance": 0.9712106101214886,
+          "relation": "supports"
+        },
+        {
+          "id": "EMPLOYMENT / LOST WAGE STATEMENT",
+          "relevance": 0.8135903030633926,
+          "relation": "contradicts"
+        },
+        {
+          "id": "MEDICAL BILL",
+          "relevance": 0.7881497293710709,
+          "relation": "contradicts"
+        },
+        {
+          "id": "PHYSICAL THERAPY BILL",
+          "relevance": 0.7831947952508926,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.9834407567977905,
+        "contradicts": 0.00403800792992115,
+        "unknown": 0.012521225959062576
+      }
+    },
+    {
+      "id": "witness_rear_impact",
+      "gold_sections": [
+        "POLICE REPORT SUMMARY"
+      ],
+      "retrieved_sections": [
+        "POLICE REPORT SUMMARY",
+        "EMERGENCY DEPARTMENT RECORD",
+        "PHYSICAL THERAPY BILL",
+        "MEDICAL BILL"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "POLICE REPORT SUMMARY",
+          "relevance": 0.9906928287819028,
+          "relation": "supports"
+        },
+        {
+          "id": "EMERGENCY DEPARTMENT RECORD",
+          "relevance": 0.8344511389732361,
+          "relation": "contradicts"
+        },
+        {
+          "id": "PHYSICAL THERAPY BILL",
+          "relevance": 0.8138284683227539,
+          "relation": "contradicts"
+        },
+        {
+          "id": "MEDICAL BILL",
+          "relevance": 0.805162712931633,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.9918551445007324,
+        "contradicts": 2.0137558749411255e-05,
+        "unknown": 0.008124710991978645
+      }
+    },
+    {
+      "id": "no_acute_fracture",
+      "gold_sections": [
+        "EMERGENCY DEPARTMENT RECORD"
+      ],
+      "retrieved_sections": [
+        "EMERGENCY DEPARTMENT RECORD",
+        "CURRENT FILE STATUS",
+        "EMPLOYMENT / LOST WAGE STATEMENT",
+        "REPAIR SHOP FINAL INVOICE"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "EMERGENCY DEPARTMENT RECORD",
+          "relevance": 0.9970122037921101,
+          "relation": "supports"
+        },
+        {
+          "id": "CURRENT FILE STATUS",
+          "relevance": 0.8783756792545319,
+          "relation": "contradicts"
+        },
+        {
+          "id": "EMPLOYMENT / LOST WAGE STATEMENT",
+          "relevance": 0.8657231777906418,
+          "relation": "contradicts"
+        },
+        {
+          "id": "REPAIR SHOP FINAL INVOICE",
+          "relevance": 0.7680035382509232,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.9961769580841064,
+        "contradicts": 0.00027760310331359506,
+        "unknown": 0.003545433050021529
+      }
+    },
+    {
+      "id": "no_neurological_deficit",
+      "gold_sections": [
+        "EMERGENCY DEPARTMENT RECORD"
+      ],
+      "retrieved_sections": [
+        "CLAIM INTAKE FORM",
+        "EMERGENCY DEPARTMENT RECORD",
+        "PRIOR MEDICAL RECORD NOTE",
+        "CLAIMANT FOLLOW-UP STATEMENT"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "CLAIM INTAKE FORM",
+          "relevance": 0.9912790022790432,
+          "relation": "contradicts"
+        },
+        {
+          "id": "EMERGENCY DEPARTMENT RECORD",
+          "relevance": 0.9903948428109288,
+          "relation": "supports"
+        },
+        {
+          "id": "PRIOR MEDICAL RECORD NOTE",
+          "relevance": 0.7709014713764191,
+          "relation": "supports"
+        },
+        {
+          "id": "CLAIMANT FOLLOW-UP STATEMENT",
+          "relevance": 0.7507560402154922,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.9832777380943298,
+        "contradicts": 0.004191230982542038,
+        "unknown": 0.012530915439128876
+      }
+    },
+    {
+      "id": "discharged_home",
+      "gold_sections": [
+        "EMERGENCY DEPARTMENT RECORD"
+      ],
+      "retrieved_sections": [
+        "EMERGENCY DEPARTMENT RECORD",
+        "PRIOR MEDICAL RECORD NOTE",
+        "VEHICLE DAMAGE ESTIMATE",
+        "PHYSICAL THERAPY BILL"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "EMERGENCY DEPARTMENT RECORD",
+          "relevance": 0.987600146792829,
+          "relation": "supports"
+        },
+        {
+          "id": "PRIOR MEDICAL RECORD NOTE",
+          "relevance": 0.9743748474866152,
+          "relation": "contradicts"
+        },
+        {
+          "id": "VEHICLE DAMAGE ESTIMATE",
+          "relevance": 0.9721660502254963,
+          "relation": "contradicts"
+        },
+        {
+          "id": "PHYSICAL THERAPY BILL",
+          "relevance": 0.9666659347712994,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.9579586386680603,
+        "contradicts": 0.018194295465946198,
+        "unknown": 0.023847106844186783
+      }
+    },
+    {
+      "id": "no_hospitalization",
+      "gold_sections": [
+        "ADJUSTER INTERNAL NOTE"
+      ],
+      "retrieved_sections": [
+        "CLAIM INTAKE FORM",
+        "ADJUSTER INTERNAL NOTE",
+        "CLAIMANT DEMAND",
+        "MEDICAL BILL"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "CLAIM INTAKE FORM",
+          "relevance": 0.9917082199826837,
+          "relation": "contradicts"
+        },
+        {
+          "id": "ADJUSTER INTERNAL NOTE",
+          "relevance": 0.9824899788945913,
+          "relation": "supports"
+        },
+        {
+          "id": "CLAIMANT DEMAND",
+          "relevance": 0.9738644454628229,
+          "relation": "contradicts"
+        },
+        {
+          "id": "MEDICAL BILL",
+          "relevance": 0.9232015311717987,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.9372645616531372,
+        "contradicts": 0.026722749695181847,
+        "unknown": 0.03601270541548729
+      }
+    },
+    {
+      "id": "prior_neck_stiffness",
+      "gold_sections": [
+        "PRIOR MEDICAL RECORD NOTE"
+      ],
+      "retrieved_sections": [
+        "PRIOR MEDICAL RECORD NOTE",
+        "ADJUSTER INTERNAL NOTE",
+        "CLAIM INTAKE FORM",
+        "EMERGENCY DEPARTMENT RECORD"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "PRIOR MEDICAL RECORD NOTE",
+          "relevance": 0.9821533858776093,
+          "relation": "supports"
+        },
+        {
+          "id": "ADJUSTER INTERNAL NOTE",
+          "relevance": 0.6328001022338867,
+          "relation": "supports"
+        },
+        {
+          "id": "CLAIM INTAKE FORM",
+          "relevance": 0.9853239683434367,
+          "relation": "contradicts"
+        },
+        {
+          "id": "EMERGENCY DEPARTMENT RECORD",
+          "relevance": 0.9256216213107109,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.7746741771697998,
+        "contradicts": 0.16364672780036926,
+        "unknown": 0.061679065227508545
+      }
+    },
+    {
+      "id": "prior_no_imaging",
+      "gold_sections": [
+        "PRIOR MEDICAL RECORD NOTE"
+      ],
+      "retrieved_sections": [
+        "PRIOR MEDICAL RECORD NOTE",
+        "MEDICAL BILL",
+        "EMERGENCY DEPARTMENT RECORD",
+        "CURRENT FILE STATUS"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "PRIOR MEDICAL RECORD NOTE",
+          "relevance": 0.9830853659659624,
+          "relation": "supports"
+        },
+        {
+          "id": "MEDICAL BILL",
+          "relevance": 0.9826377313584089,
+          "relation": "contradicts"
+        },
+        {
+          "id": "EMERGENCY DEPARTMENT RECORD",
+          "relevance": 0.9781225156039,
+          "relation": "contradicts"
+        },
+        {
+          "id": "CURRENT FILE STATUS",
+          "relevance": 0.7915260195732117,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.8523929715156555,
+        "contradicts": 0.07874871790409088,
+        "unknown": 0.06885839253664017
+      }
+    },
+    {
+      "id": "prior_no_prescription",
+      "gold_sections": [
+        "PRIOR MEDICAL RECORD NOTE"
+      ],
+      "retrieved_sections": [
+        "EMERGENCY DEPARTMENT RECORD",
+        "PRIOR MEDICAL RECORD NOTE",
+        "EMPLOYMENT / LOST WAGE STATEMENT",
+        "CURRENT FILE STATUS"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "EMERGENCY DEPARTMENT RECORD",
+          "relevance": 0.9777331128716469,
+          "relation": "contradicts"
+        },
+        {
+          "id": "PRIOR MEDICAL RECORD NOTE",
+          "relevance": 0.9494494646787643,
+          "relation": "supports"
+        },
+        {
+          "id": "EMPLOYMENT / LOST WAGE STATEMENT",
+          "relevance": 0.4759504199028015,
+          "relation": "unknown"
+        },
+        {
+          "id": "CURRENT FILE STATUS",
+          "relevance": 0.4702361822128296,
+          "relation": "unknown"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.8452491164207458,
+        "contradicts": 0.019696278497576714,
+        "unknown": 0.1350546032190323
+      }
+    },
+    {
+      "id": "prior_no_active_treatment",
+      "gold_sections": [
+        "ADJUSTER INTERNAL NOTE"
+      ],
+      "retrieved_sections": [
+        "EMERGENCY DEPARTMENT RECORD",
+        "PHYSICAL THERAPY BILL",
+        "PHYSICAL THERAPY RECORD",
+        "ADJUSTER INTERNAL NOTE"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "EMERGENCY DEPARTMENT RECORD",
+          "relevance": 0.9863113928586245,
+          "relation": "contradicts"
+        },
+        {
+          "id": "PHYSICAL THERAPY BILL",
+          "relevance": 0.9817665833979845,
+          "relation": "contradicts"
+        },
+        {
+          "id": "PHYSICAL THERAPY RECORD",
+          "relevance": 0.9771657232195139,
+          "relation": "contradicts"
+        },
+        {
+          "id": "ADJUSTER INTERNAL NOTE",
+          "relevance": 0.9759977478533983,
+          "relation": "supports"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.96900874376297,
+        "contradicts": 0.0077435909770429134,
+        "unknown": 0.023247726261615753
+      }
+    },
+    {
+      "id": "employer_two_absences",
+      "gold_sections": [
+        "EMPLOYMENT / LOST WAGE STATEMENT"
+      ],
+      "retrieved_sections": [
+        "EMPLOYMENT / LOST WAGE STATEMENT",
+        "ADJUSTER INTERNAL NOTE",
+        "PHYSICAL THERAPY BILL",
+        "CLAIMANT FOLLOW-UP STATEMENT"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "EMPLOYMENT / LOST WAGE STATEMENT",
+          "relevance": 0.9496211372315884,
+          "relation": "supports"
+        },
+        {
+          "id": "ADJUSTER INTERNAL NOTE",
+          "relevance": 0.9370226263999939,
+          "relation": "supports"
+        },
+        {
+          "id": "PHYSICAL THERAPY BILL",
+          "relevance": 0.7503095120191574,
+          "relation": "contradicts"
+        },
+        {
+          "id": "CLAIMANT FOLLOW-UP STATEMENT",
+          "relevance": 0.7092097401618958,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.9192603230476379,
+        "contradicts": 0.02203458733856678,
+        "unknown": 0.05870508775115013
+      }
+    },
+    {
+      "id": "employer_no_wage_calculation",
+      "gold_sections": [
+        "EMPLOYMENT / LOST WAGE STATEMENT"
+      ],
+      "retrieved_sections": [
+        "EMPLOYMENT / LOST WAGE STATEMENT",
+        "PHYSICAL THERAPY RECORD",
+        "VEHICLE DAMAGE ESTIMATE",
+        "MEDICAL BILL"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "EMPLOYMENT / LOST WAGE STATEMENT",
+          "relevance": 0.9664189852774143,
+          "relation": "supports"
+        },
+        {
+          "id": "PHYSICAL THERAPY RECORD",
+          "relevance": 0.6671352386474609,
+          "relation": "contradicts"
+        },
+        {
+          "id": "VEHICLE DAMAGE ESTIMATE",
+          "relevance": 0.6276448965072632,
+          "relation": "contradicts"
+        },
+        {
+          "id": "MEDICAL BILL",
+          "relevance": 0.6008559167385101,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.9826975464820862,
+        "contradicts": 0.0033548064529895782,
+        "unknown": 0.01394760049879551
+      }
+    },
+    {
+      "id": "pickup_confirmation_outstanding",
+      "gold_sections": [
+        "CURRENT FILE STATUS"
+      ],
+      "retrieved_sections": [
+        "CURRENT FILE STATUS",
+        "REPAIR SHOP FINAL INVOICE",
+        "CLAIMANT FOLLOW-UP STATEMENT",
+        "VEHICLE DAMAGE ESTIMATE"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "CURRENT FILE STATUS",
+          "relevance": 0.9691993799060583,
+          "relation": "supports"
+        },
+        {
+          "id": "REPAIR SHOP FINAL INVOICE",
+          "relevance": 0.8560755550861359,
+          "relation": "contradicts"
+        },
+        {
+          "id": "CLAIMANT FOLLOW-UP STATEMENT",
+          "relevance": 0.7146499156951904,
+          "relation": "contradicts"
+        },
+        {
+          "id": "VEHICLE DAMAGE ESTIMATE",
+          "relevance": 0.6795378029346466,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.4965119957923889,
+        "contradicts": 0.19201676547527313,
+        "unknown": 0.31147119402885437
+      }
+    },
+    {
+      "id": "payroll_statement_outstanding",
+      "gold_sections": [
+        "CURRENT FILE STATUS"
+      ],
+      "retrieved_sections": [
+        "CURRENT FILE STATUS",
+        "RENTAL VEHICLE INVOICE",
+        "PRIOR MEDICAL RECORD NOTE",
+        "MEDICAL BILL"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "CURRENT FILE STATUS",
+          "relevance": 0.984390627592802,
+          "relation": "supports"
+        },
+        {
+          "id": "RENTAL VEHICLE INVOICE",
+          "relevance": 0.7639857828617096,
+          "relation": "contradicts"
+        },
+        {
+          "id": "PRIOR MEDICAL RECORD NOTE",
+          "relevance": 0.6742750108242035,
+          "relation": "contradicts"
+        },
+        {
+          "id": "MEDICAL BILL",
+          "relevance": 0.6640205383300781,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.8632914423942566,
+        "contradicts": 0.013344205915927887,
+        "unknown": 0.12336431443691254
+      }
+    },
+    {
+      "id": "emergency_bill_matches_demand",
+      "gold_sections": [
+        "CLAIMANT DEMAND",
+        "MEDICAL BILL"
+      ],
+      "retrieved_sections": [
+        "MEDICAL BILL",
+        "CLAIMANT DEMAND",
+        "PHYSICAL THERAPY BILL",
+        "REPAIR SHOP FINAL INVOICE"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "MEDICAL BILL",
+          "relevance": 0.7597520500421524,
+          "relation": "supports"
+        },
+        {
+          "id": "CLAIMANT DEMAND",
+          "relevance": 0.4175528883934021,
+          "relation": "unknown"
+        },
+        {
+          "id": "PHYSICAL THERAPY BILL",
+          "relevance": 0.9272134676575661,
+          "relation": "contradicts"
+        },
+        {
+          "id": "REPAIR SHOP FINAL INVOICE",
+          "relevance": 0.8838010206818581,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.8851777911186218,
+        "contradicts": 0.07837889343500137,
+        "unknown": 0.0364433117210865
+      }
+    },
+    {
+      "id": "therapy_bill_matches_demand",
+      "gold_sections": [
+        "CLAIMANT DEMAND",
+        "PHYSICAL THERAPY BILL"
+      ],
+      "retrieved_sections": [
+        "PHYSICAL THERAPY BILL",
+        "CLAIMANT DEMAND",
+        "VEHICLE DAMAGE ESTIMATE",
+        "REPAIR SHOP FINAL INVOICE"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "PHYSICAL THERAPY BILL",
+          "relevance": 0.9426123537123203,
+          "relation": "supports"
+        },
+        {
+          "id": "CLAIMANT DEMAND",
+          "relevance": 0.3480917811393738,
+          "relation": "unknown"
+        },
+        {
+          "id": "VEHICLE DAMAGE ESTIMATE",
+          "relevance": 0.8469708561897278,
+          "relation": "contradicts"
+        },
+        {
+          "id": "REPAIR SHOP FINAL INVOICE",
+          "relevance": 0.8091342449188232,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.8827115893363953,
+        "contradicts": 0.05102855712175369,
+        "unknown": 0.06625986844301224
+      }
+    },
+    {
+      "id": "claimant_collision_mechanism",
+      "gold_sections": [
+        "CLAIM INTAKE FORM"
+      ],
+      "retrieved_sections": [
+        "EMERGENCY DEPARTMENT RECORD",
+        "CLAIM INTAKE FORM",
+        "PRIOR MEDICAL RECORD NOTE",
+        "CURRENT FILE STATUS"
+      ],
+      "recall": 1.0,
+      "all_gold_retrieved": true,
+      "ranking": [
+        {
+          "id": "EMERGENCY DEPARTMENT RECORD",
+          "relevance": 0.9912122543901205,
+          "relation": "supports"
+        },
+        {
+          "id": "CLAIM INTAKE FORM",
+          "relevance": 0.9840147476643324,
+          "relation": "supports"
+        },
+        {
+          "id": "PRIOR MEDICAL RECORD NOTE",
+          "relevance": 0.9360538944602013,
+          "relation": "contradicts"
+        },
+        {
+          "id": "CURRENT FILE STATUS",
+          "relevance": 0.9066547527909279,
+          "relation": "contradicts"
+        }
+      ],
+      "expected": "supports",
+      "predicted": "supports",
+      "correct": true,
+      "relation_scores": {
+        "supports": 0.9796333312988281,
+        "contradicts": 0.004840914160013199,
+        "unknown": 0.015525724738836288
+      }
+    }
+  ]
+}
