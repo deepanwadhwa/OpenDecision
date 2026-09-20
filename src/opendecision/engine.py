@@ -6,6 +6,7 @@ from transformers import pipeline
 
 
 DEFAULT_MODEL = "MoritzLaurer/ModernBERT-large-zeroshot-v2.0"
+DEFAULT_BATCH_SIZE = 8
 
 
 def _best_device():
@@ -81,7 +82,11 @@ class OpenDecisionEngine:
         self,
         model: str = DEFAULT_MODEL,
         device=None,
+        batch_size: int = DEFAULT_BATCH_SIZE,
     ):
+        if batch_size < 1:
+            raise ValueError("batch_size must be at least 1.")
+
         if device is None:
             device = _best_device()
 
@@ -93,6 +98,10 @@ class OpenDecisionEngine:
             model=model,
             device=device,
         )
+        self.batch_size = batch_size
+
+    def _inference_batch_size(self, item_count: int) -> int:
+        return min(self.batch_size, item_count)
 
     def _classify(
         self,
@@ -136,10 +145,11 @@ class OpenDecisionEngine:
             reverse_mapping[rendered] = name
 
         raw = self.classifier(
-        sequence,
-        candidate_labels=list(rendered_candidates.values()),
-        multi_label=False,
-    )
+            sequence,
+            candidate_labels=list(rendered_candidates.values()),
+            multi_label=False,
+            batch_size=self._inference_batch_size(len(candidates)),
+        )
 
         probabilities = {}
 
@@ -180,6 +190,7 @@ class OpenDecisionEngine:
             candidate_labels=list(criteria),
             multi_label=False,
             hypothesis_template=hypothesis_template,
+            batch_size=self._inference_batch_size(len(criteria)),
         )
 
         probabilities = {}
@@ -261,7 +272,11 @@ class OpenDecisionEngine:
                 f"Unknown hypothesis mode: {hypothesis_mode}"
             )
 
-        raw = self.classifier(sequence, **kwargs)
+        raw = self.classifier(
+            sequence,
+            batch_size=self._inference_batch_size(len(criteria)),
+            **kwargs,
+        )
 
         probabilities = {
             reverse_mapping[label]: float(score)
@@ -352,6 +367,37 @@ class OpenDecisionEngine:
             "confidence": _distribution_confidence(
                 probabilities
             ),
+        }
+
+    def choice_fast(
+        self,
+        *,
+        state: Any,
+        instructions: str,
+        criteria: Mapping[str, str | None],
+    ) -> dict:
+        """Return one zero-shot choice profile without cross-profile arbitration.
+
+        Use this when latency matters more than the additional robustness of
+        :meth:`choice`, such as a real-time control loop with fixed actions.
+        """
+        if len(criteria) < 2:
+            raise ValueError("Choice requires at least two candidates.")
+
+        winner, probabilities = self._choice_profile(
+            state=state,
+            instructions=instructions,
+            criteria=criteria,
+            premise_mode="state",
+            candidate_mode="label_description",
+            hypothesis_mode="default",
+        )
+
+        return {
+            "type": "choice",
+            "choice": winner,
+            "probabilities": probabilities,
+            "confidence": _distribution_confidence(probabilities),
         }
 
     # ---------------------------------------------------------

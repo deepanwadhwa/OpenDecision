@@ -1,0 +1,3 @@
+# Demo-only dependencies. Freedoom and the scenario WAD ship with ViZDoom.
+vizdoom==1.3.0
+opencv-python>=4.10,<6

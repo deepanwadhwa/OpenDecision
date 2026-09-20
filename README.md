@@ -9,6 +9,16 @@
 
 Give it some state, a natural-language question, and answer criteria. It returns a structured decision.
 
+## OpenDecision controls a bot in ViZDoom in real time
+
+**A ~400M zero-shot model navigating and fighting through ViZDoom's Deadly Corridor at wall-clock speed from structured state. Runs locally with no generative LLM and no visual input.**
+
+[Skill 1: goal reached](demos/doom/opendecision-doom-skill1.mp4) · [Skill 3: goal reached](demos/doom/opendecision-doom-skill3.mp4) · [Skill 5: goal reached](demos/doom/opendecision-doom-skill5-hero.mp4) · [run it locally](demos/doom/README.md)
+
+All three use the same ViZDoom seed; asynchronous action timing is still machine-load dependent. The environment uses Freedoom assets; the model sees health, ammo, enemy and goal geometry, and damage—not pixels.
+
+OpenDecision selects tactical actions. The opt-in demo also discloses its game-specific rule router, target-tracking actuator, and one-tic damage reflex in the on-screen panel and [demo notes](demos/doom/README.md).
+
 ## Why I built this
 
 A few days ago, I saw TypeSafe announce [Jev, their first "System One Model"](https://typesafe.ai/blog/introducing-system-one-models-and-jev). While it looked impressive, it also kind of tingled my spidey sense.

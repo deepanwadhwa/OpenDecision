@@ -8,6 +8,11 @@ def engine():
     return OpenDecisionEngine()
 
 
+def test_batch_size_must_be_positive():
+    with pytest.raises(ValueError, match="batch_size"):
+        OpenDecisionEngine(batch_size=0)
+
+
 def test_choice(engine):
     result = engine.choice(
         state="My credit card was charged twice for the same subscription.",
@@ -26,6 +31,21 @@ def test_choice(engine):
         sum(result["probabilities"].values()) - 1.0
     ) < 1e-5
     assert 0.0 <= result["confidence"] <= 1.0
+
+
+def test_choice_fast(engine):
+    result = engine.choice_fast(
+        state="My credit card was charged twice for the same subscription.",
+        instructions="Which department should handle this?",
+        criteria={
+            "billing": "Payments, invoices, refunds, and subscription charges",
+            "technical": "Software bugs and integration problems",
+            "sales": "Pricing and new purchases",
+        },
+    )
+
+    assert result["choice"] == "billing"
+    assert abs(sum(result["probabilities"].values()) - 1.0) < 1e-5
 
 
 def test_noul_positive(engine):
