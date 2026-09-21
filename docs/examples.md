@@ -6,7 +6,12 @@ OpenDecision includes runnable examples and reproducible evaluations.
 
 The ViZDoom demo sends structured game state to OpenDecision at wall-clock speed. The input contains health, ammo, targets, goal position, and recent damage.
 
-[Watch the Skill 5 run](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill5-hero.mp4) · [Run the demo](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/README.md)
+<video class="od-video" controls playsinline preload="metadata">
+  <source src="https://cdn.jsdelivr.net/gh/deepanwadhwa/OpenDecision@main/demos/doom/opendecision-doom-skill5.mp4" type="video/mp4">
+  Your browser does not support embedded video. <a href="https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill5.mp4">Open the recording</a>.
+</video>
+
+[Watch Skill 1](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill1.mp4) | [Watch Skill 3](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill3.mp4) | [Run the demo](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/README.md)
 
 ## Insurance claim
 

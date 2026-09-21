@@ -4,6 +4,17 @@ OpenDecision answers typed questions about application state and documents. It r
 
 OpenDecision is an open-source equivalent of [TypeSafe's Jev](https://docs.typesafe.ai/introduction). Both use the same basic request pattern: provide state and typed questions, then receive structured answers.
 
+## Doom demo
+
+OpenDecision chooses actions for a bot in ViZDoom's Deadly Corridor. This is the Skill 5 recording.
+
+<video class="od-video" controls autoplay muted loop playsinline preload="metadata">
+  <source src="https://cdn.jsdelivr.net/gh/deepanwadhwa/OpenDecision@main/demos/doom/opendecision-doom-skill5.mp4" type="video/mp4">
+  Your browser does not support embedded video. <a href="https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill5.mp4">Open the recording</a>.
+</video>
+
+[Watch Skill 1](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill1.mp4) | [Watch Skill 3](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill3.mp4) | [Run the demo](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/README.md)
+
 ## Install
 
 With `pip`:

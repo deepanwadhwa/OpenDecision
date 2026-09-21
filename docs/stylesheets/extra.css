@@ -81,3 +81,11 @@ body {
 .md-typeset pre > code {
   border: 1px solid #d0d7de;
 }
+
+.od-video {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  background: #000000;
+  border: 1px solid #d0d7de;
+}
