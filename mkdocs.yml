@@ -9,47 +9,27 @@ theme:
   name: material
   language: en
   icon:
-    logo: material/state-machine
     repo: fontawesome/brands/github
-  font:
-    text: Inter
-    code: JetBrains Mono
+  font: false
   features:
-    - navigation.tabs
-    - navigation.sections
     - navigation.top
-    - navigation.footer
-    - navigation.indexes
     - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
-    - content.code.annotate
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: custom
-      accent: custom
-      toggle:
-        icon: material/weather-night
-        name: Use dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: custom
-      accent: custom
-      toggle:
-        icon: material/weather-sunny
-        name: Use light mode
+    scheme: default
+    primary: custom
+    accent: custom
 
 nav:
-  - Home: index.md
+  - Introduction: index.md
   - Get started: quickstart.md
-  - Concepts:
-      - Primitives: primitives.md
-      - Document decisions: document-decisions.md
-      - Evidence and rules: evidence-and-rules.md
+  - Primitives: primitives.md
+  - Document decisions: document-decisions.md
+  - Evidence and rules: evidence-and-rules.md
   - Examples: examples.md
-  - Publishing: publishing.md
+  - Maintainer guide: publishing.md
 
 plugins:
   - search
@@ -76,4 +56,4 @@ extra:
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/OpenDecision/
 
-copyright: Apache 2.0 · OpenDecision
+copyright: OpenDecision, Apache 2.0

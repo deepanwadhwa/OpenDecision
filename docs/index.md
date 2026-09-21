@@ -1,107 +1,71 @@
----
-hide:
-  - navigation
-  - toc
----
+# OpenDecision
 
-<div class="od-hero" markdown>
+OpenDecision answers typed questions about application state and documents. It runs a local natural language inference model and returns structured values.
 
-<span class="od-eyebrow">Open-source semantic decision engine</span>
+OpenDecision is an open-source equivalent of [TypeSafe's Jev](https://docs.typesafe.ai/introduction). Both use the same basic request pattern: provide state and typed questions, then receive structured answers.
 
-# Decisions your code can use.
+## Install
 
-Send OpenDecision application state or a document and typed questions. Get structured answers, scores, confidence, and source evidence from a local NLI model.
-
-<div class="od-actions">
-  <a class="md-button md-button--primary" href="quickstart/">Get started</a>
-  <a class="md-button" href="primitives/">Explore the primitives</a>
-</div>
-
-<div class="od-install" markdown>
+With `pip`:
 
 ```bash
 pip install OpenDecision
 ```
 
-</div>
+With `uv`:
 
-</div>
-
-<div class="od-card-grid" markdown>
-
-<div class="od-card" markdown>
-
-### Typed decisions
-
-Use `Choice`, `Noul`, `Score`, and `Relation` to return values your application can branch on directly.
-
-[Read about primitives](primitives.md)
-
-</div>
-
-<div class="od-card" markdown>
-
-### Document questions
-
-Split long text, retrieve relevant passages, and answer questions with the evidence included in every response.
-
-[Read about documents](document-decisions.md)
-
-</div>
-
-<div class="od-card" markdown>
-
-### Local model execution
-
-Run the default ModernBERT NLI model on your own machine. Select another compatible model when needed.
-
-[Configure a model](quickstart.md#select-a-model)
-
-</div>
-
-<div class="od-card" markdown>
-
-### Auditable rules
-
-Keep semantic evidence judgments separate from deterministic application policy. Every composed rule returns a trace.
-
-[Read about evidence and rules](evidence-and-rules.md)
-
-</div>
-
-</div>
-
-## One request, several decisions
-
-Questions share the same state and keep separate response types.
-
-```json
-{
-  "state": "The customer was charged twice and needs help today.",
-  "questions": {
-    "department": {
-      "type": "choice",
-      "instructions": "Which team should handle this?",
-      "criteria": {
-        "billing": "Payment and refund requests",
-        "technical": "Software problems"
-      }
-    },
-    "urgent": {
-      "type": "noul",
-      "instructions": "This request is time-sensitive."
-    }
-  }
-}
+```bash
+uv add OpenDecision
 ```
+
+[Continue to the get started guide](quickstart.md)
+
+## What it provides
+
+| Type | Use | Result |
+| --- | --- | --- |
+| `Choice` | Select one option. | Option name and probabilities |
+| `Noul` | Test one statement. | A score from 0 to 1 |
+| `Score` | Use an ordered scale. | Weighted score and probabilities |
+| `Relation` | Compare evidence with a statement and its opposite. | `supports`, `contradicts`, `unknown`, or `conflicted` |
+| Document decisions | Ask questions about text or JSON. | Answers and source passages |
+
+[See code examples for each primitive](primitives.md)
+
+## Start here
+
+- [Get started](quickstart.md): install the package, run a Python example, and start the API.
+- [Primitives](primitives.md): use `Choice`, `Noul`, `Score`, and `Relation`.
+- [Document decisions](document-decisions.md): ask questions about long text or JSON and select a yes/no mode.
+- [Evidence and rules](evidence-and-rules.md): rank evidence and combine facts with rules.
+- [Examples](examples.md): run the Doom demo and review the insurance and GDPR examples.
 
 ## Interfaces
 
-| Interface | Use it when |
+| Interface | Use |
 | --- | --- |
-| Python | OpenDecision runs in the same application process. |
-| `POST /v1/systemone` | A service sends structured state and typed questions. |
-| `POST /v1/documents/decide` | A service asks questions about long text or JSON documents. |
-| TypeSafe-compatible endpoint | An existing TypeSafe SDK client needs a local OpenDecision server. |
+| Python | Call OpenDecision in the same process as the application. |
+| `POST /v1/systemone` | Send state and typed questions to the API. |
+| `POST /v1/documents/decide` | Send a document and typed questions to the API. |
+| TypeSafe-compatible endpoint | Use a compatible TypeSafe SDK client with a local server. |
 
-[:material-arrow-right: Install and run OpenDecision](quickstart.md){ .md-button .md-button--primary }
+## Basic example
+
+```python
+from opendecision import OpenDecisionEngine
+
+engine = OpenDecisionEngine()
+
+result = engine.choice(
+    state="The customer was charged twice.",
+    instructions="Which team should handle this request?",
+    criteria={
+        "billing": "Payments, invoices, refunds, and duplicate charges",
+        "technical": "Software bugs",
+        "sales": "Pricing and purchases",
+    },
+)
+
+print(result["choice"])
+# billing
+```

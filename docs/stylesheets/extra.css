@@ -1,162 +1,83 @@
 :root {
-  --md-primary-fg-color: #0f3dcc;
-  --md-primary-fg-color--light: #3b68f5;
-  --md-primary-fg-color--dark: #08247f;
-  --md-accent-fg-color: #008c7a;
-  --od-surface: #f7f9ff;
-  --od-border: rgba(15, 61, 204, 0.14);
-  --od-glow: rgba(59, 104, 245, 0.18);
+  --md-primary-fg-color: #24292f;
+  --md-primary-fg-color--light: #57606a;
+  --md-primary-fg-color--dark: #1f2328;
+  --md-accent-fg-color: #0969da;
 }
 
-[data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #7397ff;
-  --md-primary-fg-color--light: #9eb8ff;
-  --md-primary-fg-color--dark: #4f74e8;
-  --md-accent-fg-color: #4dd7c2;
-  --md-default-bg-color: #0a1020;
-  --od-surface: #111a30;
-  --od-border: rgba(115, 151, 255, 0.22);
-  --od-glow: rgba(79, 116, 232, 0.22);
+body {
+  color: #24292f;
 }
 
-.md-header,
-.md-tabs {
-  background: linear-gradient(100deg, #071a55 0%, #0f3dcc 62%, #126f8a 100%);
+.md-header {
+  background: #ffffff;
+  border-bottom: 1px solid #d0d7de;
+  box-shadow: none;
+  color: #24292f;
 }
 
-.md-header__title,
-.md-tabs__link {
-  font-weight: 650;
+.md-header__button.md-logo {
+  display: none;
+}
+
+.md-header__title {
+  margin-left: 0;
+  font-weight: 600;
+}
+
+.md-search__form {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+}
+
+.md-search__input::placeholder {
+  color: #57606a;
 }
 
 .md-main__inner {
-  margin-top: 1.4rem;
+  margin-top: 1.25rem;
 }
 
 .md-content__inner {
+  max-width: 48rem;
   padding-bottom: 4rem;
 }
 
-.od-hero {
-  position: relative;
-  overflow: hidden;
-  margin: 0 0 2rem;
-  padding: clamp(2rem, 5vw, 4.75rem);
-  border: 1px solid var(--od-border);
-  border-radius: 1.15rem;
-  background:
-    linear-gradient(135deg, var(--od-glow), transparent 55%),
-    radial-gradient(circle at 92% 12%, rgba(0, 180, 160, 0.18), transparent 28%),
-    var(--od-surface);
-  box-shadow: 0 24px 70px rgba(7, 26, 85, 0.11);
+.md-typeset h1 {
+  color: #1f2328;
+  font-size: 2rem;
+  font-weight: 650;
+  letter-spacing: 0;
 }
 
-.od-hero::after {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--od-border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--od-border) 1px, transparent 1px);
-  background-size: 32px 32px;
-  content: "";
-  opacity: 0.35;
-  pointer-events: none;
-  mask-image: linear-gradient(to left, black, transparent 72%);
+.md-typeset h2 {
+  border-bottom: 1px solid #d8dee4;
+  color: #1f2328;
+  font-size: 1.35rem;
+  font-weight: 650;
+  padding-bottom: 0.35rem;
 }
 
-.od-hero > * {
-  position: relative;
-  z-index: 1;
-}
-
-.od-hero h1 {
-  max-width: 14ch;
-  margin: 0.35rem 0 1rem;
-  font-size: clamp(2.4rem, 6vw, 4.7rem);
-  font-weight: 790;
-  letter-spacing: -0.055em;
-  line-height: 0.98;
-}
-
-.od-hero > p {
-  max-width: 52rem;
+.md-typeset h3 {
+  color: #1f2328;
   font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-.od-eyebrow {
-  color: var(--md-accent-fg-color);
-  font-size: 0.72rem;
-  font-weight: 750;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.od-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin: 1.65rem 0;
-}
-
-.od-actions .md-button {
-  border-radius: 0.55rem;
-}
-
-.od-install {
-  max-width: 29rem;
-}
-
-.od-install .highlight {
-  margin: 0;
-}
-
-.od-card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 2rem 0 3.5rem;
-}
-
-.od-card {
-  padding: 1.35rem 1.45rem;
-  border: 1px solid var(--od-border);
-  border-radius: 0.85rem;
-  background: var(--od-surface);
-  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
-}
-
-.od-card:hover {
-  border-color: var(--md-accent-fg-color);
-  box-shadow: 0 14px 35px var(--od-glow);
-  transform: translateY(-2px);
-}
-
-.od-card h3 {
-  margin-top: 0;
-  font-weight: 720;
-}
-
-.od-card p:last-child {
-  margin-bottom: 0;
+  font-weight: 650;
 }
 
 .md-typeset table:not([class]) {
-  border-radius: 0.55rem;
-  box-shadow: 0 0 0 1px var(--od-border);
+  border: 1px solid #d0d7de;
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+  background: #f6f8fa;
+  color: #24292f;
 }
 
 .md-typeset code {
-  border-radius: 0.3rem;
+  border-radius: 0;
 }
 
-@media screen and (max-width: 44rem) {
-  .od-hero {
-    padding: 2rem 1.35rem;
-    border-radius: 0.8rem;
-  }
-
-  .od-card-grid {
-    grid-template-columns: 1fr;
-  }
+.md-typeset pre > code {
+  border: 1px solid #d0d7de;
 }
