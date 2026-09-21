@@ -1,9 +1,26 @@
-# OpenDecision
+<div align="center">
 
-[![Tests](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml/badge.svg)](https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml)
-![Version](https://img.shields.io/badge/version-0.1.1-blue)
-![Python](https://img.shields.io/badge/python-3.13%2B-blue)
-![License](https://img.shields.io/badge/license-Apache%202.0-blue)
+<h1>OpenDecision</h1>
+
+<p>Open-source semantic decisions for structured state and documents.</p>
+
+<p>
+  <a href="https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml"><img alt="Tests" src="https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml/badge.svg"></a>
+  <a href="https://pypi.org/project/OpenDecision/"><img alt="Version" src="https://img.shields.io/pypi/v/OpenDecision?label=version&color=2563eb"></a>
+  <a href="https://pypi.org/project/OpenDecision/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/OpenDecision?color=2563eb"></a>
+  <a href="https://github.com/deepanwadhwa/OpenDecision/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/pypi/l/OpenDecision?color=2563eb"></a>
+  <a href="https://github.com/deepanwadhwa/OpenDecision/actions/workflows/docs.yml"><img alt="Documentation" src="https://github.com/deepanwadhwa/OpenDecision/actions/workflows/docs.yml/badge.svg"></a>
+</p>
+
+<p>
+  <a href="https://deepanwadhwa.github.io/OpenDecision/">Documentation</a> ·
+  <a href="#play-doom">Doom demo</a> ·
+  <a href="#get-started">Get started</a> ·
+  <a href="#api-surface">API</a> ·
+  <a href="https://deepanwadhwa.github.io/OpenDecision/examples/">Examples</a>
+</p>
+
+</div>
 
 OpenDecision is the open-source equivalent of [TypeSafe's Jev](https://docs.typesafe.ai/introduction).
 
@@ -131,11 +148,11 @@ The model downloads from Hugging Face on first use.
 
 ## Documentation
 
-- [Documentation index](https://github.com/deepanwadhwa/OpenDecision/tree/main/docs)
-- [Quick start and API](https://github.com/deepanwadhwa/OpenDecision/blob/main/docs/quickstart.md)
-- [Choice, Noul, Score, and Relation](https://github.com/deepanwadhwa/OpenDecision/blob/main/docs/primitives.md)
-- [Documents, evidence, and yes/no modes](https://github.com/deepanwadhwa/OpenDecision/blob/main/docs/document-decisions.md)
-- [Evidence relations and rules](https://github.com/deepanwadhwa/OpenDecision/blob/main/docs/evidence-and-rules.md)
+- [Documentation index](https://deepanwadhwa.github.io/OpenDecision/)
+- [Quick start and API](https://deepanwadhwa.github.io/OpenDecision/quickstart/)
+- [Choice, Noul, Score, and Relation](https://deepanwadhwa.github.io/OpenDecision/primitives/)
+- [Documents, evidence, and yes/no modes](https://deepanwadhwa.github.io/OpenDecision/document-decisions/)
+- [Evidence relations and rules](https://deepanwadhwa.github.io/OpenDecision/evidence-and-rules/)
 - [Doom demo](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/README.md)
 - [Benchmarks](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/opendecision_original/README.md)
 

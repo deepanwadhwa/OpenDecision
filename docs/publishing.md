@@ -42,7 +42,7 @@ dist/opendecision-0.1.1.tar.gz
 4. Merge the release commit into the default branch.
 5. Create and publish a GitHub release with a tag matching `v<version>`. Version `0.1.1` uses tag `v0.1.1`.
 
-Publishing the GitHub release starts [`.github/workflows/publish.yml`](../.github/workflows/publish.yml). The workflow verifies the tag, builds both distributions, checks their metadata, and uploads them to PyPI.
+Publishing the GitHub release starts [`.github/workflows/publish.yml`](https://github.com/deepanwadhwa/OpenDecision/blob/main/.github/workflows/publish.yml). The workflow verifies the tag, builds both distributions, checks their metadata, and uploads them to PyPI.
 
 The publish job receives a short-lived credential through GitHub OIDC. The repository does not need a stored PyPI password or API token.
 

@@ -1,0 +1,79 @@
+site_name: OpenDecision
+site_description: Open-source semantic decision engine for structured state and documents
+site_url: https://deepanwadhwa.github.io/OpenDecision/
+repo_url: https://github.com/deepanwadhwa/OpenDecision
+repo_name: deepanwadhwa/OpenDecision
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/state-machine
+    repo: fontawesome/brands/github
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Use dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Use light mode
+
+nav:
+  - Home: index.md
+  - Get started: quickstart.md
+  - Concepts:
+      - Primitives: primitives.md
+      - Document decisions: document-decisions.md
+      - Evidence and rules: evidence-and-rules.md
+  - Examples: examples.md
+  - Publishing: publishing.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/deepanwadhwa/OpenDecision
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/OpenDecision/
+
+copyright: Apache 2.0 · OpenDecision

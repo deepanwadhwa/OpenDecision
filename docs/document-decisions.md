@@ -160,8 +160,8 @@ Relevance scores rank passages for the current question. Treat them as uncalibra
 
 ## Examples
 
-- [Insurance claim pipeline](../benchmarks/insurance_claim/README.md)
-- [Structured claim through the document API](../benchmarks/structured_claim/README.md)
-- [Structured claim comparison](../benchmarks/structured_claim/COMPARISON.md)
-- [GDPR questions](../benchmarks/gdpr_wiki/questions.py)
-- [GDPR saved results](../benchmarks/results/gdpr_wiki_retrieved.json)
+- [Insurance claim pipeline](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/insurance_claim/README.md)
+- [Structured claim through the document API](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/structured_claim/README.md)
+- [Structured claim comparison](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/structured_claim/COMPARISON.md)
+- [GDPR questions](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/gdpr_wiki/questions.py)
+- [GDPR saved results](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/results/gdpr_wiki_retrieved.json)

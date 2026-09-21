@@ -42,7 +42,7 @@ typesafe = [
 opendecision = "opendecision.cli:main"
 
 [project.urls]
-Documentation = "https://github.com/deepanwadhwa/OpenDecision/tree/main/docs"
+Documentation = "https://deepanwadhwa.github.io/OpenDecision/"
 Issues = "https://github.com/deepanwadhwa/OpenDecision/issues"
 Repository = "https://github.com/deepanwadhwa/OpenDecision"
 
