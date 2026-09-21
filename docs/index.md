@@ -2,8 +2,6 @@
 
 OpenDecision answers typed questions about application state and documents. It runs a local natural language inference model and returns structured values.
 
-OpenDecision is an open-source equivalent of [TypeSafe's Jev](https://docs.typesafe.ai/introduction). Both use the same basic request pattern: provide state and typed questions, then receive structured answers.
-
 ## Doom demo
 
 OpenDecision chooses actions for a bot in ViZDoom's Deadly Corridor. This is the Skill 5 recording.
