@@ -101,12 +101,22 @@ Questions in one request share the same state. Each answer is stored under the q
 
 The default model is `MoritzLaurer/ModernBERT-large-zeroshot-v2.0`.
 
+To try DeBERTa in Python, select it explicitly:
+
+```python
+engine = OpenDecisionEngine(
+    model="MoritzLaurer/deberta-v3-large-zeroshot-v2.0"
+)
+```
+
 Set `OPENDECISION_MODEL` before starting the API to use another compatible zero-shot or NLI model:
 
 ```bash
-OPENDECISION_MODEL=tasksource/ModernBERT-large-nli \
+OPENDECISION_MODEL=MoritzLaurer/deberta-v3-large-zeroshot-v2.0 \
 opendecision serve
 ```
+
+You can also pass `opendecision serve --model MoritzLaurer/deberta-v3-large-zeroshot-v2.0`. See [model selection and evaluation](model-selection.md) before changing the default for an application.
 
 The optional `model` field in a `/v1/systemone` request exists for TypeSafe SDK compatibility. The server uses the model selected at startup.
 

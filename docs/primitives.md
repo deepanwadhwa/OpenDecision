@@ -44,13 +44,9 @@ The values above only show the response shape.
 
 `confidence` is based on the concentration of the returned distribution. Treat it as uncalibrated.
 
-### Standard and fast Choice
+### Choice formulation
 
-`engine.choice()` runs two fixed NLI formulations. When they select different options, it runs a small adjudication over those two options.
-
-`engine.choice_fast()` runs one formulation. Use it when latency matters more than the extra comparison.
-
-The older README called the two internal formulations Compiler A and Compiler B. They are still used by `engine.choice()`. They are implementation details and have no public configuration setting.
+`engine.choice()` runs two zero-shot formulations and uses a third call to settle disagreements. The first formulation includes `instructions` in its hypothesis; the second includes criterion names and descriptions. `engine.choice_fast()` uses one formulation when fewer model calls matter more than the extra comparison. See [model selection and evaluation](model-selection.md) for measured accuracy with ModernBERT and optional DeBERTa.
 
 The `binary`, `three_way`, and `both` settings belong to document `Noul` questions. They do not change `Choice`.
 

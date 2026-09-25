@@ -1,6 +1,7 @@
 import pytest
 
-from opendecision.engine import OpenDecisionEngine
+import opendecision.engine as engine_module
+from opendecision.engine import DEFAULT_MODEL, OpenDecisionEngine
 
 
 @pytest.fixture(scope="session")
@@ -11,6 +12,66 @@ def engine():
 def test_batch_size_must_be_positive():
     with pytest.raises(ValueError, match="batch_size"):
         OpenDecisionEngine(batch_size=0)
+
+
+def test_default_and_optional_model_are_recorded(monkeypatch):
+    selected = []
+
+    def fake_pipeline(*args, **kwargs):
+        selected.append(kwargs["model"])
+        return lambda *args, **kwargs: None
+
+    monkeypatch.setattr(engine_module, "pipeline", fake_pipeline)
+    default = OpenDecisionEngine(device=-1)
+    optional = OpenDecisionEngine(
+        model="MoritzLaurer/deberta-v3-large-zeroshot-v2.0",
+        device=-1,
+    )
+
+    assert DEFAULT_MODEL == "MoritzLaurer/ModernBERT-large-zeroshot-v2.0"
+    assert default.model_name == selected[0] == DEFAULT_MODEL
+    assert optional.model_name == selected[1] == (
+        "MoritzLaurer/deberta-v3-large-zeroshot-v2.0"
+    )
+
+
+def test_choice_keeps_question_profile_and_fast_profile(monkeypatch):
+    calls = []
+
+    def fake_classifier(sequence, **kwargs):
+        calls.append((sequence, kwargs))
+        return {
+            "labels": list(reversed(kwargs["candidate_labels"])),
+            "scores": [0.8, 0.2],
+        }
+
+    monkeypatch.setattr(
+        engine_module,
+        "pipeline",
+        lambda *args, **kwargs: fake_classifier,
+    )
+    engine = OpenDecisionEngine(device=-1)
+    criteria = {
+        "correct": "The answer correctly satisfies the request.",
+        "incorrect": "The answer clearly fails to satisfy the request.",
+    }
+
+    args = {
+        "state": "Question: Find Titli's medical record.\nAnswer: tax worksheet.pdf",
+        "instructions": "Does the answer satisfy the request?",
+        "criteria": criteria,
+    }
+    assert engine.choice(**args)["choice"] == "incorrect"
+    assert engine.choice_fast(**args)["choice"] == "incorrect"
+
+    assert len(calls) == 3
+    assert calls[0][1]["candidate_labels"] == list(criteria.values())
+    assert args["instructions"] in calls[0][1]["hypothesis_template"]
+    assert calls[1][1]["candidate_labels"] == [
+        f"{name}: {description}" for name, description in criteria.items()
+    ]
+    assert "hypothesis_template" not in calls[1][1]
+    assert calls[2][1]["candidate_labels"] == calls[1][1]["candidate_labels"]
 
 
 def test_choice(engine):
@@ -59,6 +120,21 @@ def test_noul_positive(engine):
 
     assert result["type"] == "noul"
     assert result["noul"] > 0.5
+
+
+def test_noul_truncates_to_model_context_window(engine, monkeypatch):
+    monkeypatch.setattr(
+        engine.classifier.model.config,
+        "max_position_embeddings",
+        512,
+    )
+    assert engine._nli_max_length() == 512
+    result = engine.noul(
+        state="The server is down. " * 800,
+        instructions="The server is down.",
+    )
+
+    assert 0.0 <= result["noul"] <= 1.0
 
 
 def test_noul_negative(engine):

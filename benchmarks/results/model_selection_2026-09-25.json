@@ -1,0 +1,40 @@
+{
+  "evaluated_at": "2026-09-25",
+  "choice_formulations": {
+    "standard": "OpenDecisionEngine.choice: description/question and label_description/default, with adjudication on disagreements",
+    "experimental_single_pass": "state/description/default; not exposed as the package default"
+  },
+  "datasets": {
+    "original_holdout": "benchmarks/opendecision_original/holdout.jsonl",
+    "public_derived": "benchmarks/typesafe_public/cases.jsonl"
+  },
+  "choice_correct": {
+    "original_holdout_125": {
+      "ModernBERT_standard": 108,
+      "DeBERTa_standard": 112,
+      "ModernBERT_experimental_single_pass": 97,
+      "DeBERTa_experimental_single_pass": 107
+    },
+    "public_derived_51": {
+      "ModernBERT_standard": 43,
+      "DeBERTa_standard": 35,
+      "ModernBERT_experimental_single_pass": 27,
+      "DeBERTa_experimental_single_pass": 31
+    }
+  },
+  "public_derived_other": {
+    "noul_correct_of_20": {
+      "ModernBERT_standard": 17,
+      "DeBERTa_standard": 14
+    },
+    "score_mean_absolute_error_on_9": {
+      "ModernBERT_standard": 0.3745885094006856,
+      "DeBERTa_standard": 0.34692728198650813
+    }
+  },
+  "saved_baselines": [
+    "benchmarks/results/opendecision_v0.1_production_holdout.json",
+    "benchmarks/results/opendecision_v0.1_typesafe_public.json"
+  ],
+  "note": "Other combinations were evaluated locally on the fixed cases. These small synthetic and documentation-derived sets do not establish general model superiority."
+}
