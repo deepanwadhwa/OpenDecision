@@ -30,8 +30,8 @@ uvx twine check dist/*
 The build creates:
 
 ```text
-dist/opendecision-0.1.1-py3-none-any.whl
-dist/opendecision-0.1.1.tar.gz
+dist/opendecision-0.1.2-py3-none-any.whl
+dist/opendecision-0.1.2.tar.gz
 ```
 
 ## Publish a release
@@ -40,7 +40,7 @@ dist/opendecision-0.1.1.tar.gz
 2. Run `uv lock`.
 3. Run the tests and distribution checks.
 4. Merge the release commit into the default branch.
-5. Create and publish a GitHub release with a tag matching `v<version>`. Version `0.1.1` uses tag `v0.1.1`.
+5. Create and publish a GitHub release with a tag matching `v<version>`. Version `0.1.2` uses tag `v0.1.2`.
 
 Publishing the GitHub release starts [`.github/workflows/publish.yml`](https://github.com/deepanwadhwa/OpenDecision/blob/main/.github/workflows/publish.yml). The workflow verifies the tag, builds both distributions, checks their metadata, and uploads them to PyPI.
 

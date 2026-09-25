@@ -26,6 +26,7 @@ nav:
   - Introduction: index.md
   - Get started: quickstart.md
   - Primitives: primitives.md
+  - Model selection: model-selection.md
   - Document decisions: document-decisions.md
   - Evidence and rules: evidence-and-rules.md
   - Examples: examples.md

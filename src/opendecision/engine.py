@@ -101,6 +101,7 @@ class OpenDecisionEngine:
             model=model,
             device=device,
         )
+        self.model_name = model
         self.batch_size = batch_size
         self.evidence_backend = (
             evidence_backend
@@ -317,7 +318,6 @@ class OpenDecisionEngine:
         if len(criteria) < 2:
             raise ValueError("Choice requires at least two candidates.")
 
-        # Compiler A
         answer_a, probabilities_a = self._choice_profile(
             state=state,
             instructions=instructions,
@@ -327,7 +327,6 @@ class OpenDecisionEngine:
             hypothesis_mode="question",
         )
 
-        # Compiler B
         answer_b, probabilities_b = self._choice_profile(
             state=state,
             instructions=instructions,
@@ -339,24 +338,16 @@ class OpenDecisionEngine:
 
         if answer_a == answer_b:
             winner = answer_a
-
             probabilities = {
-                name: (
-                    probabilities_a[name]
-                    + probabilities_b[name]
-                ) / 2.0
+                name: (probabilities_a[name] + probabilities_b[name]) / 2.0
                 for name in criteria
             }
-
         else:
             disputed = {
                 name: criteria[name]
                 for name in criteria
                 if name in {answer_a, answer_b}
             }
-
-            # Frozen adjudicator selected on development data:
-            # state + question / labels only / default hypothesis
             winner, _ = self._choice_profile(
                 state=state,
                 instructions=instructions,
@@ -365,11 +356,8 @@ class OpenDecisionEngine:
                 candidate_mode="label",
                 hypothesis_mode="default",
             )
-
             probabilities = (
-                probabilities_a
-                if winner == answer_a
-                else probabilities_b
+                probabilities_a if winner == answer_a else probabilities_b
             )
 
         return {
@@ -388,11 +376,7 @@ class OpenDecisionEngine:
         instructions: str,
         criteria: Mapping[str, str | None],
     ) -> dict:
-        """Return one zero-shot choice profile without cross-profile arbitration.
-
-        Use this when latency matters more than the additional robustness of
-        :meth:`choice`, such as a real-time control loop with fixed actions.
-        """
+        """Run one zero-shot Choice profile when latency matters."""
         if len(criteria) < 2:
             raise ValueError("Choice requires at least two candidates.")
 
@@ -416,6 +400,14 @@ class OpenDecisionEngine:
     # NOUL
     # ---------------------------------------------------------
 
+    def _nli_max_length(self) -> int:
+        model_limit = getattr(
+            self.classifier.model.config,
+            "max_position_embeddings",
+            8192,
+        )
+        return min(8192, int(model_limit))
+
     def _entailment_probability(
         self,
         *,
@@ -433,7 +425,7 @@ class OpenDecisionEngine:
             hypothesis,
             return_tensors="pt",
             truncation=True,
-            max_length=8192,
+            max_length=self._nli_max_length(),
         )
 
         device = next(model.parameters()).device
@@ -472,7 +464,7 @@ class OpenDecisionEngine:
             hypothesis,
             return_tensors="pt",
             truncation=True,
-            max_length=8192,
+            max_length=self._nli_max_length(),
         )
 
         device = next(model.parameters()).device

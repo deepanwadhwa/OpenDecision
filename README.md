@@ -37,7 +37,7 @@ OpenDecision provides:
 - Document processing with evidence retrieval and source passages.
 - A Python API, a FastAPI server, and a TypeSafe SDK compatible endpoint.
 
-The default backend is [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0). It runs locally and produces classification scores without generating text.
+The default backend is [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0). [`MoritzLaurer/deberta-v3-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0) is an optional model. Both run locally and produce classification scores without generating text. See [model selection and evaluation](https://deepanwadhwa.github.io/OpenDecision/model-selection/) for the measured tradeoffs.
 
 OpenDecision is licensed under Apache 2.0.
 
@@ -155,6 +155,7 @@ The model downloads from Hugging Face on first use.
 - [Evidence relations and rules](https://deepanwadhwa.github.io/OpenDecision/evidence-and-rules/)
 - [Doom demo](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/README.md)
 - [Benchmarks](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/opendecision_original/README.md)
+- [Model selection and evaluation](https://deepanwadhwa.github.io/OpenDecision/model-selection/)
 
 ## API surface
 
@@ -170,6 +171,6 @@ GET  /openapi.json
 
 ## Current status
 
-OpenDecision v0.1.1 is a developer preview.
+OpenDecision v0.1.2 is a developer preview.
 
 Treat the model scores as uncalibrated. Evaluate the model and thresholds on your own data before using the results in an automated decision process.
