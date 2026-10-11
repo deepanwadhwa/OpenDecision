@@ -1,6 +1,7 @@
 import json
 import os
 from contextlib import asynccontextmanager
+from threading import Lock
 
 from fastapi import FastAPI, HTTPException, Request
 
@@ -24,6 +25,16 @@ from opendecision.documents import DocumentDecisionService
 
 
 API_MODEL_NAME = "modernbert-large-zeroshot-v2"
+_image_engine_lock = Lock()
+
+
+def get_image_engine(app: FastAPI):
+    from opendecision.images import ImageDecisionEngine
+
+    with _image_engine_lock:
+        if getattr(app.state, "image_engine", None) is None:
+            app.state.image_engine = ImageDecisionEngine()
+        return app.state.image_engine
 
 
 @asynccontextmanager
@@ -94,7 +105,44 @@ def system_one(
     payload: SystemOneRequest,
     request: Request,
 ):
-    engine: OpenDecisionEngine = request.app.state.engine
+    image_request = (
+        isinstance(payload.state, dict)
+        and payload.state.get("type") == "image"
+    )
+    state = payload.state
+    if image_request:
+        from opendecision.images import DEFAULT_IMAGE_MODEL, decode_image
+
+        if payload.model not in (None, DEFAULT_IMAGE_MODEL):
+            raise HTTPException(
+                status_code=422,
+                detail="Image state requires the SigLIP2 image model.",
+            )
+        try:
+            state = decode_image(payload.state["data"])
+        except ValueError as error:
+            raise HTTPException(status_code=422, detail=str(error)) from error
+        except ImportError as error:
+            raise HTTPException(
+                status_code=503,
+                detail="Install OpenDecision[images] to enable images.",
+            ) from error
+        try:
+            engine = get_image_engine(request.app)
+        except (ImportError, OSError) as error:
+            raise HTTPException(
+                status_code=503,
+                detail="Image model unavailable; install OpenDecision[images] and check model access.",
+            ) from error
+    else:
+        from opendecision.images import DEFAULT_IMAGE_MODEL
+
+        if payload.model == DEFAULT_IMAGE_MODEL:
+            raise HTTPException(
+                status_code=422,
+                detail="SigLIP2 requires an image state.",
+            )
+        engine = request.app.state.engine
 
     answers = {}
 
@@ -103,7 +151,7 @@ def system_one(
         if isinstance(question, ChoiceQuestion):
 
             result = engine.choice(
-                state=payload.state,
+                state=state,
                 instructions=question.instructions,
                 criteria=question.criteria,
             )
@@ -116,7 +164,7 @@ def system_one(
                 criteria = question.criteria.model_dump()
 
             result = engine.noul(
-                state=payload.state,
+                state=state,
                 instructions=question.instructions,
                 criteria=criteria,
             )
@@ -124,7 +172,7 @@ def system_one(
         elif isinstance(question, RelationQuestion):
 
             result = engine.relation(
-                state=payload.state,
+                state=state,
                 proposition=question.proposition,
                 contradiction=question.contradiction,
                 threshold=question.threshold,
@@ -133,7 +181,7 @@ def system_one(
         elif isinstance(question, ScoreQuestion):
 
             result = engine.score(
-                state=payload.state,
+                state=state,
                 instructions=question.instructions,
                 criteria=question.criteria,
             )
@@ -147,10 +195,16 @@ def system_one(
         answers[question_name] = result
 
     return SystemOneResponse(
-        model=getattr(request.app.state, "model_name", API_MODEL_NAME),
+        model=(
+            engine.model_name if image_request
+            else getattr(request.app.state, "model_name", API_MODEL_NAME)
+        ),
         answers=answers,
         usage=Usage(
-            input_tokens=estimate_input_tokens(engine, payload),
+            input_tokens=(
+                engine.estimate_input_tokens(payload.model_dump())
+                if image_request else estimate_input_tokens(engine, payload)
+            ),
             output_tokens=0,
         ),
     )

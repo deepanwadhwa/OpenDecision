@@ -1,6 +1,6 @@
 from typing import Annotated, Any, Literal
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class ChoiceQuestion(BaseModel):
@@ -57,14 +57,28 @@ Question = Annotated[
 ]
 
 
+class ImageState(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    type: Literal["image"]
+    data: str = Field(min_length=1, max_length=13981016,
+                      description="Base64 JPEG, PNG, or WebP bytes (up to 10 MiB).")
+
+
 class SystemOneRequest(BaseModel):
-    state: Any
+    state: Any = Field(description='Text, structured state, or {"type": "image", "data": "BASE64_BYTES"}.')
 
     # Optional for now.
     # This will help later when we point the official SDK at OpenDecision.
     model: str | None = None
 
     questions: dict[str, Question]
+
+    @field_validator("state")
+    @classmethod
+    def validate_image_state(cls, value):
+        if isinstance(value, dict) and value.get("type") == "image":
+            return ImageState.model_validate(value).model_dump()
+        return value
 
     @field_validator("questions")
     @classmethod

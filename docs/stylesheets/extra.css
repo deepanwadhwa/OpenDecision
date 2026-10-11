@@ -89,3 +89,47 @@ body {
   background: #000000;
   border: 1px solid #d0d7de;
 }
+
+.od-image-example {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #d8dee4;
+  align-items: center;
+}
+
+.od-image-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: contain;
+}
+
+.od-image-results h3 {
+  margin-top: 0;
+}
+
+.od-image-results table {
+  width: 100%;
+}
+
+.od-image-results pre {
+  margin-top: 0.75rem;
+}
+
+.od-gallery-image {
+  display: block;
+  max-width: 100%;
+  max-height: 460px;
+  margin: 1rem 0;
+  object-fit: contain;
+}
+
+@media (max-width: 720px) {
+  .od-image-example {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+}

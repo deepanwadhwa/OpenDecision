@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from opendecision.engine import OpenDecisionEngine
+    from opendecision.images import ImageDecisionEngine
 
 
 try:
@@ -12,10 +13,14 @@ except PackageNotFoundError:
     __version__ = "0+unknown"
 
 
-__all__ = ["OpenDecisionEngine", "__version__"]
+__all__ = ["OpenDecisionEngine", "ImageDecisionEngine", "__version__"]
 
 
 def __getattr__(name: str) -> Any:
+    if name == "ImageDecisionEngine":
+        from opendecision.images import ImageDecisionEngine
+
+        return ImageDecisionEngine
     if name == "OpenDecisionEngine":
         from opendecision.engine import OpenDecisionEngine
 
