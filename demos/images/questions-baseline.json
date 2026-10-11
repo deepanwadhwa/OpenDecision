@@ -1,0 +1,372 @@
+{
+  "noul_threshold": 0.5,
+  "choice_min_probability": 0.6,
+  "cases": [
+    {
+      "image": "IMG_3718 Medium.jpeg",
+      "questions": {
+        "bird_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "A bird is visible in the image.",
+            "criteria": {
+              "true": "A bird is visible in the image.",
+              "false": "A scene without any birds."
+            }
+          },
+          "expected": true,
+          "note": null
+        },
+        "eagle_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "An eagle is visible in the image.",
+            "criteria": {
+              "true": "An eagle is visible in the image.",
+              "false": "A scene without an eagle."
+            }
+          },
+          "expected": null,
+          "note": "Bird visible; exact species not established. It appears hawk-like."
+        },
+        "human_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "A person is visible in the image.",
+            "criteria": {
+              "true": "A person is visible in the image.",
+              "false": "A scene without any people."
+            }
+          },
+          "expected": false,
+          "note": null
+        },
+        "bird_kind": {
+          "question": {
+            "type": "choice",
+            "instructions": "What kind of bird is visible?",
+            "criteria": {
+              "eagle": "A photo of an eagle.",
+              "hawk": "A photo of a hawk.",
+              "owl": "A photo of an owl.",
+              "other_bird": "A photo of another bird.",
+              "no_bird": "A scene without birds."
+            }
+          },
+          "expected": null,
+          "note": "Diagnostic species classification; no verified species label."
+        }
+      }
+    },
+    {
+      "image": "IMG_3751 Medium.jpeg",
+      "questions": {
+        "sky_object": {
+          "question": {
+            "type": "choice",
+            "instructions": "Which celestial object is visible?",
+            "criteria": {
+              "moon": "The moon visible in a blue sky.",
+              "sun": "The sun visible in a blue sky.",
+              "neither": "A blue sky without the moon or sun visible."
+            }
+          },
+          "expected": "moon",
+          "note": null
+        },
+        "plane_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "An airplane is visible in the sky.",
+            "criteria": {
+              "true": "An airplane is visible in the sky.",
+              "false": "Sky with no airplane visible."
+            }
+          },
+          "expected": null,
+          "note": "Contrails are visible; the aircraft itself is too small to establish confidently."
+        },
+        "tree_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "A tree is visible in the image.",
+            "criteria": {
+              "true": "A tree is visible in the image.",
+              "false": "A scene without any trees."
+            }
+          },
+          "expected": true,
+          "note": null
+        }
+      }
+    },
+    {
+      "image": "IMG_3975 Medium.jpeg",
+      "questions": {
+        "cat_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "A cat is visible in the image.",
+            "criteria": {
+              "true": "A cat is visible in the image.",
+              "false": "A scene without any cats."
+            }
+          },
+          "expected": true,
+          "note": null
+        },
+        "cat_count": {
+          "question": {
+            "type": "choice",
+            "instructions": "How many cats are visible?",
+            "criteria": {
+              "zero": "A scene with no cats.",
+              "one": "A photo of one cat.",
+              "multiple": "A photo of two or more cats."
+            }
+          },
+          "expected": "one",
+          "note": null
+        },
+        "cat_napping": {
+          "question": {
+            "type": "noul",
+            "instructions": "A cat is sleeping or napping.",
+            "criteria": {
+              "true": "A cat is sleeping or napping.",
+              "false": "A cat is awake, sitting upright and looking around."
+            }
+          },
+          "expected": false,
+          "note": null
+        }
+      }
+    },
+    {
+      "image": "IMG_4085 Medium.jpeg",
+      "questions": {
+        "bread_count": {
+          "question": {
+            "type": "choice",
+            "instructions": "How many loaves of bread are visible?",
+            "criteria": {
+              "zero": "A scene without bread.",
+              "one": "One loaf of bread on a cooling rack.",
+              "multiple": "Two or more loaves of bread on a cooling rack."
+            }
+          },
+          "expected": "one",
+          "note": null
+        }
+      }
+    },
+    {
+      "image": "IMG_4259 Medium.jpeg",
+      "questions": {
+        "backyard_flooded": {
+          "question": {
+            "type": "noul",
+            "instructions": "A backyard is flooded with standing water.",
+            "criteria": {
+              "true": "A backyard is flooded with standing water.",
+              "false": "A backyard is dry and free of standing water."
+            }
+          },
+          "expected": null,
+          "note": "Water visible in a wooded channel; the image alone does not establish backyard flooding."
+        },
+        "water_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "Standing or flowing water is visible on the ground.",
+            "criteria": {
+              "true": "Standing or flowing water is visible on the ground.",
+              "false": "Dry ground without visible water."
+            }
+          },
+          "expected": true,
+          "note": null
+        },
+        "water_scene": {
+          "question": {
+            "type": "choice",
+            "instructions": "What best describes the water scene?",
+            "criteria": {
+              "flooded_yard": "A backyard flooded with water covering the lawn.",
+              "wooded_creek": "A creek or stream running through a wooded area.",
+              "dry_yard": "A dry backyard without water on the ground."
+            }
+          },
+          "expected": null,
+          "note": "Looks creek-like; whether this is normally dry requires context."
+        }
+      }
+    },
+    {
+      "image": "IMG_4323.PNG",
+      "questions": {
+        "animal_count": {
+          "question": {
+            "type": "choice",
+            "instructions": "How many animals are visible?",
+            "criteria": {
+              "zero": "An outdoor scene without animals.",
+              "one": "One animal on a patio.",
+              "multiple": "Several animals together on a patio."
+            }
+          },
+          "expected": "multiple",
+          "note": null
+        },
+        "bear_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "A bear is visible in the image.",
+            "criteria": {
+              "true": "A bear is visible in the image.",
+              "false": "A scene without any bears."
+            }
+          },
+          "expected": false,
+          "note": null
+        },
+        "coyote_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "A coyote is visible in the image.",
+            "criteria": {
+              "true": "A coyote is visible in the image.",
+              "false": "A scene without any coyotes."
+            }
+          },
+          "expected": false,
+          "note": null
+        },
+        "animal_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "An animal is visible in the image.",
+            "criteria": {
+              "true": "An animal is visible in the image.",
+              "false": "A scene without any animals."
+            }
+          },
+          "expected": true,
+          "note": null
+        },
+        "animal_type": {
+          "question": {
+            "type": "choice",
+            "instructions": "What kind of animal is visible?",
+            "criteria": {
+              "cat": "A photo of a cat.",
+              "dog": "A photo of a dog.",
+              "coyote": "A photo of a coyote.",
+              "bear": "A photo of a bear.",
+              "other_animal": "A photo of another kind of animal.",
+              "no_animal": "A landscape without any animals."
+            }
+          },
+          "expected": "cat",
+          "note": "Cats visible; this is a non-bear alarm control."
+        }
+      }
+    },
+    {
+      "image": "IMG_4339 Medium.jpeg",
+      "questions": {
+        "weather": {
+          "question": {
+            "type": "choice",
+            "instructions": "What weather is visible?",
+            "criteria": {
+              "sunny": "A sunny day with a clear blue sky.",
+              "rainy": "A rainy day with rain falling.",
+              "cloudy": "An overcast day with gray clouds.",
+              "night": "A dark nighttime scene."
+            }
+          },
+          "expected": "sunny",
+          "note": null
+        },
+        "parked_car_count": {
+          "question": {
+            "type": "choice",
+            "instructions": "How many parked cars are visible?",
+            "criteria": {
+              "zero": "A driveway with no parked cars.",
+              "one": "A driveway with one parked car.",
+              "two": "A driveway with two parked cars.",
+              "three_or_more": "A driveway with three or more parked cars."
+            }
+          },
+          "expected": "two",
+          "note": null
+        }
+      }
+    },
+    {
+      "image": "IMG_4367 Medium.jpeg",
+      "questions": {
+        "cat_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "A cat is visible in the image.",
+            "criteria": {
+              "true": "A cat is visible in the image.",
+              "false": "A scene without any cats."
+            }
+          },
+          "expected": true,
+          "note": null
+        },
+        "cat_gaze": {
+          "question": {
+            "type": "choice",
+            "instructions": "Where is the cat looking?",
+            "criteria": {
+              "camera": "A cat facing and looking directly at the camera.",
+              "window": "A cat looking out of a window, shown in profile.",
+              "elsewhere": "A cat looking elsewhere inside the room."
+            }
+          },
+          "expected": "window",
+          "note": null
+        }
+      }
+    },
+    {
+      "image": "PXL_20250524_124127738.jpg",
+      "questions": {
+        "animal_present": {
+          "question": {
+            "type": "noul",
+            "instructions": "An animal is visible in the image.",
+            "criteria": {
+              "true": "An animal is visible in the image.",
+              "false": "A scene without any animals."
+            }
+          },
+          "expected": true,
+          "note": null
+        },
+        "animal_type": {
+          "question": {
+            "type": "choice",
+            "instructions": "What kind of animal is visible?",
+            "criteria": {
+              "cat": "A photo of a cat.",
+              "dog": "A photo of a dog.",
+              "coyote": "A photo of a coyote.",
+              "bear": "A photo of a bear.",
+              "other_animal": "A photo of another kind of animal.",
+              "no_animal": "A landscape without any animals."
+            }
+          },
+          "expected": "bear",
+          "note": null
+        }
+      }
+    }
+  ]
+}

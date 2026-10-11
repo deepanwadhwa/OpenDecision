@@ -2,7 +2,7 @@
 
 <h1>OpenDecision</h1>
 
-<p>Open-source semantic decisions for structured state and documents.</p>
+<p>Typed decisions for text, documents, and images.</p>
 
 <p>
   <a href="https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml"><img alt="Tests" src="https://github.com/deepanwadhwa/OpenDecision/actions/workflows/tests.yml/badge.svg"></a>
@@ -14,7 +14,7 @@
 
 <p>
   <a href="https://deepanwadhwa.github.io/OpenDecision/">Documentation</a> ·
-  <a href="#play-doom">Doom demo</a> ·
+  <a href="#image-examples">Image examples</a> ·
   <a href="#get-started">Get started</a> ·
   <a href="#api-surface">API</a> ·
   <a href="https://deepanwadhwa.github.io/OpenDecision/examples/">Examples</a>
@@ -22,38 +22,80 @@
 
 </div>
 
-OpenDecision is the open-source equivalent of [TypeSafe's Jev](https://docs.typesafe.ai/introduction).
-
-Send it application state or a document and typed questions. It returns structured answers that code can use directly.
-
-Jev and OpenDecision use the same core pattern: state plus typed questions in, structured answers out. Both provide `Choice`, `Noul`, and `Score`.
+Send text, JSON, a document, or an image with typed questions. OpenDecision runs locally and returns structured answers.
 
 OpenDecision provides:
 
 - `Choice` to select one option from a list.
-- `Noul` to measure whether a statement is true.
+- `Noul` to score a statement or compare explicit true/false descriptions.
 - `Score` to place state on an ordered scale.
 - `Relation` to report `supports`, `contradicts`, `unknown`, or `conflicted`.
 - Document processing with evidence retrieval and source passages.
+- Image decisions with optional SigLIP2 support and the same typed questions.
 - A Python API, a FastAPI server, and a TypeSafe SDK compatible endpoint.
 
-The default backend is [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0). [`MoritzLaurer/deberta-v3-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0) is an optional model. Both run locally and produce classification scores without generating text. See [model selection and evaluation](https://deepanwadhwa.github.io/OpenDecision/model-selection/) for the measured tradeoffs.
+The default backend is [`MoritzLaurer/ModernBERT-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0). [`MoritzLaurer/deberta-v3-large-zeroshot-v2.0`](https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0) is an optional model. Image decisions use [`google/siglip2-base-patch16-224`](https://huggingface.co/google/siglip2-base-patch16-224). See [model selection and evaluation](https://deepanwadhwa.github.io/OpenDecision/model-selection/) for the measured tradeoffs.
 
 OpenDecision is licensed under Apache 2.0.
 
-## What can it do?
+## Image examples
 
-### Play Doom
+### Wildlife alert
 
-OpenDecision can choose actions for a bot in ViZDoom's Deadly Corridor at wall-clock speed.
+<img src="https://raw.githubusercontent.com/deepanwadhwa/OpenDecision/main/docs/assets/images/bear.jpg" alt="A bear in a wooded landscape" width="360">
 
-The input is structured game state: health, ammo, kills, target position, goal position, and recent damage. The demo uses a disclosed tactical router, a target-tracking actuator, and a one-tic damage reflex. OpenDecision chooses between the actions available in the current tactical situation.
+| Question | Answer |
+| --- | --- |
+| Is an animal visible? | Yes |
+| What kind of animal is visible? | `bear` |
 
-[![OpenDecision plays Doom at skill 5](https://raw.githubusercontent.com/deepanwadhwa/OpenDecision/main/demos/doom/opendecision-doom-skill5-preview.gif)](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill5-hero.mp4)
+Animal present and type `bear` returns **`sound_alarm`**.
 
-[Watch skill 1](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill1.mp4) · [Watch skill 3](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/opendecision-doom-skill3.mp4) · [Run the demo](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/README.md)
+**API call: 318 ms** for both questions.
 
-These are fixed-seed recordings. No win rate has been measured.
+### Bin collection
+
+<img src="https://raw.githubusercontent.com/deepanwadhwa/OpenDecision/main/docs/assets/images/overflowing-bin.jpg" alt="An overflowing bin with litter on the floor" width="360">
+
+| Question | Answer |
+| --- | --- |
+| Is a bin visible? | Yes |
+| What condition is the bin in? | `overflowing` |
+| Is litter scattered on the floor? | Yes |
+
+Bin present and condition `overflowing` returns **`request_collection`**.
+
+**API call: 234 ms** for all three questions.
+
+### Fence repair
+
+<img src="https://raw.githubusercontent.com/deepanwadhwa/OpenDecision/main/docs/assets/images/damaged-fence.jpg" alt="A damaged metal fence leaning into vegetation" width="360">
+
+| Question | Answer |
+| --- | --- |
+| Is a fence visible? | Yes |
+| What condition is the fence in? | `damaged` |
+
+Fence present and condition `damaged` returns **`create_repair_task`**.
+
+**API call: 155 ms** for both questions.
+
+These are recorded SigLIP2 results. The actions are simulated. Call times are medians of five local HTTP requests on an Apple M3 with the models loaded. The rules use a yes/no threshold of 0.5 and require a winning Choice probability of at least 0.6.
+
+[More images and answers](https://deepanwadhwa.github.io/OpenDecision/image-examples/) · [Image API and setup](https://deepanwadhwa.github.io/OpenDecision/image-decisions/) · [Run the demo](https://github.com/deepanwadhwa/OpenDecision/tree/main/demos/images)
+
+## Text and document examples
+
+### Customer routing
+
+> I was charged twice and I need this fixed before my meeting this afternoon.
+
+| Question | Answer |
+| --- | --- |
+| Which department should handle this? | `billing` |
+| Is this request urgent? | Yes |
+
+**API call: 231 ms** for both questions, measured with the same method as the image examples.
 
 ### Answer questions about data and documents
 
@@ -70,7 +112,7 @@ The sample claim contains a demand letter, policy facts, a police report, medica
 | Is the rental need fully supported? | `unknown` |
 | Are documents still outstanding? | `established` |
 
-The current synthetic claim experiment retrieves all 17 required facts and matches all 10 composed decisions. This is one development case. See the [insurance claim benchmark](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/insurance_claim/README.md).
+The saved synthetic claim benchmark retrieves 17 required facts and matches 10 composed decisions. See the [insurance claim benchmark](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/insurance_claim/README.md).
 
 #### GDPR example
 
@@ -83,7 +125,7 @@ The GDPR example uses a 54,171-character document split into 31 sections.
 | Can pre-ticked boxes count as valid consent? | `false` |
 | What is the maximum fine for serious infringements? | `EUR 20 million or 4% of worldwide turnover` |
 
-The current retrieval experiment answers 9 of 10 objective questions correctly. See the [questions](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/gdpr_wiki/questions.py) and [saved results](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/results/gdpr_wiki_retrieved.json).
+The saved retrieval benchmark answers 9 of 10 questions correctly. See the [questions](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/gdpr_wiki/questions.py) and [saved results](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/results/gdpr_wiki_retrieved.json).
 
 #### Yes/no answer modes
 
@@ -97,7 +139,7 @@ The current retrieval experiment answers 9 of 10 objective questions correctly. 
 
 In `both` mode, OpenDecision reports `confirmed`, `tentative`, or `conflicted`. A conflict has `answer: null`. Both score distributions remain in the response.
 
-These modes are for document `Noul` questions. They are separate from the internal scoring used by `Choice`.
+The `noul_mode` setting applies to document `Noul` questions.
 
 ## Get started
 
@@ -146,14 +188,54 @@ Open `http://127.0.0.1:8000/docs` to send requests from the interactive API page
 
 The model downloads from Hugging Face on first use.
 
+For image support:
+
+```bash
+pip install 'OpenDecision[images]'
+```
+
+```python
+from PIL import Image, ImageOps
+from opendecision import ImageDecisionEngine
+
+engine = ImageDecisionEngine()
+with Image.open("photo.jpg") as source:
+    image = ImageOps.exif_transpose(source).convert("RGB")
+
+result = engine.choice(
+    state=image,
+    instructions="What kind of animal is visible?",
+    criteria={"cat": "A photo of a cat", "bear": "A photo of a bear"},
+)
+print(result["choice"])
+```
+
+The API accepts the same question types with an image state:
+
+```json
+{
+  "state": {"type": "image", "data": "BASE64_IMAGE_BYTES"},
+  "questions": {
+    "animal_type": {
+      "type": "choice",
+      "instructions": "What kind of animal is visible?",
+      "criteria": {"cat": "A photo of a cat", "bear": "A photo of a bear"}
+    }
+  }
+}
+```
+
+Images must be single-frame JPEG, PNG, or WebP, up to 10 MiB and 20 megapixels. The server loads SigLIP2 on the first valid image request.
+
 ## Documentation
 
 - [Documentation index](https://deepanwadhwa.github.io/OpenDecision/)
 - [Quick start and API](https://deepanwadhwa.github.io/OpenDecision/quickstart/)
 - [Choice, Noul, Score, and Relation](https://deepanwadhwa.github.io/OpenDecision/primitives/)
 - [Documents, evidence, and yes/no modes](https://deepanwadhwa.github.io/OpenDecision/document-decisions/)
+- [Image examples](https://deepanwadhwa.github.io/OpenDecision/image-examples/)
+- [Image decisions and SigLIP2](https://deepanwadhwa.github.io/OpenDecision/image-decisions/)
 - [Evidence relations and rules](https://deepanwadhwa.github.io/OpenDecision/evidence-and-rules/)
-- [Doom demo](https://github.com/deepanwadhwa/OpenDecision/blob/main/demos/doom/README.md)
 - [Benchmarks](https://github.com/deepanwadhwa/OpenDecision/blob/main/benchmarks/opendecision_original/README.md)
 - [Model selection and evaluation](https://deepanwadhwa.github.io/OpenDecision/model-selection/)
 
@@ -171,6 +253,6 @@ GET  /openapi.json
 
 ## Current status
 
-OpenDecision v0.1.2 is a developer preview.
+OpenDecision v0.2.0 is a developer preview.
 
-Treat the model scores as uncalibrated. Evaluate the model and thresholds on your own data before using the results in an automated decision process.
+Model scores are uncalibrated. Test captions and thresholds on your own images and documents. Counting and negated image captions produced errors in the sample tests.

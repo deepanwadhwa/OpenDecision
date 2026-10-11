@@ -1,7 +1,7 @@
 [project]
 name = "OpenDecision"
-version = "0.1.2"
-description = "Open-source semantic decision engine for structured state and documents"
+version = "0.2.0"
+description = "Typed decisions for text, documents, and images"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.13"
 license = "Apache-2.0"
@@ -34,6 +34,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+images = [
+    "pillow>=12.0.0",
+    "sentencepiece>=0.2.0",
+]
 typesafe = [
     "typesafe-sdk>=0.6.0",
 ]

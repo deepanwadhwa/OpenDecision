@@ -28,6 +28,8 @@ nav:
   - Primitives: primitives.md
   - Model selection: model-selection.md
   - Document decisions: document-decisions.md
+  - Image decisions: image-decisions.md
+  - Image examples: image-examples.md
   - Evidence and rules: evidence-and-rules.md
   - Examples: examples.md
   - Maintainer guide: publishing.md
