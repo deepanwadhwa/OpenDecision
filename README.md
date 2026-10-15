@@ -13,6 +13,13 @@
 </p>
 
 <p>
+  <a href="https://deepanwadhwa.github.io/OpenDecision/quickstart/#memory"><img alt="Text: 1.1 GB RAM measured on CPU" src="https://img.shields.io/badge/Text_RAM-1.1_GB_measured-2563eb"></a>
+  <a href="https://deepanwadhwa.github.io/OpenDecision/quickstart/#memory"><img alt="Text and images: 2.1 GB RAM measured on CPU" src="https://img.shields.io/badge/Text_%2B_images_RAM-2.1_GB_measured-2563eb"></a>
+  <a href="https://deepanwadhwa.github.io/OpenDecision/quickstart/#input-limits"><img alt="Text context: 512 to 8,192 tokens, depending on question type" src="https://img.shields.io/badge/Text_context-512%E2%80%938%2C192_tokens-2563eb"></a>
+  <a href="https://deepanwadhwa.github.io/OpenDecision/quickstart/#input-limits"><img alt="Images processed at 224 by 224 pixels" src="https://img.shields.io/badge/Image_input-224_%C3%97_224_px-2563eb"></a>
+</p>
+
+<p>
   <a href="https://deepanwadhwa.github.io/OpenDecision/">Documentation</a> ·
   <a href="#image-examples">Image examples</a> ·
   <a href="#get-started">Get started</a> ·
@@ -23,6 +30,8 @@
 </div>
 
 Send text, JSON, a document, or an image with typed questions. OpenDecision runs locally and returns structured answers.
+
+With the default models, Choice, Score, and Relation use up to **512 tokens** per text evaluation; yes/no (`Noul`) uses up to **8,192 tokens**. Tokens are pieces of words, and these limits include the question text sent to the model. Images are resized to **224 × 224 pixels**, with up to **64 tokens per caption**. The document API splits longer documents into passages. [Input limits](https://deepanwadhwa.github.io/OpenDecision/quickstart/#input-limits).
 
 OpenDecision provides:
 
@@ -144,6 +153,8 @@ The `noul_mode` setting applies to document `Noul` questions.
 ## Get started
 
 OpenDecision requires Python 3.13 or later.
+
+In a CPU check with the default models, the app used about **1.1 GB of RAM for text**, **1.4 GB for images alone**, or **2.1 GB with both models loaded**. The API keeps both models loaded after the first image request. These are measured examples, not minimum requirements; longer inputs and simultaneous requests can use more memory. Leave room for your operating system and other apps. [Memory measurement details](https://deepanwadhwa.github.io/OpenDecision/quickstart/#memory).
 
 ```bash
 pip install OpenDecision

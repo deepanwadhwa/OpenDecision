@@ -33,4 +33,6 @@ On the same 80 case public-derived set, the saved default ModernBERT run answere
 
 The models also have different context limits: [ModernBERT allows 8,192 tokens](https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0/blob/main/config.json) and [DeBERTa allows 512](https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0/blob/main/config.json). OpenDecision truncates direct NLI inputs to the selected model's limit. This matters when state or evidence is long.
 
+In the current implementation, ModernBERT's Choice, Score, and Relation paths use its tokenizer's 512-token limit. Only the direct yes/no (`Noul`) path explicitly uses 8,192 tokens. These limits include both the input and the question or candidate description sent to the model. See [input limits](quickstart.md#input-limits) for document and image handling.
+
 These results do not show a consistent quality gain from switching the package default to DeBERTa. Choose a model using representative cases from your application, and treat returned scores as uncalibrated.

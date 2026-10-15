@@ -4,7 +4,36 @@
 
 - Python 3.13 or later
 - `pip` or `uv`
-- Enough memory to load the selected transformer model
+- RAM for the models, plus your operating system and other apps (see below)
+
+### Memory
+
+| What you run | Measured app RAM on CPU |
+| --- | ---: |
+| Text | About 1.1 GB |
+| Images alone, using `ImageDecisionEngine` in Python | About 1.4 GB |
+| Text and images, including the API after its first image request | About 2.1 GB |
+
+These are measured examples, not minimum requirements. Leave room for your operating system and other apps. Longer text, larger batches, and simultaneous requests can use more memory. GPU memory use can differ.
+
+Measured on October 15, 2026, on an Apple M3 using CPU inference, Python 3.13, PyTorch 2.14.0, and Transformers 5.17.0. Each row used a fresh Python process with the default model(s), measured from process startup through one two-option `choice()` call per model. Text used a short customer billing request; images used a 640 × 480 RGB image. Figures are peak process memory, rounded to decimal GB, including model loading and Python dependencies. They exclude other processes and GPU memory. Long document workloads and the optional DeBERTa model were not measured.
+
+The default text model is `MoritzLaurer/ModernBERT-large-zeroshot-v2.0`; the image model is `google/siglip2-base-patch16-224`. The API loads the text model at startup and keeps the image model loaded after the first valid image request. A GPU is optional.
+
+### Input limits
+
+Tokens are pieces of words. Text limits include the input, the question or candidate description sent to the model, and special tokens.
+
+| Input with the default models | Limit per evaluation |
+| --- | --- |
+| Text: Choice, Score, and Relation | 512 tokens |
+| Text: yes/no (`Noul`) | 8,192 tokens |
+| Documents | Split into passages of up to 384 tokens by default, then relevant passages are selected for each question |
+| Images | Resized to 224 × 224 pixels for processing |
+| Image captions or candidate descriptions | 64 tokens each, including special tokens |
+| Image uploads through the API | Single-frame JPEG, PNG, or WebP; up to 10 MiB and 20 megapixels |
+
+ModernBERT supports 8,192 tokens, but the current Choice, Score, and Relation paths use its tokenizer's 512-token limit. The `Noul` path explicitly uses the model's 8,192-token limit. Text beyond the applicable limit is truncated. Document passages are evaluated within these same limits; the whole document is not read in one pass. The optional DeBERTa model has a 512-token limit for all text question types.
 
 ## Install
 

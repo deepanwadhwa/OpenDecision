@@ -13,6 +13,8 @@ when the first valid image request arrives. Text and document requests keep
 using the configured text model. The first image request downloads the model
 from Hugging Face and can take longer than subsequent requests.
 
+In a CPU check, images alone used about **1.4 GB of RAM** in Python. The API used about **2.1 GB with both text and image models loaded**. These are measured examples, not minimum requirements. [Memory details](quickstart.md#memory).
+
 ## Same endpoint and question shapes
 
 Send `POST /v1/systemone` with an explicit image state:

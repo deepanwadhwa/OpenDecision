@@ -2,6 +2,15 @@
 
 OpenDecision answers typed questions about text, JSON, documents, and images. It runs locally and returns structured values.
 
+[![Text: 1.1 GB RAM measured on CPU](https://img.shields.io/badge/Text_RAM-1.1_GB_measured-2563eb)](quickstart.md#memory)
+[![Text and images: 2.1 GB RAM measured on CPU](https://img.shields.io/badge/Text_%2B_images_RAM-2.1_GB_measured-2563eb)](quickstart.md#memory)
+[![Text context: 512 to 8,192 tokens, depending on question type](https://img.shields.io/badge/Text_context-512%E2%80%938%2C192_tokens-2563eb)](quickstart.md#input-limits)
+[![Images processed at 224 by 224 pixels](https://img.shields.io/badge/Image_input-224_%C3%97_224_px-2563eb)](quickstart.md#input-limits)
+
+Measured on CPU with short inputs and the default models. Longer inputs and simultaneous requests can use more memory. [Memory details](quickstart.md#memory).
+
+Text context is **512 tokens for Choice, Score, and Relation**, or **8,192 tokens for yes/no (`Noul`)**, including the question text sent to the model. Tokens are pieces of words. Images are resized to **224 × 224 pixels**, with **64 tokens per caption**. The document API splits longer documents into passages. [Input limits](quickstart.md#input-limits).
+
 ## Text decisions
 
 ### Route a customer request
